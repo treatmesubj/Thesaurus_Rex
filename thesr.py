@@ -32,11 +32,21 @@ def get_syns(word):
         if len(bitches) > 0:
             script = script.replace('undefined', "\"undefined\"")
         j = json.loads(script)
+    except Exception:
+        print("Not today!")
 
-    posTabs = j['searchData']['tunaApiData']['posTabs']
+    try:
+        posTabs = j['searchData']['tunaApiData']['posTabs']
+    except TypeError:
+        print(f"is {word} a word?")
+        return
+
     for tab in posTabs:
         print(f"<{tab['pos']}: {tab['definition']}> ~~~~~~~~~ {[s['term'] for s in tab['synonyms'][:10]]}")
 
 
 if __name__ == "__main__":
-    get_syns(sys.argv[1])
+    try:
+        get_syns(sys.argv[1])
+    except IndexError:
+        print("usage: thesr.py [word]")
