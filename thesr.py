@@ -25,15 +25,20 @@ def get_syns(word):
     html = session.get(url, headers={"user-agent": "Mozilla/5.0"}).text
     script = re.search(r'<script>window\.INITIAL_STATE = (.+);</script>', html).group(1)
 
-    try:
-        j = json.loads(script)
-    except json.decoder.JSONDecodeError:
-        bitches = [u.start() for u in re.finditer("undefined", script)]
-        if len(bitches) > 0:
-            script = script.replace('undefined', "\"undefined\"")
-        j = json.loads(script)
-    except Exception:
-        print("Not today!")
+    while True:
+        try:
+            j = json.loads(script)
+            break
+        except json.decoder.JSONDecodeError:
+            bitches = [u.start() for u in re.finditer(":undefined", script)]
+            if len(bitches) > 0:
+                script = script.replace(":undefined", ":\"undefined\"")
+            bitches = [u.start() for u in re.finditer(":null", script)]
+            if len(bitches) > 0:
+                script = script.replace(":null", ":\"null\"")
+        except Exception:
+            print("Not today!")
+            raise
 
     try:
         posTabs = j['searchData']['tunaApiData']['posTabs']
