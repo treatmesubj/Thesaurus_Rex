@@ -8,6 +8,6 @@ cd/ into dir of the script or just put it on your system's PATH so you can use i
 
 `thesr.py [word]`
 
-if `thesr.py [word]` is too tedious, you can call thsr.exe to call thesr.py for you: `thesr [word]`
+if `thesr.py [word]` is too tedious, you can call thesr.exe to call thesr.py for you: `thesr [word]`
 
 ![alt text](https://github.com/treatmesubj/Thesaurus_Rex/blob/master/Screenshot%20(23).png)
