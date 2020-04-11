@@ -1,7 +1,17 @@
 import requests
+from requests_html import HTML
 import re
 import json
 import sys
+import random
+
+def get_random_word():
+    session = requests.session()
+    html = HTML(html=session.get("https://www.merriam-webster.com/word-of-the-day/calendar").text)
+    word_elems = html.find("div.more-words-of-day-container ul.more-wod-items li h2 a")
+    words = [word_elem.text for word_elem in word_elems]
+    random_word = words[random.randint(0, len(words))]
+    return random_word
 
 
 def get_syns(word):
@@ -54,4 +64,5 @@ if __name__ == "__main__":
     try:
         get_syns(sys.argv[1])
     except IndexError:
-        print("usage: thesr.py [word]")
+        get_syns(get_random_word())
+        print("\nThesaurus Rex Command-Line Usage: thesr.py [word]")
