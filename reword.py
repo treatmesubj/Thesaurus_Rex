@@ -105,7 +105,7 @@ tags = {
 
 ignored_words = ("is")
 
-sentence = "I hope to find a big sum of money soon. It would be pleasurable to me."
+sentence = "There are big fields of grass and the sun is shining."
 tokens = pos_tag(word_tokenize(sentence))
 print(sentence)
 # print(tokens)
