@@ -105,7 +105,7 @@ tags = {
 
 ignored_words = ("is")
 
-sentence = "I wonder what the weather will be like tomorrow. I hope the sky is blue."
+sentence = "I hope to find a big sum of money soon. It would be pleasurable to me."
 tokens = pos_tag(word_tokenize(sentence))
 print(sentence)
 # print(tokens)
@@ -118,7 +118,7 @@ for index, token in enumerate(tokens):
             for homonym in word.homonyms:
                 if homonym['word_class'] == tags[token[1]]:
                     # print(homonym['synonyms'][0])
-                    tokens[index] = (homonym['synonyms'][0], token[1])
+                    tokens[index] = (homonym['synonyms'][random.randint(0, len(homonym['synonyms']))], token[1])
                     break
             # print("~~~~~~~~~~~~~~~~")
         except Exception:
