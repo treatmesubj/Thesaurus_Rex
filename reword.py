@@ -83,7 +83,7 @@ tags = {
     'VB': 'verb',
     'VBD': 'verb',
     'VBG': 'verb',
-    'VBN': 'verb',
+    'VBN': 'adj.',
     'VBP': 'verb',
     'VBZ': 'verb',
     'VH': 'verb',
@@ -103,24 +103,35 @@ tags = {
     'WRB': 'adv.'
     }
 
-ignored_words = ("is")
+conjugations= {
+    'JJR': 'er',  # er
+    'JJS': 'est',  # est
+    'NNS': 's',  # s
+    'RBR': 'er',  # er
+    'RBS': 'est',  # est
+    'VBD': 'ed',  # past tense, took will be weird
+    'VBG': 'ing',  # -ing
+    'VBZ': 's',  # s
+    }
 
-sentence = "There are big fields of grass and the sun is shining."
+ignored_words = ("is", "and")
+
+sentence = "The COVID-19 crisis is the best crisis. This pandemic is better than the last. It amazes everyone."
 tokens = pos_tag(word_tokenize(sentence))
 print(sentence)
-# print(tokens)
 
+# wow this block is gross; please refactor
 for index, token in enumerate(tokens):
     if token[1] in tags and token[0] not in ignored_words:
         try:
-            # print(token[0])
             word = Word(token[0])
             for homonym in word.homonyms:
                 if homonym['word_class'] == tags[token[1]]:
-                    # print(homonym['synonyms'][0])
-                    tokens[index] = (homonym['synonyms'][random.randint(0, len(homonym['synonyms']))], token[1])
+                    if token[1] in conjugations:
+                        tokens[index] = (f"{homonym['synonyms'][random.randint(0, len(homonym['synonyms']))]}{conjugations[token[1]]}", token[1])
+                    else:
+                        tokens[index] = (homonym['synonyms'][random.randint(0, len(homonym['synonyms']))], token[1])
                     break
-            # print("~~~~~~~~~~~~~~~~")
         except Exception:
             pass
 
