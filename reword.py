@@ -106,8 +106,8 @@ tags = {
 conjugations= {
     'JJR': 'er',  # er
     'JJS': 'est',  # est
-    'NNS': 's',  # s
-    'RBR': 'er',  # er
+    'NNS': 's',  # plural
+    # 'RBR': 'er',  # er
     'RBS': 'est',  # est
     'VBD': 'ed',  # past tense, took will be weird
     'VBG': 'ing',  # -ing
@@ -116,7 +116,7 @@ conjugations= {
 
 ignored_words = ("is", "and")
 
-sentence = "The COVID-19 crisis is the best crisis. This pandemic is better than the last. It amazes everyone."
+sentence = "I miss Jade. She used to cook the best meals. Now, she is sadly down the road from me."
 tokens = pos_tag(word_tokenize(sentence))
 print(sentence)
 
@@ -127,10 +127,18 @@ for index, token in enumerate(tokens):
             word = Word(token[0])
             for homonym in word.homonyms:
                 if homonym['word_class'] == tags[token[1]]:
+                    # choose random synonym
+                    replacement_word = homonym['synonyms'][random.randint(0, len(homonym['synonyms']))]
+                    # check for capitalization
+                    if word.spelling == word.spelling.capitalize():
+                        replacement_word = replacement_word.capitalize()
+                    # check for conjugation
                     if token[1] in conjugations:
-                        tokens[index] = (f"{homonym['synonyms'][random.randint(0, len(homonym['synonyms']))]}{conjugations[token[1]]}", token[1])
+                        tokens[index] = (f"{replacement_word}{conjugations[token[1]]}", token[1])
+                    # no need to conjugate
                     else:
-                        tokens[index] = (homonym['synonyms'][random.randint(0, len(homonym['synonyms']))], token[1])
+                        tokens[index] = (replacement_word, token[1])
+
                     break
         except Exception:
             pass
