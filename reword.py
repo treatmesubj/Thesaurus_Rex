@@ -7,6 +7,11 @@ import random
 from nltk import pos_tag, word_tokenize
 import string
 
+"""
+This is a funny language processing project. It attempts to re-word a sentence
+with synonyms using proper conjugations and such. 
+"""
+
 
 def get_random_word():
     session = requests.session()
