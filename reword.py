@@ -132,83 +132,85 @@ monty = MontyNLGenerator.MontyNLGenerator()
 plur = inflect.engine()
 
 
-sentence = "We all think that Jade is a big doofus. We have always loved her, though. She made me very happy."
-word_tokens = pos_tag(tknzr.tokenize(sentence))
-print(f"{sentence=}")
-# print(f"{word_tokens=}")
+sentence = "I should probably lift soon. I've been obsessed with coding this all day. I am very satisfied, though."
+while True:
+    sentence = input("sentence: ")
+    word_tokens = pos_tag(tknzr.tokenize(sentence))
+    print(f"{sentence=}")
+    # print(f"{word_tokens=}")
 
-new_word_tokens = []
+    new_word_tokens = []
 
 
-for word_token in word_tokens:
-    tag = word_token[1]
-    word = word_token[0]
+    for word_token in word_tokens:
+        tag = word_token[1]
+        word = word_token[0]
 
-    if tag in tags and word not in ignored_words:
+        if tag in tags and word not in ignored_words:
 
-        try:
-            
-            thesr_word = Word(word)
-            for homonym in thesr_word.homonyms:
-                if homonym['word_class'] == tags[tag]:
+            try:
+                
+                thesr_word = Word(word)
+                for homonym in thesr_word.homonyms:
+                    if homonym['word_class'] == tags[tag]:
 
-                    replacement = homonym['synonyms'][random.randint(0, len(homonym['synonyms'])-1)]
-                    replacement_tagged = pos_tag(tknzr.tokenize(replacement))
-                    
-                    # check for conjugation
-                    if tag in verb_types:
-                        for rep_index, rep_word_token in enumerate(replacement_tagged):
-                            if 'V' in rep_word_token[1] or 'NN' in rep_word_token[1]:
-                                try:
-                                    conjugated = monty.conjugate_verb(rep_word_token[0], tag)
-                                    replacement_tagged[rep_index] = (conjugated, tag)
-                                    for rep_tag in replacement_tagged:
-                                        new_word_tokens.append(rep_tag)
-                                    break
-                                except Exception as e:
-                                    # print(e)
-                                    new_word_tokens.append(word_token)
-                        break
+                        replacement = homonym['synonyms'][random.randint(0, len(homonym['synonyms'])-1)]
+                        replacement_tagged = pos_tag(tknzr.tokenize(replacement))
+                        
+                        # check for conjugation
+                        if tag in verb_types:
+                            for rep_index, rep_word_token in enumerate(replacement_tagged):
+                                if 'V' in rep_word_token[1] or 'NN' in rep_word_token[1]:
+                                    try:
+                                        conjugated = monty.conjugate_verb(rep_word_token[0], tag)
+                                        replacement_tagged[rep_index] = (conjugated, tag)
+                                        for rep_tag in replacement_tagged:
+                                            new_word_tokens.append(rep_tag)
+                                        break
+                                    except Exception as e:
+                                        # print(e)
+                                        new_word_tokens.append(word_token)
+                            break
 
-                    # check for plural
-                    if tag == 'NNS':
-                        for rep_index, rep_word_token in enumerate(replacement_tagged):
-                            if 'NN' in rep_word_token[1]:
-                                try:
-                                    plural = plur.plural(rep_word_token[0])
-                                    replacement_tagged[rep_index] = (plural, tag)
-                                    for rep_tag in replacement_tagged:
-                                        new_word_tokens.append(rep_tag)
-                                    break
-                                except Exception as e:
-                                    # print(e)
-                                    new_word_tokens.append(word_token)
-                        break
+                        # check for plural
+                        if tag == 'NNS':
+                            for rep_index, rep_word_token in enumerate(replacement_tagged):
+                                if 'NN' in rep_word_token[1]:
+                                    try:
+                                        plural = plur.plural(rep_word_token[0])
+                                        replacement_tagged[rep_index] = (plural, tag)
+                                        for rep_tag in replacement_tagged:
+                                            new_word_tokens.append(rep_tag)
+                                        break
+                                    except Exception as e:
+                                        # print(e)
+                                        new_word_tokens.append(word_token)
+                            break
 
-                    else:
-                        # no need to conjugate
-                        for rep_tag in replacement_tagged:
-                            new_word_tokens.append(rep_tag)
-                        break
+                        else:
+                            # no need to conjugate
+                            for rep_tag in replacement_tagged:
+                                new_word_tokens.append(rep_tag)
+                            break
 
-                    # check for capitalization
-                    # if word.spelling == word.spelling.capitalize():
-                    #     replacement = replacement[0][1].capitalize()
+                        # check for capitalization
+                        # if word.spelling == word.spelling.capitalize():
+                        #     replacement = replacement[0][1].capitalize()
 
-                else:  # wrong homonym
-                    pass
-            else:
+                    else:  # wrong homonym
+                        pass
+                else:
+                    new_word_tokens.append(word_token)
+
+            except Exception as e:
+                # print(e)
                 new_word_tokens.append(word_token)
+                pass
 
-        except Exception as e:
-            # print(e)
+        else:
             new_word_tokens.append(word_token)
-            pass
 
-    else:
-        new_word_tokens.append(word_token)
-
-# print(f"{new_word_tokens=}")
-new_sentence = "".join([" "+token[0] if not token[0].startswith("'") and token[0] not in string.punctuation else token[0] for token in new_word_tokens]).strip()
-print(f"{new_sentence=}")
+    # print(f"{new_word_tokens=}")
+    new_sentence = "".join([" "+token[0] if not token[0].startswith("'") and token[0] not in string.punctuation else token[0] for token in new_word_tokens]).strip()
+    print(f"{new_sentence=}", end='\n\n')
 
