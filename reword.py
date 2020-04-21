@@ -132,7 +132,7 @@ monty = MontyNLGenerator.MontyNLGenerator()
 plur = inflect.engine()
 
 
-sentence = "The dog barks loudly. The cats run. We are all happy."
+sentence = "We all think that Jade is a big doofus. We have always loved her, though. She made me very happy."
 word_tokens = pos_tag(tknzr.tokenize(sentence))
 print(f"{sentence=}")
 # print(f"{word_tokens=}")
@@ -166,7 +166,8 @@ for word_token in word_tokens:
                                         new_word_tokens.append(rep_tag)
                                     break
                                 except Exception as e:
-                                    print(e)
+                                    # print(e)
+                                    new_word_tokens.append(word_token)
                         break
 
                     # check for plural
@@ -180,7 +181,8 @@ for word_token in word_tokens:
                                         new_word_tokens.append(rep_tag)
                                     break
                                 except Exception as e:
-                                    print(e)
+                                    # print(e)
+                                    new_word_tokens.append(word_token)
                         break
 
                     else:
@@ -195,10 +197,13 @@ for word_token in word_tokens:
 
                 else:  # wrong homonym
                     pass
+            else:
+                new_word_tokens.append(word_token)
 
         except Exception as e:
-            print(e)
+            # print(e)
             new_word_tokens.append(word_token)
+            pass
 
     else:
         new_word_tokens.append(word_token)
