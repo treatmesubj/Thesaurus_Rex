@@ -6,20 +6,15 @@ import sys
 import random
 from nltk import pos_tag, word_tokenize
 import string
+from nltk.tokenize import TweetTokenizer
+from MontyLingua import MontyNLGenerator
+import inflect
+
 
 """
 This is a funny language processing project. It attempts to re-word a sentence
 with synonyms using proper conjugations and such. 
 """
-
-
-def get_random_word():
-    session = requests.session()
-    html = HTML(html=session.get("https://www.merriam-webster.com/word-of-the-day/calendar").text)
-    word_elems = html.find("div.more-words-of-day-container ul.more-wod-items li h2 a")
-    words = [word_elem.text for word_elem in word_elems]
-    random_word = words[random.randint(0, len(words))]
-    return random_word
 
 
 def get_syns(word):
@@ -108,45 +103,107 @@ tags = {
     'WRB': 'adv.'
     }
 
-conjugations= {
-    'JJR': 'er',  # er
-    'JJS': 'est',  # est
-    'NNS': 's',  # plural
-    # 'RBR': 'er',  # er
-    'RBS': 'est',  # est
-    'VBD': 'ed',  # past tense, took will be weird
-    'VBG': 'ing',  # -ing
-    'VBZ': 's',  # s
-    }
+verb_types = {
+    'VB': 'verb',
+    'VBD': 'verb',
+    'VBG': 'verb',
+    'VBN': 'adj.',
+    'VBP': 'verb',
+    'VBZ': 'verb',
+    'VH': 'verb',
+    'VHD': 'verb',
+    'VHG': 'verb',
+    'VHN': 'verb',
+    'VHP': 'verb',
+    'VHZ': 'verb',
+    'VV': 'verb',
+    'VVD': 'verb',
+    'VVG': 'verb',
+    'VVN': 'verb',
+    'VVP': 'verb',
+    'VVZ': 'verb',
+}
 
-ignored_words = ("is", "and")
+ignored_words = ("is", "and", "be")
 
-sentence = "I miss Jade. She used to cook the best meals. Now, she is sadly down the road from me."
-tokens = pos_tag(word_tokenize(sentence))
-print(sentence)
 
-# wow this block is gross; please refactor
-for index, token in enumerate(tokens):
-    if token[1] in tags and token[0] not in ignored_words:
+tknzr = TweetTokenizer()
+monty = MontyNLGenerator.MontyNLGenerator()
+plur = inflect.engine()
+
+
+sentence = "The dog barks loudly. The cats run. We are all happy."
+word_tokens = pos_tag(tknzr.tokenize(sentence))
+print(f"{sentence=}")
+# print(f"{word_tokens=}")
+
+new_word_tokens = []
+
+
+for word_token in word_tokens:
+    tag = word_token[1]
+    word = word_token[0]
+
+    if tag in tags and word not in ignored_words:
+
         try:
-            word = Word(token[0])
-            for homonym in word.homonyms:
-                if homonym['word_class'] == tags[token[1]]:
-                    # choose random synonym
-                    replacement_word = homonym['synonyms'][random.randint(0, len(homonym['synonyms']))]
-                    # check for capitalization
-                    if word.spelling == word.spelling.capitalize():
-                        replacement_word = replacement_word.capitalize()
+            
+            thesr_word = Word(word)
+            for homonym in thesr_word.homonyms:
+                if homonym['word_class'] == tags[tag]:
+
+                    replacement = homonym['synonyms'][random.randint(0, len(homonym['synonyms'])-1)]
+                    replacement_tagged = pos_tag(tknzr.tokenize(replacement))
+                    
                     # check for conjugation
-                    if token[1] in conjugations:
-                        tokens[index] = (f"{replacement_word}{conjugations[token[1]]}", token[1])
-                    # no need to conjugate
+                    if tag in verb_types:
+                        for rep_index, rep_word_token in enumerate(replacement_tagged):
+                            if 'V' in rep_word_token[1] or 'NN' in rep_word_token[1]:
+                                try:
+                                    conjugated = monty.conjugate_verb(rep_word_token[0], tag)
+                                    replacement_tagged[rep_index] = (conjugated, tag)
+                                    for rep_tag in replacement_tagged:
+                                        new_word_tokens.append(rep_tag)
+                                    break
+                                except Exception as e:
+                                    print(e)
+                        break
+
+                    # check for plural
+                    if tag == 'NNS':
+                        for rep_index, rep_word_token in enumerate(replacement_tagged):
+                            if 'NN' in rep_word_token[1]:
+                                try:
+                                    plural = plur.plural(rep_word_token[0])
+                                    replacement_tagged[rep_index] = (plural, tag)
+                                    for rep_tag in replacement_tagged:
+                                        new_word_tokens.append(rep_tag)
+                                    break
+                                except Exception as e:
+                                    print(e)
+                        break
+
                     else:
-                        tokens[index] = (replacement_word, token[1])
+                        # no need to conjugate
+                        for rep_tag in replacement_tagged:
+                            new_word_tokens.append(rep_tag)
+                        break
 
-                    break
-        except Exception:
-            pass
+                    # check for capitalization
+                    # if word.spelling == word.spelling.capitalize():
+                    #     replacement = replacement[0][1].capitalize()
 
-new_sentence = "".join([" "+token[0] if not token[0].startswith("'") and token[0] not in string.punctuation else token[0] for token in tokens]).strip()
-print(new_sentence)
+                else:  # wrong homonym
+                    pass
+
+        except Exception as e:
+            print(e)
+            new_word_tokens.append(word_token)
+
+    else:
+        new_word_tokens.append(word_token)
+
+# print(f"{new_word_tokens=}")
+new_sentence = "".join([" "+token[0] if not token[0].startswith("'") and token[0] not in string.punctuation else token[0] for token in new_word_tokens]).strip()
+print(f"{new_sentence=}")
+
