@@ -7,7 +7,7 @@ import random
 from nltk import pos_tag, word_tokenize
 import string
 from nltk.tokenize import TweetTokenizer
-from MontyLingua import MontyNLGenerator
+from MontyLingua import MontyNLGenerator  # https://github.com/treatmesubj/MontyLingua
 import inflect
 
 """
@@ -67,6 +67,7 @@ class Word:
 
 
 def reword(sentence):
+
     tags = {'CC': 'conj.', 'JJ': 'adj.', 'JJR': 'adj.', 'JJS': 'adj.', 'NN': 'noun', 'NNS': 'noun', 'PP': 'noun', 'PPZ': 'adj.', 'RB': 'adv.', 'RBR': 'adv.', 'RBS': 'best', 
     'VB': 'verb', 'VBD': 'verb', 'VBG': 'verb', 'VBN': 'adj.', 'VBP': 'verb', 'VBZ': 'verb', 'VH': 'verb', 'VHD': 'verb', 'VHG': 'verb', 'VHN': 'verb', 'VHP': 'verb', 
     'VHZ': 'verb', 'VV': 'verb', 'VVD': 'verb', 'VVG': 'verb', 'VVN': 'verb', 'VVP': 'verb', 'VVZ': 'verb', 'WDT': 'conj', 'WP': 'pron.', 'WRB': 'adv.'}
@@ -78,13 +79,10 @@ def reword(sentence):
     monty = MontyNLGenerator.MontyNLGenerator()
     plur = inflect.engine()
 
-
     word_tokens = pos_tag(tknzr.tokenize(sentence))
+    new_word_tokens = []
     print(f"{sentence=}")
     # print(f"{word_tokens=}")
-
-    new_word_tokens = []
-
 
     for word_token in word_tokens:
         tag = word_token[1]
