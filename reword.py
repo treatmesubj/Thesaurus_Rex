@@ -68,73 +68,71 @@ class Word:
             print(f"<{homonym['word_class']}: {homonym['definition']}> ~~~~~~~~~ {homonym['synonyms'][:10]}")
 
 
-tags = {
-    'CC': 'conj.',
-    'JJ': 'adj.',
-    'JJR': 'adj.',
-    'JJS': 'adj.',
-    'NN': 'noun',
-    'NNS': 'noun',
-    'PP': 'noun',
-    'PPZ': 'adj.',
-    'RB': 'adv.',
-    'RBR': 'adv.',
-    'RBS': 'best',
-    'VB': 'verb',
-    'VBD': 'verb',
-    'VBG': 'verb',
-    'VBN': 'adj.',
-    'VBP': 'verb',
-    'VBZ': 'verb',
-    'VH': 'verb',
-    'VHD': 'verb',
-    'VHG': 'verb',
-    'VHN': 'verb',
-    'VHP': 'verb',
-    'VHZ': 'verb',
-    'VV': 'verb',
-    'VVD': 'verb',
-    'VVG': 'verb',
-    'VVN': 'verb',
-    'VVP': 'verb',
-    'VVZ': 'verb',
-    'WDT': 'conj',
-    'WP': 'pron.',
-    'WRB': 'adv.'
+def reword(sentence):
+    tags = {
+        'CC': 'conj.',
+        'JJ': 'adj.',
+        'JJR': 'adj.',
+        'JJS': 'adj.',
+        'NN': 'noun',
+        'NNS': 'noun',
+        'PP': 'noun',
+        'PPZ': 'adj.',
+        'RB': 'adv.',
+        'RBR': 'adv.',
+        'RBS': 'best',
+        'VB': 'verb',
+        'VBD': 'verb',
+        'VBG': 'verb',
+        'VBN': 'adj.',
+        'VBP': 'verb',
+        'VBZ': 'verb',
+        'VH': 'verb',
+        'VHD': 'verb',
+        'VHG': 'verb',
+        'VHN': 'verb',
+        'VHP': 'verb',
+        'VHZ': 'verb',
+        'VV': 'verb',
+        'VVD': 'verb',
+        'VVG': 'verb',
+        'VVN': 'verb',
+        'VVP': 'verb',
+        'VVZ': 'verb',
+        'WDT': 'conj',
+        'WP': 'pron.',
+        'WRB': 'adv.'
+        }
+
+    verb_types = {
+        'VB': 'verb',
+        'VBD': 'verb',
+        'VBG': 'verb',
+        'VBN': 'adj.',
+        'VBP': 'verb',
+        'VBZ': 'verb',
+        'VH': 'verb',
+        'VHD': 'verb',
+        'VHG': 'verb',
+        'VHN': 'verb',
+        'VHP': 'verb',
+        'VHZ': 'verb',
+        'VV': 'verb',
+        'VVD': 'verb',
+        'VVG': 'verb',
+        'VVN': 'verb',
+        'VVP': 'verb',
+        'VVZ': 'verb',
     }
 
-verb_types = {
-    'VB': 'verb',
-    'VBD': 'verb',
-    'VBG': 'verb',
-    'VBN': 'adj.',
-    'VBP': 'verb',
-    'VBZ': 'verb',
-    'VH': 'verb',
-    'VHD': 'verb',
-    'VHG': 'verb',
-    'VHN': 'verb',
-    'VHP': 'verb',
-    'VHZ': 'verb',
-    'VV': 'verb',
-    'VVD': 'verb',
-    'VVG': 'verb',
-    'VVN': 'verb',
-    'VVP': 'verb',
-    'VVZ': 'verb',
-}
-
-ignored_words = ("is", "and", "be")
+    ignored_words = ("is", "and", "be")
 
 
-tknzr = TweetTokenizer()
-monty = MontyNLGenerator.MontyNLGenerator()
-plur = inflect.engine()
+    tknzr = TweetTokenizer()
+    monty = MontyNLGenerator.MontyNLGenerator()
+    plur = inflect.engine()
 
 
-sentence = "I should probably lift soon. I've been obsessed with coding this all day. I am very satisfied, though."
-while True:
-    sentence = input("sentence: ")
     word_tokens = pos_tag(tknzr.tokenize(sentence))
     print(f"{sentence=}")
     # print(f"{word_tokens=}")
@@ -149,7 +147,6 @@ while True:
         if tag in tags and word not in ignored_words:
 
             try:
-                
                 thesr_word = Word(word)
                 for homonym in thesr_word.homonyms:
                     if homonym['word_class'] == tags[tag]:
@@ -157,8 +154,7 @@ while True:
                         replacement = homonym['synonyms'][random.randint(0, len(homonym['synonyms'])-1)]
                         replacement_tagged = pos_tag(tknzr.tokenize(replacement))
                         
-                        # check for conjugation
-                        if tag in verb_types:
+                        if tag in verb_types:  # check for conjugation
                             for rep_index, rep_word_token in enumerate(replacement_tagged):
                                 if 'V' in rep_word_token[1] or 'NN' in rep_word_token[1]:
                                     try:
@@ -167,13 +163,11 @@ while True:
                                         for rep_tag in replacement_tagged:
                                             new_word_tokens.append(rep_tag)
                                         break
-                                    except Exception as e:
-                                        # print(e)
+                                    except Exception:
                                         new_word_tokens.append(word_token)
                             break
 
-                        # check for plural
-                        if tag == 'NNS':
+                        if tag == 'NNS':  # check for plural
                             for rep_index, rep_word_token in enumerate(replacement_tagged):
                                 if 'NN' in rep_word_token[1]:
                                     try:
@@ -182,35 +176,29 @@ while True:
                                         for rep_tag in replacement_tagged:
                                             new_word_tokens.append(rep_tag)
                                         break
-                                    except Exception as e:
-                                        # print(e)
+                                    except Exception:
                                         new_word_tokens.append(word_token)
                             break
 
-                        else:
-                            # no need to conjugate
+                        else:  # no need to conjugate
                             for rep_tag in replacement_tagged:
                                 new_word_tokens.append(rep_tag)
                             break
-
-                        # check for capitalization
-                        # if word.spelling == word.spelling.capitalize():
-                        #     replacement = replacement[0][1].capitalize()
-
                     else:  # wrong homonym
                         pass
-                else:
+                else:  # no suitable homonyms
                     new_word_tokens.append(word_token)
-
-            except Exception as e:
-                # print(e)
+            except Exception:
                 new_word_tokens.append(word_token)
-                pass
-
-        else:
+        else:  # weird word, keep it
             new_word_tokens.append(word_token)
 
     # print(f"{new_word_tokens=}")
     new_sentence = "".join([" "+token[0] if not token[0].startswith("'") and token[0] not in string.punctuation else token[0] for token in new_word_tokens]).strip()
     print(f"{new_sentence=}", end='\n\n')
+
+
+if __name__ == "__main__":
+    while True:
+        reword(input("sentence: "))
 
