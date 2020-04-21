@@ -10,7 +10,6 @@ from nltk.tokenize import TweetTokenizer
 from MontyLingua import MontyNLGenerator
 import inflect
 
-
 """
 This is a funny language processing project. It attempts to re-word a sentence
 with synonyms using proper conjugations and such. 
@@ -48,7 +47,6 @@ def get_syns(word):
     homonyms = []
 
     for tab in posTabs:
-        # print(f"<{tab['pos']}: {tab['definition']}> ~~~~~~~~~ {[s['term'] for s in tab['synonyms'][:10]]}")
         homonyms.append({
             'word_class': tab['pos'],
             'definition': tab['definition'],
@@ -69,64 +67,12 @@ class Word:
 
 
 def reword(sentence):
-    tags = {
-        'CC': 'conj.',
-        'JJ': 'adj.',
-        'JJR': 'adj.',
-        'JJS': 'adj.',
-        'NN': 'noun',
-        'NNS': 'noun',
-        'PP': 'noun',
-        'PPZ': 'adj.',
-        'RB': 'adv.',
-        'RBR': 'adv.',
-        'RBS': 'best',
-        'VB': 'verb',
-        'VBD': 'verb',
-        'VBG': 'verb',
-        'VBN': 'adj.',
-        'VBP': 'verb',
-        'VBZ': 'verb',
-        'VH': 'verb',
-        'VHD': 'verb',
-        'VHG': 'verb',
-        'VHN': 'verb',
-        'VHP': 'verb',
-        'VHZ': 'verb',
-        'VV': 'verb',
-        'VVD': 'verb',
-        'VVG': 'verb',
-        'VVN': 'verb',
-        'VVP': 'verb',
-        'VVZ': 'verb',
-        'WDT': 'conj',
-        'WP': 'pron.',
-        'WRB': 'adv.'
-        }
+    tags = {'CC': 'conj.', 'JJ': 'adj.', 'JJR': 'adj.', 'JJS': 'adj.', 'NN': 'noun', 'NNS': 'noun', 'PP': 'noun', 'PPZ': 'adj.', 'RB': 'adv.', 'RBR': 'adv.', 'RBS': 'best', 
+    'VB': 'verb', 'VBD': 'verb', 'VBG': 'verb', 'VBN': 'adj.', 'VBP': 'verb', 'VBZ': 'verb', 'VH': 'verb', 'VHD': 'verb', 'VHG': 'verb', 'VHN': 'verb', 'VHP': 'verb', 
+    'VHZ': 'verb', 'VV': 'verb', 'VVD': 'verb', 'VVG': 'verb', 'VVN': 'verb', 'VVP': 'verb', 'VVZ': 'verb', 'WDT': 'conj', 'WP': 'pron.', 'WRB': 'adv.'}
 
-    verb_types = {
-        'VB': 'verb',
-        'VBD': 'verb',
-        'VBG': 'verb',
-        'VBN': 'adj.',
-        'VBP': 'verb',
-        'VBZ': 'verb',
-        'VH': 'verb',
-        'VHD': 'verb',
-        'VHG': 'verb',
-        'VHN': 'verb',
-        'VHP': 'verb',
-        'VHZ': 'verb',
-        'VV': 'verb',
-        'VVD': 'verb',
-        'VVG': 'verb',
-        'VVN': 'verb',
-        'VVP': 'verb',
-        'VVZ': 'verb',
-    }
-
+    verb_types = ('VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 'VH', 'VHD', 'VHG', 'VHN', 'VHP', 'VHZ', 'VV', 'VVD', 'VVG', 'VVN', 'VVP', 'VVZ')
     ignored_words = ("is", "and", "be")
-
 
     tknzr = TweetTokenizer()
     monty = MontyNLGenerator.MontyNLGenerator()
