@@ -14,4 +14,4 @@ If you call `thesr` without a word argument, it'll use a random word from Webste
 
 If no synonyms for the word can be found, it'll return Webster's definitions
 
-![alt text](https://github.com/treatmesubj/Thesaurus_Rex/blob/master/Screenshot%20(23).png)
+![alt text](https://github.com/treatmesubj/Thesaurus_Rex/blob/master/Screenshot%20(24).png)
