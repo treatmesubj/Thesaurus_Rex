@@ -6,7 +6,7 @@ cd/ into dir of the script or just put it on your system's PATH so you can use i
 
 ### Usage
 
-`thesr.py [word] [-d | define]`
+`thesr.py [word] [-d | -define]`
 
 If `thesr.py [word]` is too tedious, you can call thesr.exe to call thesr.py for you: `thesr [word]`
 
