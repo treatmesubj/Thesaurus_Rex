@@ -23,7 +23,6 @@ def get_defs(word):
     zipped_elems = zip(dict_entry_elems, word_class_elems)
 
     homonyms = []
-
     try:
         for dict_entry_elem, word_class_elem in zipped_elems:
             definitions_elems = dict_entry_elem.find("span.dtText")
@@ -43,8 +42,7 @@ def get_syns(word):
     session = requests.session()
     print(f"[{word}!]", end="\n\n")
 
-    url = f"http://www.thesaurus.com/browse/{word}"
-    html = session.get(url, headers={"user-agent": "Mozilla/5.0"}).text
+    html = session.get(f"http://www.thesaurus.com/browse/{word}", headers={"user-agent": "Mozilla/5.0"}).text
     script = re.search(r'<script>window\.INITIAL_STATE = (.+);</script>', html).group(1)
 
     while True:
@@ -67,14 +65,12 @@ def get_syns(word):
         return
 
     homonyms = []
-
     for tab in posTabs:
         homonyms.append({
             'word_class': tab['pos'],
             'definition': tab['definition'],
             'synonyms': [s['term'] for s in tab['synonyms']]
             })
-
     return(homonyms)
 
 
