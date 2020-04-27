@@ -26,12 +26,14 @@ def get_defs(word):
 
     try:
         for dict_entry_elem, word_class_elem in zipped_elems:
-            definition = dict_entry_elem.find("span.dtText", first=True).text[2:]
+            definitions_elems = dict_entry_elem.find("span.dtText")
             word_class = word_class_elem.text
-            homonyms.append({
-                'definition': definition,
-                'word_class': word_class
-                })
+            for definition_elem in definitions_elems:
+                definition = definition_elem.text[2:]
+                homonyms.append({
+                    'definition': definition,
+                    'word_class': word_class
+                    })
         return(homonyms)
     except Exception:
         return
@@ -87,6 +89,7 @@ class Word:
         if getattr(self, "thesr_homonyms", None):
             for homonym in self.thesr_homonyms:
                 print(f"<{homonym['word_class']}: {homonym['definition']}> ~~~~~~~~~ {homonym['synonyms'][:10]}")
+            print()
         else:
             print("Sorry, no synonyms found\n")
             self.show_defs()
@@ -115,7 +118,8 @@ if __name__ == "__main__":
     try:
         thesr_word = Word(sys.argv[1])
         thesr_word.show_syns()
+        # thesr_word.show_defs()
     except IndexError:
         thesr_word = Word(get_random_word())
         thesr_word.show_syns()
-        print("\nThesaurus Rex Command-Line Usage: thesr.py [word]")
+        print("Thesaurus Rex Command-Line Usage: thesr.py [word]")
