@@ -1,5 +1,5 @@
 # Thesaurus Rex
-It's a command-line thesaurus tool that uses thesaurus.com to define a word's homonyms and present their synonyms via HTTP requests, regular expressions, and JSON. (It's also a dictionary that uses merriam-webster.com)
+It's a command-line thesaurus tool that uses thesaurus.com's HTML to define a word's homonyms and present their synonyms via HTTP requests, CSS selector, regular expression, and JSON. (It's also a dictionary that uses merriam-webster.com)
 
 ### Setup
 cd/ into dir of the script or just put it on your system's PATH so you can use it from anywhere
