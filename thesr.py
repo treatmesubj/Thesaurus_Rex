@@ -122,4 +122,4 @@ if __name__ == "__main__":
     except IndexError:
         thesr_word = Word(get_random_word())
         thesr_word.show_syns()
-        print("Thesaurus Rex Command-Line Usage: thesr.py [word]")
+        print("Thesaurus Rex Command-Line Usage: thesr.py [word] [-d | -define]")
