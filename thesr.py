@@ -115,7 +115,7 @@ if __name__ == "__main__":
         thesr_word = Word(sys.argv[1])
         thesr_word.show_syns()
         try:  # check for define arg
-            if sys.argv[2] == "-d" or sys.argv[2] == "-define":
+            if sys.argv[2] in ("-d", "-define"):
                 thesr_word.show_defs()
         except IndexError:
             pass
