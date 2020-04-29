@@ -115,11 +115,12 @@ if __name__ == "__main__":
         thesr_word = Word(sys.argv[1])
         thesr_word.show_syns()
         try:  # check for define arg
-            if sys.argv[2] in ("-d", "-define"):
+            if sys.argv[2] in ("-d", "--define"):
                 thesr_word.show_defs()
         except IndexError:
             pass
     except IndexError:
         thesr_word = Word(get_random_word())
         thesr_word.show_syns()
-        print("Thesaurus Rex Command-Line Usage: thesr [word] [-d | -define]")
+        print("Thesaurus Rex Command-Line Usage: thesr [word] [-d | --define]")
+        
