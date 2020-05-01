@@ -12,6 +12,6 @@ If `thesr.py [word]` is too tedious, you can call thesr.exe to call thesr.py for
 
 If you call `thesr` without a word argument, it'll use a random word from Webster's recent words of the day
 
-Common english phrases can be defined and return synonyms as well. Pass the hyphenated phrase as an argument to thesr like so: `thesr tongue-and-cheek -d` or `thesr dime-a-dozen`. Webster seems to have sufficient documentation for common idioms and phrases while thesaurus.com does too, but to a lesser extent. 
+Common English phrases can be defined and return synonyms as well. Pass the hyphenated phrase as an argument to thesr like so: `thesr tongue-and-cheek -d` or `thesr dime-a-dozen`. Webster seems to have sufficient documentation for common idioms and phrases while thesaurus.com does too, but to a lesser extent. 
 
 ![alt text](https://github.com/treatmesubj/Thesaurus_Rex/blob/master/Screenshot%20(24).png)
