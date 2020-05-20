@@ -6,9 +6,9 @@ cd/ into dir of the script or just put it on your system's PATH so you can use i
 
 ### Usage
 
-`thesr.py [word | hyphenated-phrase] [-d | --define]`
+`thesr.py <word|hyphenated-phrase> [-d|--define]`
 
-If `thesr.py [word]` is too tedious, you can call thesr.exe to call thesr.py for you: `thesr [word]`
+If `thesr.py <word>` is too tedious, you can call thesr.exe to call thesr.py for you: `thesr <word>`
 
 If you call `thesr` without a word argument, it'll use a random word from Webster's recent words of the day
 
