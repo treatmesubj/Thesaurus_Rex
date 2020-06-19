@@ -97,6 +97,7 @@ class Word:
         if getattr(self, 'webster_homonyms', None):
             for homonym in self.webster_homonyms:
                 print(f"<{homonym['word_class']}: {homonym['definition']}>")
+            print()
         else:
             print(f"Is {self.spelling} a word?")
             candidates = SpellChecker().candidates(self.spelling)
