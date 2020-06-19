@@ -4,6 +4,7 @@ import re
 import json
 import sys
 import random
+from spellchecker import SpellChecker
 
 
 def get_random_word():
@@ -97,7 +98,7 @@ class Word:
             for homonym in self.webster_homonyms:
                 print(f"<{homonym['word_class']}: {homonym['definition']}>")
         else:
-            print(f"Is {self.spelling} a word?")
+            print(f"Is {self.spelling} a word?", f"Did you mean {SpellChecker().candidates(self.spelling)}?")
 
 
 if __name__ == "__main__":
