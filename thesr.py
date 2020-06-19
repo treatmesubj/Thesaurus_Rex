@@ -98,7 +98,11 @@ class Word:
             for homonym in self.webster_homonyms:
                 print(f"<{homonym['word_class']}: {homonym['definition']}>")
         else:
-            print(f"Is {self.spelling} a word?", f"Did you mean {SpellChecker().candidates(self.spelling)}?")
+            print(f"Is {self.spelling} a word?")
+            candidates = SpellChecker().candidates(self.spelling)
+            candidates.discard(self.spelling)
+            if candidates:
+                print(f"Did you mean {candidates}?")
 
 
 if __name__ == "__main__":
