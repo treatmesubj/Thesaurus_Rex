@@ -12,7 +12,7 @@ def get_random_word():
     html = HTML(html=session.get("https://www.merriam-webster.com/word-of-the-day/calendar").text)
     word_elems = html.find("div.more-words-of-day-container ul.more-wod-items li h2 a")
     words = [word_elem.text for word_elem in word_elems]
-    random_word = words[random.randint(0, len(words))]
+    random_word = words[random.randint(0, len(words)-1)]
     return random_word
 
 
