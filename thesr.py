@@ -5,6 +5,7 @@ import json
 import sys
 import random
 from spellchecker import SpellChecker
+import os
 
 
 def get_random_word():
@@ -34,7 +35,8 @@ def get_defs(word):
                     'definition': definition,
                     'word_class': word_class
                     })
-        return(homonyms)
+        if homonyms:
+            return(homonyms)
     except Exception:
         return
 
@@ -90,7 +92,7 @@ class Word:
         else:
             print("Sorry, no synonyms found\n")
             # no need to call defs twice
-            if not any(arg in ("-d", "--define") for arg in sys.argv):
+            if not any(arg in sys.argv for arg in ("-d", "--define")):
                 self.show_defs()
 
     def show_defs(self):
@@ -122,8 +124,13 @@ if __name__ == "__main__":
     try:
         thesr_word = Word(sys.argv[1])
         thesr_word.show_syns()
-        if any(arg in ("-d", "--define") for arg in sys.argv):
+        if any(arg in sys.argv for arg in ("-d", "--define")):
             thesr_word.show_defs()
+        # log word
+        if any(getattr(thesr_word, attr, None) for attr in ("thesr_homonyms", "webster_homonyms")):
+            with open(f"{os.path.dirname(sys.argv[0])}/thesr_log.log", 'a') as f:
+                f.writelines(f"{thesr_word.spelling}\n")
+
     except IndexError:
         thesr_word = Word(get_random_word())
         thesr_word.show_syns()
