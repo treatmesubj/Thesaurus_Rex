@@ -89,7 +89,9 @@ class Word:
             print()
         else:
             print("Sorry, no synonyms found\n")
-            self.show_defs()
+            # no need to call defs twice
+            if not any(arg in ("-d", "--define") for arg in sys.argv):
+                self.show_defs()
 
     def show_defs(self):
         if not getattr(self, 'webster_homonyms', None):
@@ -120,11 +122,8 @@ if __name__ == "__main__":
     try:
         thesr_word = Word(sys.argv[1])
         thesr_word.show_syns()
-        try:  # check for define arg
-            if sys.argv[2] in ("-d", "--define"):
-                thesr_word.show_defs()
-        except IndexError:
-            pass
+        if any(arg in ("-d", "--define") for arg in sys.argv):
+            thesr_word.show_defs()
     except IndexError:
         thesr_word = Word(get_random_word())
         thesr_word.show_syns()
