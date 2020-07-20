@@ -53,11 +53,11 @@ def get_syns(word):
             j = json.loads(script)
             break
         except json.decoder.JSONDecodeError:
-            bitches = [u.start() for u in re.finditer(":undefined", script)]
-            if len(bitches) > 0:
+            issues = [u.start() for u in re.finditer(":undefined", script)]
+            if len(issues) > 0:
                 script = script.replace(":undefined", ":\"undefined\"")
-            bitches = [u.start() for u in re.finditer(":null", script)]
-            if len(bitches) > 0:
+            issues = [u.start() for u in re.finditer(":null", script)]
+            if len(issues) > 0:
                 script = script.replace(":null", ":\"null\"")
         except Exception:
             return
