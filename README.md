@@ -5,8 +5,6 @@ It's a command-line thesaurus tool that uses thesaurus.com's HTML to determine a
 
 `thesr.py <word|hyphenated-phrase> [-d|--define]`
 
-If `thesr.py <word>` is too tedious, you can call thesr.exe to call thesr.py for you: `thesr <word>`
-
 If you call `thesr` without a word argument, it'll use a random word from Webster's recent words of the day
 
 Common English phrases can be defined and return synonyms as well. Pass the hyphenated phrase as an argument to thesr like so: `thesr tongue-and-cheek -d` or `thesr dime-a-dozen`. Webster seems to have sufficient documentation for common idioms and phrases while thesaurus.com does too, but to a lesser extent. 
