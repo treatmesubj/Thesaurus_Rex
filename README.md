@@ -1,9 +1,6 @@
 # Thesaurus Rex
 It's a command-line thesaurus tool that uses thesaurus.com's HTML to determine a word's homonyms and present their synonyms via HTTP requests, CSS selectors, regular expressions, and JSON. (It's also a dictionary that uses merriam-webster.com)
 
-### Setup
-cd/ into dir of the script or just put it on your system's PATH so you can use it from anywhere
-
 ### Usage
 
 `thesr.py <word|hyphenated-phrase> [-d|--define]`
