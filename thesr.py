@@ -4,7 +4,10 @@ import re
 import json
 import sys
 import random
-from spellchecker import SpellChecker
+try:
+    from spellchecker import SpellChecker
+except ImportError:  # idk, it's different on Debian Linux
+    from spellchecker.spellchecker import SpellChecker
 import os
 
 
