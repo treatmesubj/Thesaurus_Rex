@@ -1,5 +1,5 @@
 # Thesaurus Rex
-It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and antonyms from https://www.thesaurus.com/ via HTTP requests, CSS selectors, regular expressions, and JSON. It's also a dictionary that uses https://www.merriam-webster.com/
+It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and antonyms from [Thesaurus.com](https://www.thesaurus.com/) via HTTP requests, CSS selectors, regular expressions, and JSON. It's also a dictionary tool that fetches definitions from [Webster](https://www.merriam-webster.com/)
 
 ### Usage
 
