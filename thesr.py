@@ -4,10 +4,7 @@ import re
 import json
 import sys
 import random
-try:
-    from spellchecker import SpellChecker
-except ImportError:  # idk, it's different on Debian Linux
-    from spellchecker.spellchecker import SpellChecker
+from spellchecker import SpellChecker
 import os
 
 
@@ -39,31 +36,21 @@ def get_defs(word):
                     'word_class': word_class
                     })
         if homonyms:
-            return(homonyms)
+            return homonyms
     except Exception:
         return
 
 
-def get_syns(word):
+def get_syns_ants(word):
     session = requests.session()
-    print(f"[{word}!]", end="\n\n")
 
     html = session.get(f"http://www.thesaurus.com/browse/{word}", headers={"user-agent": "Mozilla/5.0"}).text
     script = re.search(r'<script>window\.INITIAL_STATE = (.+);</script>', html).group(1)
-
-    while True:
-        try:
-            j = json.loads(script)
-            break
-        except json.decoder.JSONDecodeError:
-            issues = [u.start() for u in re.finditer(":undefined", script)]
-            if len(issues) > 0:
-                script = script.replace(":undefined", ":\"undefined\"")
-            issues = [u.start() for u in re.finditer(":null", script)]
-            if len(issues) > 0:
-                script = script.replace(":null", ":\"null\"")
-        except Exception:
-            return
+    # clean JSON
+    script = script.replace(":undefined", ":\"undefined\"")
+    script = script.replace(":null", ":\"null\"")
+    
+    j = json.loads(script)
 
     try:
         posTabs = j['searchData']['tunaApiData']['posTabs']
@@ -75,42 +62,50 @@ def get_syns(word):
         homonyms.append({
             'word_class': tab['pos'],
             'definition': tab['definition'],
-            'synonyms': [s['term'] for s in tab['synonyms']]
+            'synonyms': [s['term'] for s in tab['synonyms']],
+            'antonyms': [s['term'] for s in tab['antonyms']]
             })
-    return(homonyms)
+    return homonyms
 
 
 class Word:
     def __init__(self, word):
         self.spelling = word
-        self.thesr_homonyms = get_syns(self.spelling)
-        if not getattr(self, "thesr_homonyms", None):
-            self.webster_homonyms = get_defs(self.spelling)
+        self.thesr_homonyms = get_syns_ants(self.spelling)
 
     def show_syns(self):
+        print(f"[{self.spelling}!]", end="\n\n")
+        print(f"---Synonyms{'-'*67}")
         if getattr(self, "thesr_homonyms", None):
             for homonym in self.thesr_homonyms:
                 print(f"<{homonym['word_class']}: {homonym['definition']}> ~~~~~~~~~ {homonym['synonyms'][:10]}")
-            print()
         else:
-            print("Sorry, no synonyms found\n")
-            # no need to call defs twice
-            if not any(arg in sys.argv for arg in ("-d", "--define")):
-                self.show_defs()
+            print("Sorry, no synonyms found")
+        print('-'*80, '\n')
+
+    def show_ants(self):
+        print(f"---Antonyms{'-'*67}")
+        if getattr(self, "thesr_homonyms", None):
+            for homonym in self.thesr_homonyms:
+                print(f"<{homonym['word_class']}: {homonym['definition']}> ********* {homonym['antonyms'][:10]}")
+        else:
+            print("Sorry, no antonyms found")
+        print('-'*80, '\n')
 
     def show_defs(self):
+        print(f"---Definitions{'-'*67}")
         if not getattr(self, 'webster_homonyms', None):
             self.webster_homonyms = get_defs(self.spelling)
         if getattr(self, 'webster_homonyms', None):
             for homonym in self.webster_homonyms:
                 print(f"<{homonym['word_class']}: {homonym['definition']}>")
-            print()
         else:
             print(f"Is {self.spelling} a word?")
             candidates = SpellChecker().candidates(self.spelling)
             candidates.discard(self.spelling)
             if candidates:
                 print(f"Did you mean {candidates}?")
+        print('-'*80, '\n')
 
 
 if __name__ == "__main__":
@@ -121,21 +116,23 @@ if __name__ == "__main__":
           | | | |__   ___  ___  __ _ _   _ _ __ _   _ ___ 
           | | | '_ \\ / _ \\/ __|/ _` | | | | '__| | | / __|
           | | | | | |  __/\\__ \\ (_| | |_| | |  | |_| \\__ \\
-          \\_/ |_| |_|\\___||___/\\__,_|\\__,_|_|   \\__,_|___/ Rex
+          |_| |_| |_|\\___||___/\\__,_|\\__,_|_|   \\__,_|___/ Rex
         """
             )
     try:
         thesr_word = Word(sys.argv[1])
         thesr_word.show_syns()
-        if any(arg in sys.argv for arg in ("-d", "--define")):
-            thesr_word.show_defs()
-        # log word
-        if any(getattr(thesr_word, attr, None) for attr in ("thesr_homonyms", "webster_homonyms")):
-            with open(f"{os.path.dirname(sys.argv[0])}/thesr_log.log", 'a') as f:
-                f.writelines(f"{thesr_word.spelling}\n")
+
+        if len(sys.argv) > 2:
+            if sys.argv[2] in ("-d", "--define"):
+                thesr_word.show_defs()
+            if sys.argv[2] in ('-a', '--antonyms'):
+                thesr_word.show_ants()
+            if sys.argv[2] in ('-v', '--verbose'):
+                thesr_word.show_defs(); thesr_word.show_ants()
 
     except IndexError:
         thesr_word = Word(get_random_word())
-        thesr_word.show_syns()
-        print("Thesaurus Rex Command-Line Usage: thesr <word|hyphenated-phrase> [-d|--define]")
+        thesr_word.show_syns(); thesr_word.show_defs(); thesr_word.show_ants()
+        print("Thesaurus Rex Command-Line Usage: thesr <word|hyphenated-phrase> [-d | --define | -a | --antonyms | -v | --verbose]")
         
