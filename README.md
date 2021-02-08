@@ -3,7 +3,7 @@ It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and
 
 ### Usage
 
-`thesr.py <word|hyphenated-phrase> [-d | --define | -a | --antonyms | -v | --verbose]`
+`thesr.py <word | hyphenated-phrase> [-d | --define | -a | --antonyms | -v | --verbose]`
 
 If you call `thesr` without a word argument, it'll fetch a random word from Webster's recent words of the day
 
