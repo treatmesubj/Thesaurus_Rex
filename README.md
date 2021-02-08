@@ -11,4 +11,4 @@ Common English phrases can be defined and return synonyms as well. Pass the hyph
 
 An argument that yields neither synonyms nor a definition is likely misspelled and will return a list of potentially intended words.
 
-![alt text](https://github.com/treatmesubj/Thesaurus_Rex/blob/master/thesr_demo.png)
+![alt text](https://github.com/treatmesubj/Thesaurus_Rex/blob/master/thesr_demo.JPG)
