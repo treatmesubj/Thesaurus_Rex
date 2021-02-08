@@ -3,7 +3,7 @@ It's a command-line thesaurus tool that uses thesaurus.com's HTML to determine a
 
 ### Usage
 
-`thesr.py <word|hyphenated-phrase> [-d|--define]`
+`thesr.py <word|hyphenated-phrase> [-d | --define | -a | --antonyms | -v | --verbose]`
 
 If you call `thesr` without a word argument, it'll use a random word from Webster's recent words of the day
 
@@ -11,4 +11,4 @@ Common English phrases can be defined and return synonyms as well. Pass the hyph
 
 An argument that yields neither synonyms nor a definition is likely misspelled and will return a list of potentially intended words.
 
-![alt text](https://github.com/treatmesubj/Thesaurus_Rex/blob/master/Screenshot%20(24).png)
+![alt text](https://github.com/treatmesubj/Thesaurus_Rex/blob/master/thesr_demo.png)
