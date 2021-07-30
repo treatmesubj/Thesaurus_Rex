@@ -6,6 +6,10 @@ import sys
 import random
 from spellchecker import SpellChecker
 import os
+from rich.console import Console
+
+
+console = Console()
 
 
 def get_random_word():
@@ -78,7 +82,7 @@ class Word:
         print(f"---Synonyms{'-'*67}")
         if getattr(self, "thesr_homonyms", None):
             for homonym in self.thesr_homonyms:
-                print(f"<{homonym['word_class']}: {homonym['definition']}> ~~~~~~~~~ {homonym['synonyms'][:10]}")
+                console.print(f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [green]==>[/green] [green]{homonym['synonyms'][:10]}[/green]")
         else:
             print("Sorry, no synonyms found")
         print('-'*80, '\n')
@@ -87,7 +91,7 @@ class Word:
         print(f"---Antonyms{'-'*67}")
         if getattr(self, "thesr_homonyms", None):
             for homonym in self.thesr_homonyms:
-                print(f"<{homonym['word_class']}: {homonym['definition']}> ********* {homonym['antonyms'][:10]}")
+                console.print(f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [red]=/=>[/red] [red]{homonym['antonyms'][:10]}[/red]")
         else:
             print("Sorry, no antonyms found")
         print('-'*80, '\n')
@@ -98,7 +102,7 @@ class Word:
             self.webster_homonyms = get_defs(self.spelling)
         if getattr(self, 'webster_homonyms', None):
             for homonym in self.webster_homonyms:
-                print(f"<{homonym['word_class']}: {homonym['definition']}>")
+                console.print(f"[magenta]{{ {homonym['word_class']}: [/magenta][yellow]{homonym['definition']}[/yellow] [magenta]}}[/magenta]")
         else:
             print(f"Is {self.spelling} a word?")
             candidates = SpellChecker().candidates(self.spelling)
