@@ -1,5 +1,5 @@
 import requests
-from requests_html import HTML
+from bs4 import BeautifulSoup
 import re
 import json
 import sys
@@ -14,8 +14,8 @@ console = Console()
 
 def get_random_word():
     session = requests.session()
-    html = HTML(html=session.get("https://www.merriam-webster.com/word-of-the-day/calendar").text)
-    word_elems = html.find("div.more-words-of-day-container ul.more-wod-items li h2 a")
+    soup = BeautifulSoup(session.get("https://www.merriam-webster.com/word-of-the-day/calendar").text, 'html.parser')
+    word_elems = soup.select("div.more-words-of-day-container ul.more-wod-items li h2 a")
     words = [word_elem.text for word_elem in word_elems]
     random_word = words[random.randint(0, len(words)-1)]
     return random_word
@@ -23,9 +23,9 @@ def get_random_word():
 
 def get_defs(word):
     session = requests.session()
-    html = HTML(html=session.get(f"https://www.merriam-webster.com/dictionary/{word}").text)
-    dict_entry_elems = html.find("div[id*='dictionary-entry']")
-    word_class_elems = html.find("div.row.entry-header a.important-blue-link")[:len(dict_entry_elems)]
+    soup = BeautifulSoup(session.get(f"https://www.merriam-webster.com/dictionary/{word}").text, 'html.parser')
+    dict_entry_elems = soup.select("div[id*='dictionary-entry']")
+    word_class_elems = soup.select("div.row.entry-header a.important-blue-link")[:len(dict_entry_elems)]
     zipped_elems = zip(dict_entry_elems, word_class_elems)
 
     homonyms = []
@@ -49,6 +49,7 @@ def get_syns_ants(word):
     session = requests.session()
 
     html = session.get(f"http://www.thesaurus.com/browse/{word}", headers={"user-agent": "Mozilla/5.0"}).text
+    # beautifulsoup soup.text strips the script elems, I guess
     script = re.search(r'<script>window\.INITIAL_STATE = (.+);</script>', html).group(1)
     # clean JSON
     script = script.replace(":undefined", ":\"undefined\"")
