@@ -31,7 +31,7 @@ def get_defs(word):
     homonyms = []
     try:
         for dict_entry_elem, word_class_elem in zipped_elems:
-            definitions_elems = dict_entry_elem.find("span.dtText")
+            definitions_elems = dict_entry_elem.select("span.dtText")
             word_class = word_class_elem.text
             for definition_elem in definitions_elems:
                 definition = definition_elem.text[2:]
