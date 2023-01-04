@@ -1,6 +1,10 @@
 # Thesaurus Rex
 It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and antonyms from [Thesaurus.com](https://www.thesaurus.com/) via HTTP requests, CSS selectors, regular expressions, and JSON. It's also a dictionary tool that fetches definitions from [Webster](https://www.merriam-webster.com/)
 
+### Set-Up
+
+`pip3 install -r requirements.txt`
+
 ### Usage
 
 `python thesr.py <word | hyphenated-phrase> [-d | --define | -a | --antonyms | -v | --verbose]`
