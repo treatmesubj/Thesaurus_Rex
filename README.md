@@ -1,16 +1,14 @@
 # Thesaurus Rex
 It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and antonyms from [Thesaurus.com](https://www.thesaurus.com/) via HTTP requests, CSS selectors, regular expressions, and JSON. It's also a dictionary tool that fetches definitions from [Webster](https://www.merriam-webster.com/)
 
-### Set-Up
-
-```
-pip install -r requirements.txt`
-```
+### Installation
+- from [PyPI](https://pypi.org/project/thesr): `pip install thesr`
+- from [GitHub](https://github.com/treatmesubj/Thesaurus_Rex): `pip install "git+https://github.com/treatmesubj/Thesaurus_Rex"
 
 ### Usage
 
 ```
-usage: thesr.py [-h] [--word WORD] [--define | --antonyms | --verbose]
+python -m thesr.thesr [-h] [--word WORD] [--define | --antonyms | --verbose]
 ```
 
 If you call `thesr` without a word argument, it'll fetch a random word from Webster's recent words of the day and fetch its synonyms & antonyms
