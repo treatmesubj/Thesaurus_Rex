@@ -3,7 +3,7 @@ It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and
 
 ### Installation
 - from [PyPI](https://pypi.org/project/thesr): `pip install thesr`
-- from [GitHub](https://github.com/treatmesubj/Thesaurus_Rex): `pip install "git+https://github.com/treatmesubj/Thesaurus_Rex"
+- from [GitHub](https://github.com/treatmesubj/Thesaurus_Rex): `pip install "git+https://github.com/treatmesubj/Thesaurus_Rex`
 
 ### Usage
 
