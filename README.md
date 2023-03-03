@@ -3,7 +3,7 @@ It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and
 
 ### Set-Up
 
-`pip3 install -r requirements.txt`
+`pip install -r requirements.txt`
 
 ### Usage
 
