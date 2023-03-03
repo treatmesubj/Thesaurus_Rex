@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import urllib.parse
 import re
 import json
 import sys
@@ -9,12 +10,8 @@ import os
 from rich.console import Console
 
 
-console = Console()
-
-
 def get_random_word():
-    session = requests.session()
-    soup = BeautifulSoup(session.get("https://www.merriam-webster.com/word-of-the-day/calendar").text, 'html.parser')
+    soup = BeautifulSoup(requests.get("https://www.merriam-webster.com/word-of-the-day/calendar").text, 'html.parser')
     word_elems = soup.select("div.more-words-of-day-container ul.more-wod-items li h2 a")
     words = [word_elem.text for word_elem in word_elems]
     random_word = words[random.randint(0, len(words)-1)]
@@ -22,8 +19,7 @@ def get_random_word():
 
 
 def get_defs(word):
-    session = requests.session()
-    soup = BeautifulSoup(session.get(f"https://www.merriam-webster.com/dictionary/{word}").text, 'html.parser')
+    soup = BeautifulSoup(requests.get(f"https://www.merriam-webster.com/dictionary/{word}").text, 'html.parser')
     dict_entry_elems = soup.select("div[id*='dictionary-entry']")
     word_class_elems = soup.select("div.row.entry-header a.important-blue-link")[:len(dict_entry_elems)]
     zipped_elems = zip(dict_entry_elems, word_class_elems)
@@ -46,15 +42,12 @@ def get_defs(word):
 
 
 def get_syns_ants(word):
-    session = requests.session()
-
-    html = session.get(f"http://www.thesaurus.com/browse/{word}", headers={"user-agent": "Mozilla/5.0"}).text
-    # beautifulsoup soup.text strips the script elems, I guess
-    script = re.search(r'<script>window\.INITIAL_STATE = (.+);</script>', html).group(1)
+    soup = BeautifulSoup(requests.get(f"http://www.thesaurus.com/browse/{word}", headers={"user-agent": "Mozilla/5.0"}).text, 'html.parser')
+    script = re.search(r'<script>[\s\S]*window\.INITIAL_STATE = (.+);[\s\S]*</script>', soup.prettify()).group(1)
     # clean JSON
     script = script.replace(":undefined", ":\"undefined\"")
     script = script.replace(":null", ":\"null\"")
-    
+
     j = json.loads(script)
 
     try:
@@ -74,9 +67,10 @@ def get_syns_ants(word):
 
 
 class Word:
-    def __init__(self, word):
+    def __init__(self, word, console):
         self.spelling = word
         self.thesr_homonyms = get_syns_ants(self.spelling)
+        self.console = console
 
     def show_syns(self):
         print(f"[{self.spelling}!]", end="\n\n")
@@ -124,20 +118,23 @@ if __name__ == "__main__":
           |_| |_| |_|\\___||___/\\__,_|\\__,_|_|   \\__,_|___/ Rex
         """
             )
+    console = Console()
     try:
-        thesr_word = Word(sys.argv[1])
+        thesr_word = Word(sys.argv[1], console)
         thesr_word.show_syns()
 
         if len(sys.argv) > 2:
             if sys.argv[2] in ("-d", "--define"):
                 thesr_word.show_defs()
-            if sys.argv[2] in ('-a', '--antonyms'):
+            elif sys.argv[2] in ('-a', '--antonyms'):
                 thesr_word.show_ants()
-            if sys.argv[2] in ('-v', '--verbose'):
+            elif sys.argv[2] in ('-v', '--verbose'):
                 thesr_word.show_defs(); thesr_word.show_ants()
+            else:
+                pass
 
     except IndexError:
-        thesr_word = Word(get_random_word())
+        thesr_word = Word(get_random_word(), console)
         thesr_word.show_syns(); thesr_word.show_defs(); thesr_word.show_ants()
         print("Thesaurus Rex Command-Line Usage: thesr <word|hyphenated-phrase> [-d | --define | -a | --antonyms | -v | --verbose]")
-        
+
