@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 import urllib.parse
 import re
 import json
-import sys
 import random
 from spellchecker import SpellChecker
 import os
 from rich.console import Console
+import argparse
 
 
 def get_random_word():
@@ -119,22 +119,24 @@ if __name__ == "__main__":
         """
             )
     console = Console()
-    try:
-        thesr_word = Word(sys.argv[1], console)
-        thesr_word.show_syns()
 
-        if len(sys.argv) > 2:
-            if sys.argv[2] in ("-d", "--define"):
-                thesr_word.show_defs()
-            elif sys.argv[2] in ('-a', '--antonyms'):
-                thesr_word.show_ants()
-            elif sys.argv[2] in ('-v', '--verbose'):
-                thesr_word.show_defs(); thesr_word.show_ants()
-            else:
-                pass
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--word", "-w", action="store")
+    group = parser.add_mutually_exclusive_group(required=False)
+    group.add_argument("--define", "-d", action="store_true")
+    group.add_argument("--antonyms", "-a", action="store_true")
+    group.add_argument("--verbose", "-v", action="store_true")
+    args = parser.parse_args()
 
-    except IndexError:
-        thesr_word = Word(get_random_word(), console)
-        thesr_word.show_syns(); thesr_word.show_defs(); thesr_word.show_ants()
-        print("Thesaurus Rex Command-Line Usage: thesr <word|hyphenated-phrase> [-d | --define | -a | --antonyms | -v | --verbose]")
+    if args.word:
+        thesr_word = Word(args.word, console)
+    else:
+        thesr_word= Word(get_random_word(), console)
+
+    thesr_word.show_syns()
+
+    if args.define or args.verbose or not args.word:
+        thesr_word.show_defs()
+    if args.antonyms or args.verbose:
+        thesr_word.show_ants()
 

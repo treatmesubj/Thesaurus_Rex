@@ -3,13 +3,17 @@ It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and
 
 ### Set-Up
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt`
+```
 
 ### Usage
 
-`python thesr.py <word | hyphenated-phrase> [-d | --define | -a | --antonyms | -v | --verbose]`
+```
+usage: thesr.py [-h] [--word WORD] [--define | --antonyms | --verbose]
+```
 
-If you call `thesr` without a word argument, it'll fetch a random word from Webster's recent words of the day
+If you call `thesr` without a word argument, it'll fetch a random word from Webster's recent words of the day and fetch its synonyms & antonyms
 
 Common English phrases can be defined and return synonyms as well. Pass the hyphenated phrase as an argument to thesr like so: `thesr tongue-and-cheek -d` or `thesr dime-a-dozen`. Webster seems to have sufficient documentation for common idioms and phrases while Thesaurus.com does too, but to a lesser extent. 
 
