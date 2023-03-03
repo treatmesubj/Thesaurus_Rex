@@ -19,7 +19,7 @@ An argument that yields neither synonyms nor a definition is likely misspelled a
 
 ```
 john@spectre:~
-$ python -m thesr.thesr. --word purport --verbose
+$ python -m thesr.thesr --word purport --verbose
 
          _____ _
         |_   _| |
