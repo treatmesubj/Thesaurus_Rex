@@ -18,8 +18,8 @@ Common English phrases can be defined and return synonyms as well. Pass the hyph
 An argument that yields neither synonyms nor a definition is likely misspelled and will return a list of potentially intended words.
 
 ```
-john@spectre:~/Documents/Thesaurus_Rex
-$ python thesr.py --word purport --verbose
+john@spectre:~
+$ python -m thesr.thesr. --word purport --verbose
 
          _____ _
         |_   _| |
