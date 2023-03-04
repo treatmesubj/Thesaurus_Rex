@@ -1,5 +1,5 @@
 # Thesaurus Rex
-It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and antonyms from [Thesaurus.com](https://www.thesaurus.com/) via HTTP requests, CSS selectors, regular expressions, and JSON. It's also a dictionary tool that fetches definitions from [Webster](https://www.merriam-webster.com/)
+Thesaurus tool that fetches a word's homonyms, synonyms, and antonyms from [Thesaurus.com](https://www.thesaurus.com/). It's also a dictionary tool that fetches definitions from [Webster](https://www.merriam-webster.com/)
 
 ### Installation
 - from [PyPI](https://pypi.org/project/thesr): `pip install thesr`
@@ -10,10 +10,7 @@ It's a command-line thesaurus tool that fetches a word's homonyms, synonyms, and
 ```
 python -m thesr.thesr [-h] [--word WORD] [--define | --antonyms | --verbose]
 ```
-
-Common English phrases such as `toungue-and-cheek` or `dime-a-dozen` can be defined and return synonyms as well. Webster seems to have sufficient documentation for common idioms and phrases while Thesaurus.com does too, but to a lesser extent. 
-
-An argument that yields neither synonyms nor a definition is likely misspelled and will return a list of potentially intended words.
+Common English phrases such as `toungue-and-cheek` or `dime-a-dozen` can be defined and return synonyms as well if Webster and Thesaurus.com have entries for them. 
 
 ```
 john@spectre:~
