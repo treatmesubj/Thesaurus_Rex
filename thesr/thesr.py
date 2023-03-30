@@ -66,6 +66,24 @@ def get_syns_ants(word):
     return homonyms
 
 
+def get_etymology(word):
+    soup = BeautifulSoup(requests.get(f"https://www.etymonline.com/word/{word}").text, 'html.parser')
+    class_elems = soup.select("div[class^='word'] [class^='word__name']")
+    etym_elems = soup.select("div[class^='word'] [class^='word__def']")
+    zipped_elems = zip(class_elems, etym_elems)
+    homonyms = []
+    for class_elem, etym_elem in zipped_elems:
+        if 'href' not in class_elem.attrs.keys():
+            etym_text = ""
+            for etym_p_elem in etym_elem.select('p'):
+                etym_text += f"{etym_p_elem.text}\n"
+            homonyms.append({
+                'etym_desc': etym_text.rstrip('\n'),
+                'word_class': class_elem.text
+                })
+    return homonyms
+
+
 class Word:
     def __init__(self, word, console):
         self.spelling = word
@@ -77,7 +95,7 @@ class Word:
         print(f"---Synonyms{'-'*67}")
         if getattr(self, "thesr_homonyms", None):
             for homonym in self.thesr_homonyms:
-                console.print(f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [green]==>[/green] [green]{homonym['synonyms'][:10]}[/green]")
+                console.print(f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [green]==[/green] [green]{homonym['synonyms'][:10]}[/green]")
         else:
             print("Sorry, no synonyms found")
         print('-'*80, '\n')
@@ -86,7 +104,7 @@ class Word:
         print(f"---Antonyms{'-'*67}")
         if getattr(self, "thesr_homonyms", None):
             for homonym in self.thesr_homonyms:
-                console.print(f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [red]=/=>[/red] [red]{homonym['antonyms'][:10]}[/red]")
+                console.print(f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [red]=/=[/red] [red]{homonym['antonyms'][:10]}[/red]")
         else:
             print("Sorry, no antonyms found")
         print('-'*80, '\n')
@@ -101,9 +119,21 @@ class Word:
         else:
             print(f"Is {self.spelling} a word?")
             candidates = SpellChecker().candidates(self.spelling)
-            candidates.discard(self.spelling)
             if candidates:
+                candidates.discard(self.spelling)
                 print(f"Did you mean {candidates}?")
+        print('-'*80, '\n')
+
+    def show_etymology(self):
+        print(f"---Etymology{'-'*67}")
+        if not getattr(self, 'etymology', None):
+            self.etymology = get_etymology(self.spelling)
+        if getattr(self, 'etymology', None):
+            for homonym  in self.etymology:
+                console.print(f"[magenta]{homonym['word_class']}[/magenta]")
+                console.print(f"[white]{homonym['etym_desc']}[/white]")
+        else:
+            print("Sorry, no etymology found")
         print('-'*80, '\n')
 
 
@@ -122,21 +152,23 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--word", "-w", action="store")
-    group = parser.add_mutually_exclusive_group(required=False)
-    group.add_argument("--define", "-d", action="store_true")
-    group.add_argument("--antonyms", "-a", action="store_true")
-    group.add_argument("--verbose", "-v", action="store_true")
+    parser.add_argument("--define", "-d", action="store_true")
+    parser.add_argument("--etymology", "-e", action="store_true")
+    parser.add_argument("--antonyms", "-a", action="store_true")
+    parser.add_argument("--verbose", "-v", action="store_true")
     args = parser.parse_args()
 
     if args.word:
         thesr_word = Word(args.word, console)
     else:
-        thesr_word= Word(get_random_word(), console)
+        thesr_word = Word(get_random_word(), console)
 
     thesr_word.show_syns()
 
-    if args.define or args.verbose or not args.word:
+    if args.define or args.verbose:
         thesr_word.show_defs()
+    if args.etymology or args.verbose:
+        thesr_word.show_etymology()
     if args.antonyms or args.verbose:
         thesr_word.show_ants()
 
