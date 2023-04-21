@@ -1,4 +1,4 @@
-# Thesaurus Rex
+# Thesaurus-Rex
 Thesaurus tool that fetches a word's homonyms, synonyms, and antonyms from [Thesaurus.com](https://www.thesaurus.com/). It's also a dictionary tool that fetches definitions from [Webster](https://www.merriam-webster.com/). It fetches etymology information from [etymonline](https://www.etymonline.com/).
 
 ### Installation
