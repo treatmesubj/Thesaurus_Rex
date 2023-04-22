@@ -8,7 +8,7 @@ from flask import (
     redirect,
     request,
 )
-from thesr import *
+from thesr.thesr import *
 
 # initialise app
 app = Flask(__name__)
