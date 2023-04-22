@@ -103,7 +103,7 @@ def get_etymology(word):
 
 
 class Word:
-    def __init__(self, word, console):
+    def __init__(self, word, console=None):
         self.spelling = word
         self.thesr_homonyms = get_syns_ants(self.spelling)
         self.console = console
@@ -113,9 +113,14 @@ class Word:
         print(f"---Synonyms{'-'*67}")
         if getattr(self, "thesr_homonyms", None):
             for homonym in self.thesr_homonyms:
-                console.print(
-                    f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [green]==[/green] [green]{homonym['synonyms'][:10]}[/green]"
-                )
+                if self.console:
+                    self.console.print(
+                        f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [green]==[/green] [green]{homonym['synonyms'][:10]}[/green]"
+                    )
+                else:
+                    print(
+                        f"{{ {homonym['word_class']}: {homonym['definition']} }} == {homonym['synonyms'][:10]}"
+                    )
         else:
             print("Sorry, no synonyms found")
         print("-" * 80, "\n")
@@ -124,9 +129,14 @@ class Word:
         print(f"---Antonyms{'-'*67}")
         if getattr(self, "thesr_homonyms", None):
             for homonym in self.thesr_homonyms:
-                console.print(
-                    f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [red]=/=[/red] [red]{homonym['antonyms'][:10]}[/red]"
-                )
+                if self.console:
+                    self.console.print(
+                        f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [red]=/=[/red] [red]{homonym['antonyms'][:10]}[/red]"
+                    )
+                else:
+                    print(
+                        f"{{ {homonym['word_class']}: {homonym['definition']} }} =/= {homonym['antonyms'][:10]}"
+                    )
         else:
             print("Sorry, no antonyms found")
         print("-" * 80, "\n")
@@ -137,9 +147,14 @@ class Word:
             self.webster_homonyms = get_defs(self.spelling)
         if getattr(self, "webster_homonyms", None):
             for homonym in self.webster_homonyms:
-                console.print(
-                    f"[magenta]{{ {homonym['word_class']}: [/magenta][yellow]{homonym['definition']}[/yellow] [magenta]}}[/magenta]"
-                )
+                if self.console:
+                    console.print(
+                        f"[magenta]{{ {homonym['word_class']}: [/magenta][yellow]{homonym['definition']}[/yellow] [magenta]}}[/magenta]"
+                    )
+                else:
+                    print(
+                        f"{{ {homonym['word_class']}: {homonym['definition']} }}"
+                    )
         else:
             print(f"Is {self.spelling} a word?")
             candidates = SpellChecker().candidates(self.spelling)
@@ -154,8 +169,12 @@ class Word:
             self.etymology = get_etymology(self.spelling)
         if getattr(self, "etymology", None):
             for homonym in self.etymology:
-                console.print(f"[magenta]{homonym['word_class']}[/magenta]")
-                console.print(f"[white]{homonym['etym_desc']}[/white]")
+                if self.console:
+                    console.print(f"[magenta]{homonym['word_class']}[/magenta]")
+                    console.print(f"[white]{homonym['etym_desc']}[/white]")
+                else:
+                    print(f"{homonym['word_class']}")
+                    print(f"{homonym['etym_desc']}")
         else:
             print("Sorry, no etymology found")
         print("-" * 80, "\n")
