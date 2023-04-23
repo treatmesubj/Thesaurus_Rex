@@ -1,5 +1,4 @@
 import requests
-from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
 import urllib.parse
 import re
@@ -12,23 +11,25 @@ import argparse
 import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
 
+# from fake_useragent import UserAgent
+
 
 def _allowed_gai_family():
     # https://github.com/shazow/urllib3/blob/master/urllib3/util/connection.py
     family = socket.AF_INET
-    #if urllib3_cn.HAS_IPV6:
+    # if urllib3_cn.HAS_IPV6:
     #    family = socket.AF_INET6 # force ipv6 only if it is available
     return family
 
 
 urllib3_cn.allowed_gai_family = _allowed_gai_family
+# headers = {
+#    "User-Agent": str(UserAgent().random),
+# }
 
 
 def get_random_word():
-    headers = {
-        "User-Agent": str(UserAgent().random),
-    }
-    response = requests.get("https://www.merriam-webster.com/word-of-the-day/calendar", headers=headers)
+    response = requests.get("https://www.merriam-webster.com/word-of-the-day/calendar")
     soup = BeautifulSoup(
         response.text,
         "html.parser",
@@ -42,10 +43,7 @@ def get_random_word():
 
 
 def get_defs(word):
-    headers = {
-        "User-Agent": str(UserAgent().random),
-    }
-    response = requests.get(f"https://www.merriam-webster.com/dictionary/{word}", headers=headers)
+    response = requests.get(f"https://www.merriam-webster.com/dictionary/{word}")
     soup = BeautifulSoup(
         response.text,
         "html.parser",
@@ -71,13 +69,7 @@ def get_defs(word):
 
 
 def get_syns_ants(word):
-    headers = {
-        "User-Agent": str(UserAgent().random),
-    }
-    response = requests.get(
-        f"http://www.thesaurus.com/browse/{word}",
-        headers=headers
-    )
+    response = requests.get(f"http://www.thesaurus.com/browse/{word}")
     soup = BeautifulSoup(
         response.text,
         "html.parser",
@@ -110,10 +102,7 @@ def get_syns_ants(word):
 
 
 def get_etymology(word):
-    headers = {
-        "User-Agent": str(UserAgent().random),
-    }
-    response = requests.get(f"https://www.etymonline.com/word/{word}", headers=headers)
+    response = requests.get(f"https://www.etymonline.com/word/{word}")
     soup = BeautifulSoup(response.text, "html.parser")
     class_elems = soup.select("div[class^='word'] [class^='word__name']")
     etym_elems = soup.select("div[class^='word'] [class^='word__def']")
