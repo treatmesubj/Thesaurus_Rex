@@ -10,7 +10,6 @@ from rich.console import Console
 import argparse
 import socket
 import requests.packages.urllib3.util.connection as urllib3_cn
-
 # from fake_useragent import UserAgent
 
 
