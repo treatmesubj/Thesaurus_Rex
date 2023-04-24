@@ -190,7 +190,7 @@ class Word:
                     )
                 else:
                     print(
-                        f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}\n"
+                        f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}"
                     )
         else:
             print("Sorry, no etymology found")
