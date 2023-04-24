@@ -33,30 +33,64 @@ def thesr(request_form):
     thesr_word = Word(request_form["word"])
 
     word_spelling = thesr_word.spelling
-    #synonyms
+    # synonyms
     synonyms_str = ""
-    for homonym in thesr_word.thesr_homonyms:
-        synonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} == {homonym['synonyms'][:10]}\n"
+    try:
+        assert (
+            thesr_word.thesr_homonyms is not None and len(thesr_word.thesr_homonyms) > 0
+        ), f"no Thesaurus.com homonyms for {word_spelling}"
+        for homonym in thesr_word.thesr_homonyms:
+            synonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} == {homonym['synonyms'][:10]}\n"
+    except Exception as e:
+        print(e)
+        synonyms_str = "nothin'"
 
     # definitions
+    definitions_str = ""
     if "definitions" in request_form.keys():
-        definitions_str = ""
-        thesr_word.webster_homonyms = get_defs(word_spelling)
-        for homonym in thesr_word.webster_homonyms:
-            definitions_str += f"{{ {homonym['word_class']}: {homonym['definition']} }}\n"
+        try:
+            thesr_word.webster_homonyms = get_defs(word_spelling)
+            assert (
+                thesr_word.webster_homonyms is not None
+                and len(thesr_word.webster_homonyms) > 0
+            ), f"no Webster homonyms for {word_spelling}"
+            for homonym in thesr_word.webster_homonyms:
+                definitions_str += (
+                    f"{{ {homonym['word_class']}: {homonym['definition']} }}\n"
+                )
+        except Exception as e:
+            print(e)
+            definitions_str = "nothin'"
 
     # etymology
+    etymology_str = ""
     if "etymology" in request_form.keys():
-        etymology_str = ""
-        thesr_word.etymology = get_etymology(word_spelling)
-        for homonym in thesr_word.etymology:
-            etymology_str += f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}\n"
+        try:
+            thesr_word.etymology = get_etymology(word_spelling)
+            assert (
+                thesr_word.etymology is not None and len(thesr_word.etymology) > 0
+            ), f"no etymonline homonyms for {word_spelling}"
+            for homonym in thesr_word.etymology:
+                etymology_str += (
+                    f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}\n"
+                )
+        except Exception as e:
+            print(e)
+            etymology_str = "nothin'"
 
     # antonyms
+    antonyms_str = ""
     if "antonyms" in request_form.keys():
-        antonyms_str = ""
-        for homonym in thesr_word.thesr_homonyms:
-            antonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} =/= {homonym['antonyms'][:10]}\n"
+        try:
+            assert (
+                thesr_word.thesr_homonyms is not None
+                and len(thesr_word.thesr_homonyms) > 0
+            ), f"no Thesaurus.com homonyms for {word_spelling}"
+            for homonym in thesr_word.thesr_homonyms:
+                antonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} =/= {homonym['antonyms'][:10]}\n"
+        except Exception as e:
+            print(e)
+            antonyms_str = "nothin'"
 
     return render_template(
         "thesr.html",
