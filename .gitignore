@@ -1,5 +1,7 @@
 dist
+build
+**/dist
+**/build
 *.egg
 *.egg-info/
 __pycache__/
-build
