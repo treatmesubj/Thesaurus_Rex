@@ -20,7 +20,11 @@ I had to create a new Python venv just for flask because I had wack dependency i
     - $ `waitress-serve --host 127.0.0.1 --port 8000 thesr_flask_app:app`
 
 # Docker stuff
-1. [Dockerfile](Dockerfile)
-2. $ `docker build -t webserv_img .`
-3. $ `docker run -itd -p 8000:80 --name webserv webserv_img`
+- [Dockerfile](Dockerfile)
+- clear up stuff
+    - $ `docker ps`
+    - $ `docker stop <container>`
+    - $ `docker system prune --all`
+- $ `docker build -t thesr_flask_img .`
+- $ `docker run -itd -p 8000:80 --name thesr_flask_app thesr_flask_img`
 
