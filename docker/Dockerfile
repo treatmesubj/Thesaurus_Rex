@@ -7,6 +7,6 @@ RUN pip3 install thesr
 
 RUN mkdir /app
 
-COPY ./flask/* /
+COPY ./flask/* /app
 
 EXPOSE 8000

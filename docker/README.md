@@ -27,4 +27,6 @@ I had to create a new Python venv just for flask because I had wack dependency i
     - $ `docker system prune --all`
 - $ `docker build -t thesr_flask_img .`
 - $ `docker run -itd -p 8000:80 --name thesr_flask_app thesr_flask_img`
+- check stuff
+    - $ `docker exec -it thesr_flask_app bash`
 
