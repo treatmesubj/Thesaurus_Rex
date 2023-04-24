@@ -42,11 +42,12 @@ $ python -m thesr.thesr -w purport -v
 
 ---Etymology-------------------------------------------------------------------
 purport (n.)
-early 15c., "meaning, tenor, the surface or expressed meaning of a document, etc.; that which is conveyed or
+    early 15c., "meaning, tenor, the surface or expressed meaning of a document, etc.; that which is conveyed or
 expressed," from Anglo-French purport (late 13c.), Old French porport "contents, tenor," back-formation from
 purporter "to contain, convey, carry; intend," from pur- (from Latin pro- "forth;" see pur-) + Old French porter "tocarry," from Latin portare "to carry" (from PIE root *per- (2)  "to lead, pass over"). Meaning "that which is to be done or effected" is from 1650s.
+--------------------
 purport (v.)
-1520s, "indicate, express, set forth, convey to the mind as the meaning or thing intended," from the noun in Englishand from Anglo-French purporter (c. 1300), from Old French purporter "to contain, convey, carry; intend," from pur- (from Latin pro- "forth;" see pur-) + Old French porter "to carry," from Latin portare "to carry" (from PIE root
+    1520s, "indicate, express, set forth, convey to the mind as the meaning or thing intended," from the noun in Englishand from Anglo-French purporter (c. 1300), from Old French purporter "to contain, convey, carry; intend," from pur- (from Latin pro- "forth;" see pur-) + Old French porter "to carry," from Latin portare "to carry" (from PIE root
 *per- (2)  "to lead, pass over"). Related: Purported; purporting.
 --------------------------------------------------------------------------------
 
