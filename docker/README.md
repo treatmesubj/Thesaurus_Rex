@@ -15,7 +15,7 @@ I had to create a new Python venv just for flask because I had wack dependency i
     - $ `python -m venv ~/.tmp_flask_venv`
     - $ `source ~/.tmp_flask_venv/bin/activate`
     - $ `pip install thesr_flask_app-0.0.0-py3-none-any.whl`
-- Deploy on [Waitress WSGI server](https://flask.palletsprojects.com/en/2.2.x/deploying/waitress/)
+- Deploy on locally [Waitress WSGI server](https://flask.palletsprojects.com/en/2.2.x/deploying/waitress/)
     - $ `pip install waitress`
     - $ `waitress-serve --host 127.0.0.1 --port 8000 thesr_flask_app:app`
 
@@ -26,7 +26,8 @@ I had to create a new Python venv just for flask because I had wack dependency i
     - $ `docker stop <container>`
     - $ `docker system prune --all`
 - $ `docker build -t thesr_flask_img .`
-- $ `docker run -itd -p 8000:8000 --name thesr_flask_app thesr_flask_img`
+- $ `docker run -itd -p 80:8000 --name thesr_flask_app thesr_flask_img`
 - check stuff
     - $ `docker exec -it thesr_flask_app bash`
+        - $ `waitress-serve --host 0.0.0.0 --port 8000 thesr_flask_app:app`
 
