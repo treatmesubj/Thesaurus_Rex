@@ -60,6 +60,6 @@ purport (v.)
 
 ## [Thesaurus-Rex Web Server](./docker)
 
-Checkout Thesaurus-Rex's [Docker](./docker) containerized web experience built with the [Flask](https://flask.palletsprojects.com/en/2.2.x/) framework and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/) web server.
+Check out Thesaurus-Rex's [Docker](./docker) containerized web experience built with the [Flask](https://flask.palletsprojects.com/en/2.2.x/) framework and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/) web server.
 
 ![](./images/thesr_web.png)
