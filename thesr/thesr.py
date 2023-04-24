@@ -187,7 +187,7 @@ class Word:
                 if self.console:
                     console.print(f"[magenta]{homonym['word_class']}[/magenta]:\n    [white]{homonym['etym_desc']}[/white]\n{'-'*20}")
                 else:
-                    print(f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}\n")
+                    print(f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}")
         else:
             print("Sorry, no etymology found")
         print("-" * 80, "\n")
