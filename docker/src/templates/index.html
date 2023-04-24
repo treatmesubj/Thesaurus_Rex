@@ -28,8 +28,13 @@
                 <label for="antonyms"> antonyms</label><br>
             <br>
             <input type="submit" value="Submit">
+            <br>
+            <br>
+            <span id="error">{{error}}</span>
         </form>
     </div>
+    {% block body %}
+    {% endblock %}
 </body>
 </html>
 

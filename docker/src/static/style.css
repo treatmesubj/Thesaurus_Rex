@@ -4,6 +4,10 @@
     font-family: Courier;
 }
 
+span[id=error] {
+    color: red;
+}
+
 input[type=text] {
     background-color: lightgrey;
     color: black;
