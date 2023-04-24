@@ -33,20 +33,24 @@ def thesr(request_form):
     thesr_word = Word(request_form["word"])
 
     word_spelling = thesr_word.spelling
-
+    #synonyms
     synonyms_str = ""
     for homonym in thesr_word.thesr_homonyms:
         synonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} == {homonym['synonyms'][:10]}\n"
 
     # definitions
-    #if "define" in request_form.keys():
-    #    definitions_str = ""
-    #    thesr_word.webster_homonyms = get_defs("word")
+    if "definitions" in request_form.keys():
+        definitions_str = ""
+        thesr_word.webster_homonyms = get_defs(word_spelling)
+        for homonym in thesr_word.webster_homonyms:
+            definitions_str += f"{{ {homonym['word_class']}: {homonym['definition']} }}\n"
 
-    ## etymology
-    #if "etymology" in request_form.keys():
-    #    etymology_str = ""
-    #    thesr_word.etymology = get_etymology("word")
+    # etymology
+    if "etymology" in request_form.keys():
+        etymology_str = ""
+        thesr_word.etymology = get_etymology(word_spelling)
+        for homonym in thesr_word.etymology:
+            etymology_str += f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}\n"
 
     # antonyms
     if "antonyms" in request_form.keys():
@@ -58,8 +62,8 @@ def thesr(request_form):
         "thesr.html",
         word_spelling=word_spelling,
         synonyms_str=synonyms_str,
-        # definitions_str=definitions_str,
-        # etymology_str=etymology_str,
+        definitions_str=definitions_str,
+        etymology_str=etymology_str,
         antonyms_str=antonyms_str,
     )
 

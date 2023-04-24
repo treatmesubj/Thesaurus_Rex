@@ -8,6 +8,22 @@ span[id=error] {
     color: red;
 }
 
+h3[id=synonyms] {
+    color: lawngreen;
+}
+
+h3[id=definitions] {
+    color: gold;
+}
+
+h3[id=etymology] {
+    color: khaki;
+}
+
+h3[id=antonyms] {
+    color: red;
+}
+
 input[type=text] {
     background-color: lightgrey;
     color: black;
