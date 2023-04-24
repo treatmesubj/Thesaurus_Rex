@@ -185,11 +185,13 @@ class Word:
         if getattr(self, "etymology", None):
             for homonym in self.etymology:
                 if self.console:
-                    console.print(f"[magenta]{homonym['word_class']}[/magenta]")
-                    console.print(f"[white]{homonym['etym_desc']}[/white]")
+                    console.print(
+                        f"[magenta]{homonym['word_class']}[/magenta]:\n    [white]{homonym['etym_desc']}[/white]\n{'-'*20}"
+                    )
                 else:
-                    print(f"{homonym['word_class']}")
-                    print(f"{homonym['etym_desc']}")
+                    print(
+                        f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}\n"
+                    )
         else:
             print("Sorry, no etymology found")
         print("-" * 80, "\n")
