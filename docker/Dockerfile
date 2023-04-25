@@ -1,6 +1,6 @@
 FROM nginx:bullseye
 
-RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN apt install python3
 
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
