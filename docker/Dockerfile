@@ -26,7 +26,7 @@ RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 CMD ["waitress-serve", "--host", "0.0.0.0", "--port", "8000", "--url-scheme", "https", "thesr_flask_app:app"]
 # need to service start nginx
-#CMD ["/bin/bash", "-c", "waitress-serve --host 0.0.0.0 --port 8000 --url-scheme https thesr_flask_app:app; service nginx start"]
+#CMD ["/bin/bash", "-c", "waitress-serve --host 0.0.0.0 --port 8000 --url-scheme https thesr_flask_app:app; nginx -g daemon off;"]
 
 EXPOSE 443
 EXPOSE 80
