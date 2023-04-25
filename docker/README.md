@@ -16,13 +16,13 @@ I had to create a new Python venv just for flask because I had wack dependency i
     - $ `python -m venv ~/.tmp_flask_venv`
     - $ `source ~/.tmp_flask_venv/bin/activate`
     - $ `pip install thesr_flask_app-0.0.0-py3-none-any.whl`
-- Deploy on locally [Waitress WSGI server](https://flask.palletsprojects.com/en/2.2.x/deploying/waitress/)
+- Deploy locally on [Waitress WSGI server](https://flask.palletsprojects.com/en/2.2.x/deploying/waitress/)
     - $ `pip install waitress`
     - $ `waitress-serve --host 127.0.0.1 --port 8000 thesr_flask_app:app`
 
 ## [Nginx Reverse Proxy for Flask + Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/reverse-proxy.html)
 - Create TLS/SSL crytographic certificate & key for encryption & decryption of TCP packets
-    - $ `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout thesr.key -out thesr.crt --subj "/C=US/ST=Texas/L=Austin/O=John/OU=John/CN=jrock4503@hotmail.com"`
+    - $ `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/thesr.key -out /etc/ssl/certs/thesr.crt --subj "/C=US/ST=Texas/L=Austin/O=John/OU=John/CN=jrock4503@hotmail.com"`
 - configure nginx: `/etc/nginx/sites-available/default`
     ```
     server {

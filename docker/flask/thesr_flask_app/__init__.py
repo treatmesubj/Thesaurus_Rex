@@ -8,7 +8,7 @@ from flask import (
     redirect,
     request,
 )
-from waitress import serve
+#from waitress import serve
 from thesr.thesr import *
 
 # initialise app
@@ -104,5 +104,5 @@ def thesr(request_form):
 
 
 if __name__ == "__main__":
-    #app.run(debug=True)
-    serve(app, host='0.0.0.0', port=8000, url_scheme='https')
+    app.run()
+    #serve(app, host='0.0.0.0', port=8000, url_scheme='https')
