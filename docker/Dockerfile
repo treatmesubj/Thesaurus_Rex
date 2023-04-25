@@ -1,6 +1,7 @@
 FROM nginx:bullseye
 
-RUN apt install python3
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install -y python3 python3-venv && rm -rf /var/lib/apt/lists/*
 
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
