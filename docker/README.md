@@ -1,12 +1,12 @@
-# [flask package setup](https://flask.palletsprojects.com/en/2.2.x/patterns/packages/)
+- [Flask package setup](https://flask.palletsprojects.com/en/2.2.x/patterns/packages/)
 I had to create a new Python venv just for flask because I had wack dependency issues
 
-## Dev
+## Flask Dev
 - $ `cd ./flask`
 - $ `pip install -e .`
 - $ `flask --app thesr_flask_app run -p 8000`
 
-## [Deploy to Prod](https://flask.palletsprojects.com/en/2.2.x/tutorial/deploy/)
+## [Flask + Waitress Deploy to Prod](https://flask.palletsprojects.com/en/2.2.x/tutorial/deploy/)
 - create a wheel to distribute because it's the cool way
     - $ `cd ./flask`
     - $ `python setup.py bdist_wheel`
@@ -18,6 +18,9 @@ I had to create a new Python venv just for flask because I had wack dependency i
 - Deploy on locally [Waitress WSGI server](https://flask.palletsprojects.com/en/2.2.x/deploying/waitress/)
     - $ `pip install waitress`
     - $ `waitress-serve --host 127.0.0.1 --port 8000 thesr_flask_app:app`
+
+## [Nginx Reverse Proxy for Flask + Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/reverse-proxy.html)
+
 
 # Docker stuff
 - [Dockerfile](Dockerfile)
