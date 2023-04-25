@@ -1,4 +1,5 @@
 - [Flask package setup](https://flask.palletsprojects.com/en/2.2.x/patterns/packages/)
+
 I had to create a new Python venv just for flask because I had wack dependency issues
 
 ## Flask Dev
@@ -20,7 +21,27 @@ I had to create a new Python venv just for flask because I had wack dependency i
     - $ `waitress-serve --host 127.0.0.1 --port 8000 thesr_flask_app:app`
 
 ## [Nginx Reverse Proxy for Flask + Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/reverse-proxy.html)
+- Create TLS/SSL crytographic certificate & key for encryption & decryption of TCP packets
+    - $ `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout thesr.key -out thesr.crt --subj "/C=US/ST=Texas/L=Austin/O=John/OU=John/CN=jrock4503@hotmail.com"`
+- configure nginx: `/etc/nginx/sites-available/default`
+    ```
+    server {
+        listen 443 ssl;
+        ssl_certificate thesr.crt;
+        ssl_certificate_key thesr.key;
+        server_name thesr.com;
+        location / {
+            proxy_pass http://127.0.0.1:8000;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+    }
 
+    server {
+        listen 80;
+        server_name thesr.com;
+        return 302 https://$server_name$request_uri;
+    }
+    ```
 
 # Docker stuff
 - [Dockerfile](Dockerfile)
