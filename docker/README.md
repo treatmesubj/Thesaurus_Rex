@@ -27,8 +27,8 @@ I had to create a new Python venv just for flask because I had wack dependency i
     ```
     server {
         listen 443 ssl;
-        ssl_certificate thesr.crt;
-        ssl_certificate_key thesr.key;
+        ssl_certificate /etc/ssl/certs/thesr.crt;
+        ssl_certificate_key /etc/ssl/private/thesr.key;
         server_name thesr.com;
         location / {
             proxy_pass http://127.0.0.1:8000;
