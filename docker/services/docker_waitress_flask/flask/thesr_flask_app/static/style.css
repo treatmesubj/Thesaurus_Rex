@@ -1,0 +1,39 @@
+* {
+    background-color: rgb(43, 42, 51);
+    color: white;
+    font-family: Courier;
+}
+
+span[id=error] {
+    color: red;
+}
+
+h3[id=synonyms] {
+    color: lawngreen;
+}
+
+h3[id=definitions] {
+    color: gold;
+}
+
+h3[id=etymology] {
+    color: khaki;
+}
+
+h3[id=antonyms] {
+    color: red;
+}
+
+input[type=text] {
+    background-color: lightgrey;
+    color: black;
+    border-color: white;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    background-color: rgb(135,206,250);
+    color: black;
+    border-color: white;
+    border-radius: 4px;
+}

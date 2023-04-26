@@ -1,0 +1,16 @@
+server {
+    listen 443 ssl;
+    ssl_certificate /etc/ssl/certs/thesr.crt;
+    ssl_certificate_key /etc/ssl/private/thesr.key;
+    server_name thesr.online;
+    location / {
+        proxy_pass http://flask:8000/;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+server {
+    listen 80;
+    server_name thesr.online;
+    return 302 https://$server_name$request_uri;
+}

@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+ 
+{% block body %}
+ 
+<h2>[{{word_spelling}}!]</h2>
+
+<h3 id="synonyms">synonyms</h3>
+<pre>{{synonyms_str}}</pre>
+
+<h3 id="definitions">definitions</h3>
+<pre>{{definitions_str}}</pre>
+
+<h3 id="etymology">etymology</h3>
+<pre>{{etymology_str}}</pre>
+
+<h3 id="antonyms">antonyms</h3>
+<pre>{{antonyms_str}}</pre>
+ 
+{% endblock %}
