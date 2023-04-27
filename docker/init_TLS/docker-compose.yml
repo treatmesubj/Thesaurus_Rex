@@ -1,0 +1,16 @@
+services:
+  nginx_temp:
+    build: ./services/nginx
+    hostname: nginx
+    volumes:
+      - ../letsencrypt:/letsencrypt
+      - ../letsencrypt/certs:/etc/letsencrypt
+    ports:
+      - 443:443
+      - 80:80
+  certbot:
+    build: ./services/certbot
+    hostname: certbot
+    volumes:
+      - ../letsencrypt:/letsencrypt
+      - ../letsencrypt/certs:/etc/letsencrypt
