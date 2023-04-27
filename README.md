@@ -60,6 +60,7 @@ purport (v.)
 
 ## [Thesaurus-Rex Web Server](./docker)
 ### [thesr.online](https://thesr.online)
+**NOTE**: I've taken the site down for now until I can get a CA signed cert for the domain\
 Check out Thesaurus-Rex's [Docker](https://www.docker.com/) (Compose) containerized web experience built with an [NGINX](https://www.nginx.com/) load-balanced reverse proxy & TLS/SSL encryption container in front of a containerized [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/) web server & [Flask](https://flask.palletsprojects.com/en/2.2.x/) framework Python application.\
 It's running on a [ufw](https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29) firewalled Debian virtual machine in the cloud courtesy of [Linode](https://www.linode.com/).\
 [fail2ban](https://github.com/fail2ban/fail2ban) protects the server from bruteforce attacks.\
