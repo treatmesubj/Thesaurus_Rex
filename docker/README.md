@@ -26,10 +26,25 @@
         }
     ```
 
+- $ `cd init_TLS`
 - fire up docker containers
-    - $ `docker compose up`
+    - $ `docker compose up -d`
+- check NGINX is all good
+    - $ `curl localhost`
     - check that you mounted stuff correctly
 - hop in certbot container
     - $ `docker exec -it cerbot bash`
     - $ `certbot certonly --webroot`
         - webroot: `/letsencrypt`
+    - congrats
+
+- bring down the `init_TLS` docker containers
+- clean up
+    - $ `docker system prune --all`
+    - $ `docker ps`
+
+- go live
+    - $ `cd go_live`
+    - $ `docker compose up -d`
+
+
