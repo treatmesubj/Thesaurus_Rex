@@ -19,3 +19,5 @@ services:
     volumes:
       - ../letsencrypt:/letsencrypt
       - ../letsencrypt/certs:/etc/letsencrypt
+    stdin_open: true
+    tty: true
