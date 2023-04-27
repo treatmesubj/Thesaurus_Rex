@@ -1,12 +1,21 @@
 services:
   nginx_reverse_proxy:
-    build: ./services/docker_nginx
+    build: ./services/nginx
     hostname: nginx
+    volumes:
+      - ./letsencrypt:/letsencrypt
+      - ./letsencrypt/certs:/etc/letsencrypt
     ports:
       - 443:443
       - 80:80
   waitress_flask_wsgi:
-    build: ./services/docker_waitress_flask
+    build: ./services/waitress_flask
     hostname: flask
     expose:
       - 8000
+  certbot:
+    build: ./services/certbot
+    hostname: certbot
+    volumes:
+      - ./letsencrypt:/letsencrypt
+      - ./letsencrypt/certs:/etc/letsencrypt

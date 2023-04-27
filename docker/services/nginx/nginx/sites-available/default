@@ -1,7 +1,7 @@
 server {
     listen 443 ssl;
-    ssl_certificate /etc/ssl/certs/thesr.crt;
-    ssl_certificate_key /etc/ssl/private/thesr.key;
+    ssl_certificate /etc/letsencrypt/live/thesr.online/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/thesr.online/privkey.pem;
     server_name thesr.online;
     location / {
         proxy_pass http://flask:8000/;
@@ -12,5 +12,8 @@ server {
 server {
     listen 80;
     server_name thesr.online;
+    location /.well-known/acme-challenge/ {
+        root /letsencrypt/;
+    }
     return 302 https://$server_name$request_uri;
 }
