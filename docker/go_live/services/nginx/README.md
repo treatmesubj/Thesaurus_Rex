@@ -2,6 +2,7 @@
 - Create TLS/SSL crytographic certificate & key for encryption & decryption of TCP packets
     - $ `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/thesr.key -out /etc/ssl/certs/thesr.crt --subj "/C=US/ST=Texas/L=Austin/O=John/OU=John/CN=jrock4503@hotmail.com"`
 - configure nginx: `/etc/nginx/sites-available/default`
+- Apparently it's very important to include trailing `/` to protect against path traversal
     ```
     server {
         listen 443 ssl;
