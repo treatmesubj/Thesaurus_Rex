@@ -11,6 +11,7 @@
 - in nginx.conf, allow letsencrypt to find files for validation
     ```
     server {
+          listen [::]:80;
           listen 80;
 
           location /.well-known/acme-challenge/ {
