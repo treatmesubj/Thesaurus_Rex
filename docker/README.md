@@ -47,4 +47,6 @@
     - $ `cd go_live`
     - $ `docker compose up -d`
 
+- check NGINX logs (official NGINX Docker image symlinks access & error logs to stdout & stderr)
+    - $ `docker logs {your-container-id-here} -f`
 
