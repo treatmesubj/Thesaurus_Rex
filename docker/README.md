@@ -43,6 +43,9 @@
     - $ `docker system prune --all`
     - $ `docker ps`
 
+- back up a copy of letsencrypt files
+    - $ `cp -r ~/Thesarus_Rex/docker/letsencrypt/ ~`
+
 - go live
     - $ `cd go_live`
     - $ `docker compose up -d`
