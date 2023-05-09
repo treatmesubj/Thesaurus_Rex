@@ -32,21 +32,20 @@
 - check NGINX is all good
     - $ `curl localhost`
     - check that you mounted stuff correctly
-- hop in certbot container
+- hop in certbot container and create TLS key/cert
     - $ `docker exec -it cerbot bash`
     - $ `certbot certonly --webroot`
         - webroot: `/letsencrypt`
     - congrats
 
 - bring down the `init_TLS` docker containers
+    - $ `docker compose down`
 - clean up
     - $ `docker system prune --all`
     - $ `docker ps`
-
 - back up a copy of letsencrypt files
-    - $ `cp -r ~/Thesarus_Rex/docker/letsencrypt/ ~`
-
-- go live
+    - $ `cp -r letsencrypt/ ~`
+- **Go Live**
     - $ `cd go_live`
     - $ `docker compose up -d`
 
