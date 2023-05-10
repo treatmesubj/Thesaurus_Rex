@@ -57,3 +57,10 @@
 
 - verify `certbot` works
     - $ `certbot renew --dry-run`
+
+- add a `certbot renew` cron job
+    - $ `docker exec -it go_live-certbot-1 bash`
+    - $ `apt update && apt install cron`
+    - $ `cron` (background)
+    - $ `export EDITOR='vim'`
+    - $ there's already a 12hr cron for certbot set up: `/etc/cron.d/certbot`
