@@ -68,7 +68,6 @@ The TLS/SSL key/cert is verified by [letsencrypt](https://letsencrypt.org/).
 
 ![](./images/thesr_web.png)
 
----
 #### The Internet's Spooky
 [https://thesr.online](https://thesr.online) has been on the internet for about 2 weeks now.\
 Here's a geo-map of thousands of malicious IP addresses that tried to brute-force guess my server credentials to gain control of my server from just some of the logs.\
