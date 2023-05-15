@@ -70,7 +70,7 @@ The TLS/SSL cryptographic certificate is signed by [Let's Encrypt](https://letse
 
 #### The Internet's Spooky
 [https://thesr.online](https://thesr.online) has been on the internet for about 2 weeks now (5/12/23).\
-Here's a geo-map of thousands of malicious IP addresses that tried to brute-force guess my server credentials to gain control of my server from just some of the logs.\
+Here's a geo-map of thousands of malicious IP addresses that tried to bruteforce guess my server credentials to gain control of my server from just some of the logs.\
 Also, here's a sample of the latest traffic to my server from the logs, showing probably botnets, trying to extract credentials, upload binary data, and exploit old software vulnerabilities.
 
 ![](./images/sshers.png)\
