@@ -64,7 +64,7 @@ Check out Thesaurus-Rex's [Docker](https://www.docker.com/) (Compose) containeri
 It's running on a [ufw](https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29) firewalled Debian virtual machine in the cloud courtesy of [Linode](https://www.linode.com/).\
 [fail2ban](https://github.com/fail2ban/fail2ban) protects the server from bruteforce attacks.\
 I bought the [thesr.online](https://thesr.online) domain from [Hover](https://www.hover.com/).\
-The TLS/SSL cryptograpic certificate is signed by [Let's Encrypt](https://letsencrypt.org/) certificate authority.
+The TLS/SSL cryptographic certificate is signed by [Let's Encrypt](https://letsencrypt.org/) certificate authority.
 
 ![](./images/thesr_web.png)
 
