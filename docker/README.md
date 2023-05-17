@@ -55,13 +55,15 @@
 - check NGINX logs (official NGINX Docker image symlinks access & error logs to stdout & stderr)
     - $ `docker logs {your-container-id-here} -f`
 
-- verify `certbot` works
-    - $ `certbot renew --dry-run`
-
-- add a cron job for certbot to renew cert before expiry
+- Set Up `certbot`
     - $ `docker exec -it go_live-certbot-1 bash`
-    - $ `apt update && apt install cron`
-    - $ `cron` (background)
-    - $ `export EDITOR='vim'`
-    - $ `crontab /etc/cron.d/certbot`
-    - $ `crontab -l`
+    - verify `certbot` works
+        - $ `certbot renew --dry-run`
+    - add a cron job for certbot to renew cert before expiry
+        - $ `docker exec -it go_live-certbot-1 bash`
+        - $ `apt update && apt install cron`
+        - $ `cron` (background)
+        - $ `apt install vim`
+        - $ `export EDITOR='vim'`
+        - $ `crontab /etc/cron.d/certbot`
+        - $ `crontab -l`
