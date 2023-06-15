@@ -74,17 +74,16 @@ def get_syns_ants(word):
         response.text,
         "html.parser",
     )
-    script = re.search(
-        r"<script>[\s\S]*window\.INITIAL_STATE = (.+);[\s\S]*</script>", soup.prettify()
-    ).group(1)
+    script_elem = soup.select_one("script#preloaded-state")
+    script = re.search(r"window.__PRELOADED_STATE__ = ({.*})", script_elem.text).group(1)
     # clean JSON
     script = script.replace(":undefined", ':"undefined"')
     script = script.replace(":null", ':"null"')
 
-    j = json.loads(script)
+    sanjay = json.loads(script)
 
     try:
-        posTabs = j["searchData"]["tunaApiData"]["posTabs"]
+        posTabs = sanjay['tuna']['resultsData']['definitionData']['definitions']
     except TypeError:
         return
 
