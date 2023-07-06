@@ -89,7 +89,9 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-
 ./kompose convert -f docker-compose.yml --volumes hostPath -c
 ```
 
-- [Docker user group](https://docs.docker.com/engine/install/linux-postinstall/)
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [Docker install](https://docs.docker.com/engine/install/debian/)
+    - [Docker user group](https://docs.docker.com/engine/install/linux-postinstall/)
+- [Kubectl install](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [Helm install](https://helm.sh/docs/intro/install/)
 - [Kind & Helm](https://faun.pub/local-kubernetes-with-kind-helm-and-a-sample-service-4755e3e6eff4)
 
