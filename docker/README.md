@@ -68,12 +68,3 @@
         - $ `crontab /etc/cron.d/certbot`
         - $ `crontab -l`
 
----
-
-### [Kompose](https://github.com/kubernetes/kompose)
-
-```bash
-cd go_live
-curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-linux-amd64 -o kompose
-./kompose convert -f docker-compose.yml --volumes hostPath -c
-```
