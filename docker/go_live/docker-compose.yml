@@ -17,6 +17,8 @@ services:
   certbot:
     build: ./services/certbot
     hostname: certbot
+    expose:
+      - 9999  # for kompose
     volumes:
       - ../letsencrypt:/letsencrypt
       - ../letsencrypt/certs:/etc/letsencrypt

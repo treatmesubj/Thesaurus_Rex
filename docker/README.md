@@ -70,10 +70,24 @@
 
 ---
 
-### [Kompose](https://github.com/kubernetes/kompose)
+## Docker Compose -> K8s
+
+```
+$ cd ~/Thesaurus_Rex/docker/
+$ ls -1
+go_live
+init_TLS
+letsencrypt
+README.md
+```
+
+- [Kompose](https://github.com/kubernetes/kompose)
 
 ```bash
 cd go_live
 curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-linux-amd64 -o kompose
 ./kompose convert -f docker-compose.yml --volumes hostPath -c
 ```
+
+- [Kind & Helm](https://faun.pub/local-kubernetes-with-kind-helm-and-a-sample-service-4755e3e6eff4)
+
