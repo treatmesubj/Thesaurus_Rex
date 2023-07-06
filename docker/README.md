@@ -95,3 +95,9 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-
 - [Helm install](https://helm.sh/docs/intro/install/)
 - [Kind & Helm](https://faun.pub/local-kubernetes-with-kind-helm-and-a-sample-service-4755e3e6eff4)
 
+```bash
+kind create cluster --name local-dev
+kind get clusters
+kubectl cluster-info
+helm install docker-kompose docker-compose --dry-run
+```
