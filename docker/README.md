@@ -99,5 +99,5 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-
 kind create cluster --name local-dev
 kind get clusters
 kubectl cluster-info
-helm install docker-kompose docker-compose --dry-run
+helm install docker-kompose ./docker-compose --dry-run
 ```
