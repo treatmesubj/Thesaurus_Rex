@@ -90,5 +90,6 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-
 ```
 
 - [Docker user group](https://docs.docker.com/engine/install/linux-postinstall/)
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 - [Kind & Helm](https://faun.pub/local-kubernetes-with-kind-helm-and-a-sample-service-4755e3e6eff4)
 
