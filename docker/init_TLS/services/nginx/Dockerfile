@@ -1,4 +1,4 @@
-FROM nginx:bullseye
+FROM nginx:bookworm
 
 COPY ./nginx/ /etc/nginx
 

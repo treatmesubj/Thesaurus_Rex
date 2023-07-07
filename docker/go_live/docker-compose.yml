@@ -1,6 +1,6 @@
 version: "3"
 services:
-  nginx_reverse_proxy:
+  nginx-reverse-proxy:
     build: ./services/nginx
     hostname: nginx
     volumes:
@@ -9,8 +9,8 @@ services:
     ports:
       - 443:443
       - 80:80
-  waitress_flask_wsgi:
-    build: ./services/waitress_flask
+  waitress-flask-wsgi:
+    build: ./services/waitress-flask
     hostname: flask
     expose:
       - 8000
