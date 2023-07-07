@@ -85,9 +85,11 @@ README.md
 - [Install Kompose](https://github.com/kubernetes/kompose)
 
 ```bash
-cd go_live
 curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-linux-amd64 -o kompose
-./kompose convert -f docker-compose.yml --volumes hostPath -c
+./kompose convert -f ./go_live/docker-compose.yml --volumes hostPath -c
+mkdir helm
+mv ./go_live/docker_compose/ ./helm/thesr/
+rm kompose
 ```
 
 - [Install Docker](https://docs.docker.com/engine/install/debian/)
@@ -117,6 +119,6 @@ kubectl cluster-info
 #              --type=kubernetes.io/dockerconfigjson
 #            kubectl get secret regcred --output=yaml
 
-# helm upgrade --install docker-kompose ./docker-compose --dry-run
+# helm upgrade --install thesr ./helm/thesr/ --dry-run
 
 ```
