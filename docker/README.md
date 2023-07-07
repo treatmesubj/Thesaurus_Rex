@@ -90,6 +90,9 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-
 mkdir helm
 mv ./go_live/docker_compose/ ./helm/thesr/
 rm kompose
+# add `imagePullPolicy: IfNotPresent` to each of ./helm/thesr/templates/*deployment.yaml
+# per https://kind.sigs.k8s.io/docs/user/quick-start/#loading-an-image-into-your-cluster
+# so k8s doesn't try to pull images from external registries
 ```
 
 - [Install Docker](https://docs.docker.com/engine/install/debian/)

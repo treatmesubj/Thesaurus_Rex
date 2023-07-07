@@ -27,7 +27,8 @@ spec:
     spec:
       containers:
         - image: certbot
-          name: localhost:5000/certbot
+          name: certbot
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9999
           resources: {}
