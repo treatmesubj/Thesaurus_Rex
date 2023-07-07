@@ -82,7 +82,7 @@ letsencrypt
 README.md
 ```
 
-- [Kompose](https://github.com/kubernetes/kompose)
+- [Install Kompose](https://github.com/kubernetes/kompose)
 
 ```bash
 cd go_live
@@ -90,10 +90,14 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-
 ./kompose convert -f docker-compose.yml --volumes hostPath -c
 ```
 
-- [Docker install](https://docs.docker.com/engine/install/debian/)
+- [Install Docker](https://docs.docker.com/engine/install/debian/)
     - [Docker user group](https://docs.docker.com/engine/install/linux-postinstall/)
-- [Kubectl install](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-- [Helm install](https://helm.sh/docs/intro/install/)
+- [Install Kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+    - easiest to first [install Go](https://go.dev/doc/install)
+        - put Go bins on `$PATH`; [my bashrc](https://github.com/treatmesubj/Tips-Tricks/blob/master/configs/Linux/Bash/.bashrc_john.sh)
+    - then, `go install sigs.k8s.io/kind@v0.20.0`
+- [Install Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [Install Helm](https://helm.sh/docs/intro/install/)
 - [Kind & Helm](https://faun.pub/local-kubernetes-with-kind-helm-and-a-sample-service-4755e3e6eff4)
 
 ```bash
