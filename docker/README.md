@@ -109,7 +109,9 @@ Kind cluster setup
 ```bash
 kind create cluster --name local-dev
 kind get clusters
+kind get nodes --name local-dev
 kubectl cluster-info
+kubectl get all
 # kubectl proxy  # to expose cluster to localhost
 ```
 
@@ -127,6 +129,13 @@ cd ~/Thesaurus_Rex/docker/go_live/services/waitress-flask/
 docker build -t waitress-flask-wsgi:latest .
 
 docker images
+```
+
+Kind load images into cluster local registry
+```bash
+kind load docker-image nginx-reverse-proxy:latest --name local-dev
+kind load docker-image certbot:latest --name local-dev
+kind load docker-image waitress-flask:latest --name local-dev
 ```
 
 Helm install charts
