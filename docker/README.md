@@ -102,4 +102,5 @@ kubectl cluster-info
 kubectl proxy  # to expose cluster to localhost
 helm upgrade --install docker-kompose ./docker-compose --dry-run
 # need to push images up to docker registry, so they can be pulled
+#    https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 ```
