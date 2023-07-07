@@ -143,4 +143,5 @@ kind load docker-image waitress-flask-wsgi:latest --name local-dev
 Helm install charts
 ```bash
 helm upgrade --install thesr ./helm/thesr/ --dry-run
+# TODO: figure out why volumes not mounting files
 ```
