@@ -99,8 +99,14 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-
 kind create cluster --name local-dev
 kind get clusters
 kubectl cluster-info
-kubectl proxy  # to expose cluster to localhost
-helm upgrade --install docker-kompose ./docker-compose --dry-run
+# kubectl proxy  # to expose cluster to localhost
 # need to push images up to docker registry, so they can be pulled
 #    https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+# docker login
+kubectl create secret generic regcred \
+    --from-file=.dockerconfigjson=/home/john/.docker/config.json \
+    --type=kubernetes.io/dockerconfigjson
+kubectl get secret regcred --output=yaml
+# helm upgrade --install docker-kompose ./docker-compose --dry-run
+
 ```
