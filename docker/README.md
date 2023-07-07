@@ -113,6 +113,22 @@ kubectl cluster-info
 # kubectl proxy  # to expose cluster to localhost
 ```
 
+Docker build images
+```bash
+docker images
+
+cd ~/Thesaurus_Rex/docker/go_live/services/nginx/
+docker build -t nginx-reverse-proxy:latest .
+
+cd ~/Thesaurus_Rex/docker/go_live/services/certbot/
+docker build -t certbot:latest .
+
+cd ~/Thesaurus_Rex/docker/go_live/services/waitress-flask/
+docker build -t waitress-flask-wsgi:latest .
+
+docker images
+```
+
 Helm install charts
 ```bash
 helm upgrade --install thesr ./helm/thesr/ --dry-run
