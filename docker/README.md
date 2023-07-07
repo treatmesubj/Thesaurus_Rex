@@ -73,6 +73,7 @@
 ## Docker Compose -> K8s
 
 ```
+$ # you need the letsencrypt dir with certs already created by Docker Compose init_TLS cerbot above
 $ cd ~/Thesaurus_Rex/docker/
 $ ls -1
 go_live
