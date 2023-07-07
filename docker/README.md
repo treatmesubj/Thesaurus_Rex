@@ -100,13 +100,18 @@ kind create cluster --name local-dev
 kind get clusters
 kubectl cluster-info
 # kubectl proxy  # to expose cluster to localhost
-# need to push images up to docker registry, so they can be pulled
-#    https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-# docker login
-kubectl create secret generic regcred \
-    --from-file=.dockerconfigjson=/home/john/.docker/config.json \
-    --type=kubernetes.io/dockerconfigjson
-kubectl get secret regcred --output=yaml
+
+# run local registry, build images, push to local registry, so they can be pulled by K8s
+#       https://docs.docker.com/registry/deploying/#run-a-local-registry
+#       BONUS
+#       build & push images up to docker registry
+#            https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+#            docker login
+#            kubectl create secret generic regcred \
+#              --from-file=.dockerconfigjson=/home/john/.docker/config.json \
+#              --type=kubernetes.io/dockerconfigjson
+#            kubectl get secret regcred --output=yaml
+
 # helm upgrade --install docker-kompose ./docker-compose --dry-run
 
 ```
