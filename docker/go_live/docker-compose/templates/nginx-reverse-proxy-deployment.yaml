@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - image: nginx-reverse-proxy
-          name: nginx-reverse-proxy
+          name: localhost:5000/nginx-reverse-proxy
           ports:
             - containerPort: 443
             - containerPort: 80

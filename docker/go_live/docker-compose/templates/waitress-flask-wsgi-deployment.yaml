@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - image: waitress-flask-wsgi
-          name: waitress-flask-wsgi
+          name: localhost:5000/waitress-flask-wsgi
           ports:
             - containerPort: 8000
           resources: {}
