@@ -1,4 +1,4 @@
-FROM python:bullseye
+FROM python:bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y python3 python3-venv && rm -rf /var/lib/apt/lists/*
