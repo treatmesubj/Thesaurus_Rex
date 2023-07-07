@@ -38,7 +38,7 @@ spec:
               name: nginx-reverse-proxy-hostpath0
             - mountPath: /etc/letsencrypt
               name: nginx-reverse-proxy-hostpath1
-      hostname: nginx
+      hostname: nginx-reverse-proxy
       restartPolicy: Always
       volumes:
         - hostPath:

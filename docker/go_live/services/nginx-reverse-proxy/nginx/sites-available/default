@@ -29,11 +29,11 @@ server {
         root /letsencrypt/;
     }
     location = / {
-        proxy_pass http://flask:8000/;
+        proxy_pass http://waitress-flask-wsgi:8000/;
         proxy_set_header X-Real-IP $remote_addr;
     }
     location ~* ^/static/(style\.css|avoid_space\.js|favicon\.ico)$ {
-        proxy_pass http://flask:8000/static/$1;
+        proxy_pass http://waitress-flask-wsgi:8000/static/$1;
         proxy_set_header X-Real-IP $remote_addr;
     }
 }

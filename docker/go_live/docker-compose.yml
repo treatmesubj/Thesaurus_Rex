@@ -1,8 +1,8 @@
 version: "3"
 services:
   nginx-reverse-proxy:
-    build: ./services/nginx
-    hostname: nginx
+    build: ./services/nginx-reverse-proxy
+    hostname: nginx-reverse-proxy
     volumes:
       - ../letsencrypt:/letsencrypt
       - ../letsencrypt/certs:/etc/letsencrypt
@@ -10,8 +10,8 @@ services:
       - 443:443
       - 80:80
   waitress-flask-wsgi:
-    build: ./services/waitress-flask
-    hostname: flask
+    build: ./services/waitress-flask-wsgi
+    hostname: waitress-flask-wsgi
     expose:
       - 8000
   certbot:
