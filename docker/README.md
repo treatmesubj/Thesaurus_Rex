@@ -99,5 +99,7 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.29.0/kompose-
 kind create cluster --name local-dev
 kind get clusters
 kubectl cluster-info
-helm install docker-kompose ./docker-compose --dry-run
+kubectl proxy  # to expose cluster to localhost
+helm upgrade --install docker-kompose ./docker-compose --dry-run
+# need to push images up to docker registry, so they can be pulled
 ```

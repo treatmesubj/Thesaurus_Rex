@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: waitress-flask-wsgi
-  name: waitress_flask_wsgi
+  name: waitress-flask-wsgi
 spec:
   ports:
     - name: "8000"
