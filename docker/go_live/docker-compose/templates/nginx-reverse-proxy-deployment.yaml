@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: ./kompose convert -f docker-compose.yml --volumes hostPath -c
+    kompose.version: 1.29.0 (997957870)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: nginx-reverse-proxy
+  name: nginx-reverse-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: nginx-reverse-proxy
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: ./kompose convert -f docker-compose.yml --volumes hostPath -c
+        kompose.version: 1.29.0 (997957870)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/go-live-default: "true"
+        io.kompose.service: nginx-reverse-proxy
+    spec:
+      containers:
+        - image: nginx-reverse-proxy
+          name: nginx-reverse-proxy
+          ports:
+            - containerPort: 443
+            - containerPort: 80
+          resources: {}
+          volumeMounts:
+            - mountPath: /letsencrypt
+              name: nginx-reverse-proxy-hostpath0
+            - mountPath: /etc/letsencrypt
+              name: nginx-reverse-proxy-hostpath1
+      hostname: nginx
+      restartPolicy: Always
+      volumes:
+        - hostPath:
+            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt
+          name: nginx-reverse-proxy-hostpath0
+        - hostPath:
+            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/certs
+          name: nginx-reverse-proxy-hostpath1
+status: {}
