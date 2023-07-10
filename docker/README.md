@@ -121,7 +121,7 @@ nodes:
 ```
 
 ```bash
-kind create cluster --name local-dev
+kind create cluster --name local-dev --config kind_config.yaml
 
 kind get clusters
 kind get nodes --name local-dev
