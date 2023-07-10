@@ -109,6 +109,7 @@ rm kompose
 
 Kind cluster setup
 - Kind (K8s in Docker) runs the K8s node/host as a Docker container itself, so to mount local directories in the pods, we need to first mount it in the Kind node, from which it will be mounted into the pods
+- Also for Kind, `extraPortMappings` allow the local host to make requests to an Ingress controller over ports 80/443; [Kind Ingress docs](https://kind.sigs.k8s.io/docs/user/ingress/)
 - Create `kind_config.yaml` with below contents
 ```yaml
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -118,6 +119,13 @@ nodes:
     extraMounts:
       - hostPath: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/
         containerPath: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/
+    extraPortMappings:
+    - containerPort: 80
+      hostPort: 80
+      protocol: TCP
+    - containerPort: 443
+      hostPort: 443
+      protocol: TCP
 ```
 
 ```bash

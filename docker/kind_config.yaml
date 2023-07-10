@@ -5,3 +5,10 @@ nodes:
     extraMounts:
       - hostPath: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/
         containerPath: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/
+    extraPortMappings:
+    - containerPort: 80
+      hostPort: 80
+      protocol: TCP
+    - containerPort: 443
+      hostPort: 443
+      protocol: TCP
