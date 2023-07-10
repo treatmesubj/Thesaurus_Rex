@@ -157,4 +157,6 @@ Helm install charts
 ```bash
 helm upgrade --install thesr ./helm/thesr/ --dry-run
 kubectl get pods
+kubectl exec --stdin --tty nginx-reverse-proxy-56877cb6cb-4df7x -- /bin/bash
+# curl -k https://localhost
 ```
