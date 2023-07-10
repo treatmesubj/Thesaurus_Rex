@@ -9,6 +9,7 @@ metadata:
     io.kompose.service: nginx-reverse-proxy
   name: nginx-reverse-proxy
 spec:
+  type: NodePort
   ports:
     - name: "443"
       port: 443
