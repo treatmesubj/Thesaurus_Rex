@@ -44,8 +44,10 @@ spec:
       volumes:
         - hostPath:
             path: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt
+            type: Directory
           name: certbot-hostpath0
         - hostPath:
             path: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/certs
+            type: Directory
           name: certbot-hostpath1
 status: {}
