@@ -138,6 +138,11 @@ kubectl get all
 # kubectl proxy  # to expose cluster to localhost
 ```
 
+Allow kubectl binary to port-forward K8s to localhost low ports
+```bash
+sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/bin/kubectl
+```
+
 Docker build images
 ```bash
 docker images
