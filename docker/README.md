@@ -108,8 +108,21 @@ rm kompose
 ```
 
 Kind cluster setup
+- Kind (K8s in Docker) runs the K8s node/host as a Docker container itself, so to mount local directories in the pods, we need to first mount it in the Kind node, from which it will be mounted into the pods
+- Create `kind_config.yaml` with below contents
+```yaml
+apiVersion: kind.x-k8s.io/v1alpha4
+kind: Cluster
+nodes:
+  - role: control-plane
+    extraMounts:
+      - hostPath: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/
+        containerPath: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/
+```
+
 ```bash
 kind create cluster --name local-dev
+
 kind get clusters
 kind get nodes --name local-dev
 kubectl cluster-info
@@ -143,5 +156,5 @@ kind load docker-image waitress-flask-wsgi:latest --name local-dev
 Helm install charts
 ```bash
 helm upgrade --install thesr ./helm/thesr/ --dry-run
-# TODO: figure out why volumes not mounting files
+kubectl get pods
 ```
