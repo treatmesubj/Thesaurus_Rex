@@ -42,11 +42,11 @@ spec:
       restartPolicy: Always
       volumes:
         - hostPath:
-            path: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/
+            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/
             type: Directory
           name: nginx-reverse-proxy-hostpath0
         - hostPath:
-            path: /home/john/Documents/Thesaurus_Rex/docker/letsencrypt/certs/
+            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/certs/
             type: Directory
           name: nginx-reverse-proxy-hostpath1
 status: {}
