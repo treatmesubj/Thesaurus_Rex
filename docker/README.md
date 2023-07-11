@@ -147,13 +147,13 @@ Docker build images
 ```bash
 docker images
 
-cd ~/Thesaurus_Rex/docker/go_live/services/nginx/
+cd ~/Thesaurus_Rex/docker/go_live/services/nginx-reverse-proxy/
 docker build -t nginx-reverse-proxy:latest .
 
 cd ~/Thesaurus_Rex/docker/go_live/services/certbot/
 docker build -t certbot:latest .
 
-cd ~/Thesaurus_Rex/docker/go_live/services/waitress-flask/
+cd ~/Thesaurus_Rex/docker/go_live/services/waitress-flask-wsgi/
 docker build -t waitress-flask-wsgi:latest .
 
 docker images
