@@ -9,11 +9,13 @@ metadata:
     io.kompose.service: nginx-reverse-proxy
   name: nginx-reverse-proxy
 spec:
-  type: LoadBalancer
+  # type: LoadBalancer
+  type: NodePort
   ports:
     - name: "443"
       port: 443
       targetPort: 443
+      nodePort: 30111
     - name: "80"
       port: 80
       targetPort: 80
