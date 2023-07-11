@@ -67,6 +67,9 @@
         - $ `export EDITOR='vim'`
         - $ `crontab /etc/cron.d/certbot`
         - $ `crontab -l`
+    - FYI: apparently NGINX needs to be restarted to pick up the new cert
+        - $ `docker compose down`
+        - $ `docker compose up -d`
 
 ---
 
