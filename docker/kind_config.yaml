@@ -12,3 +12,7 @@ nodes:
     - containerPort: 30111
       hostPort: 443
       protocol: TCP
+#  - role: worker
+#    extraMounts:
+#      - hostPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/
+#        containerPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/
