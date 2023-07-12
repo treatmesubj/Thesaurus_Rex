@@ -85,6 +85,6 @@ I used [Helm](https://helm.sh) to deploy the workload to my cluster.
 
 See [docker\_k8s/README.md](./docker_k8s/README.md) for the detailed steps.
 
-In reality, this is completely unnecessary and more expensive to host, so I'll continue with Docker Compose approach for now. In the future, I could look into a proper [ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) for K8s, uploading my images to a container registry, and maybe setting up some CI/CD to build the images.
+In reality, this is completely unnecessary and more expensive to host, so I'll continue with Docker Compose approach for now. In the future, I could look into a proper [ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) for K8s, uploading my images to a container registry, proper Persistent Volume Claims (PVCs), and maybe setting up some CI/CD to build the images.
 
 ![](./images/k8s_thesr.gif)
