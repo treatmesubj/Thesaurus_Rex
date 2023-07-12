@@ -1,0 +1,18 @@
+apiVersion: kind.x-k8s.io/v1alpha4
+kind: Cluster
+nodes:
+  - role: control-plane
+    extraMounts:
+      - hostPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
+        containerPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
+    extraPortMappings:
+    - containerPort: 80
+      hostPort: 80
+      protocol: TCP
+    - containerPort: 30111
+      hostPort: 443
+      protocol: TCP
+#  - role: worker
+#    extraMounts:
+#      - hostPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
+#        containerPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/

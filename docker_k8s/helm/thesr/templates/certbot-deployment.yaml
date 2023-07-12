@@ -43,11 +43,11 @@ spec:
       restartPolicy: Always
       volumes:
         - hostPath:
-            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/
+            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
             type: Directory
           name: certbot-hostpath0
         - hostPath:
-            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/certs/
+            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/certs/
             type: Directory
           name: certbot-hostpath1
 status: {}

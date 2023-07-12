@@ -88,7 +88,7 @@
 
 you need the letsencrypt dir with certs already created by Docker Compose init\_TLS cerbot above
 ```
-$ cd ~/Thesaurus_Rex/docker/
+$ cd ~/Thesaurus_Rex/docker_k8s/
 $ ls -1
 go_live
 init_TLS
@@ -120,8 +120,8 @@ kind: Cluster
 nodes:
   - role: control-plane
     extraMounts:
-      - hostPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/
-        containerPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker/letsencrypt/
+      - hostPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
+        containerPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
     extraPortMappings:
     - containerPort: 80
       hostPort: 80
@@ -150,13 +150,13 @@ Docker build images
 ```bash
 docker images
 
-cd ~/Thesaurus_Rex/docker/go_live/services/nginx-reverse-proxy/
+cd ~/Thesaurus_Rex/docker_k8s/go_live/services/nginx-reverse-proxy/
 docker build -t nginx-reverse-proxy:latest .
 
-cd ~/Thesaurus_Rex/docker/go_live/services/certbot/
+cd ~/Thesaurus_Rex/docker_k8s/go_live/services/certbot/
 docker build -t certbot:latest .
 
-cd ~/Thesaurus_Rex/docker/go_live/services/waitress-flask-wsgi/
+cd ~/Thesaurus_Rex/docker_k8s/go_live/services/waitress-flask-wsgi/
 docker build -t waitress-flask-wsgi:latest .
 
 docker images
