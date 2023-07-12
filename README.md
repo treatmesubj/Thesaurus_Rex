@@ -83,7 +83,7 @@ I first used [Kompose](https://github.com/kubernetes/kompose) to roughly transla
 Then, I used [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) to run a local cluster to develop and test my project.\
 I used [Helm](https://helm.sh) to deploy the workload to my cluster.
 
-See [./docker\_k8s/README.md](./docker_k8s/README.md) for the detailed steps.
+See [docker\_k8s/README.md](./docker_k8s/README.md) for the detailed steps.
 
 In reality, this is completely unnecessary and more expensive to host, so I'll continue with Docker Compose approach for now. In the future, I could look into a proper [ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) for K8s, uploading my images to a container registry, and maybe setting up some CI/CD to build the images.
 
