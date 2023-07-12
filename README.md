@@ -76,3 +76,11 @@ Also, here's a sample of the latest traffic to my server from the logs, showing 
 ![](./images/sshers.png)\
 ![](./images/nginx_tail.png)
 
+### [Docker Compose](https://docs.docker.com/compose/) -> [Kubernetes](https://kubernetes.io/)
+Venture capitalists & the media have been slow to catch on to my revolutionary [thesr.online](https://thesr.online), but in anticipation of its imminent virality & demand for scale, I've migrated from Docker Compose to a Kubernetes cluster w/ Helm so a control plane can orchestrate the deployment of my containerized apps as self-healing pods and auto-scale across worker nodes.
+
+I first used [Kompose](https://github.com/kubernetes/kompose) to roughly translate my Docker Compose files to K8s resources.\
+Then, I used [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) to run a local cluster to develop and flesh things out.\
+I used [Helm](https://helm.sh) to deploy my workload to the cluster.\
+
+

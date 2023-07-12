@@ -84,7 +84,6 @@
     - then, `go install sigs.k8s.io/kind@v0.20.0`
 - [Install Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 - [Install Helm](https://helm.sh/docs/intro/install/)
-- [Kind & Helm](https://faun.pub/local-kubernetes-with-kind-helm-and-a-sample-service-4755e3e6eff4)
 
 you need the letsencrypt dir with certs already created by Docker Compose init\_TLS cerbot above
 ```
