@@ -80,7 +80,9 @@ Also, here's a sample of the latest traffic to my server from the logs, showing 
 Venture capitalists & the media have been slow to catch on to my revolutionary [thesr.online](https://thesr.online), but in anticipation of its imminent virality & demand for scale, I've migrated from Docker Compose to a Kubernetes cluster w/ Helm so a control plane can orchestrate the deployment of my containerized apps as self-healing pods and auto-scale across worker nodes.
 
 I first used [Kompose](https://github.com/kubernetes/kompose) to roughly translate my Docker Compose files to K8s resources.\
-Then, I used [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) to run a local cluster to develop and flesh things out.\
-I used [Helm](https://helm.sh) to deploy my workload to the cluster.\
+Then, I used [Kind](https://kind.sigs.k8s.io/) (Kubernetes in Docker) to run a local cluster to develop and test my project.\
+I used [Helm](https://helm.sh) to deploy the workload to my cluster.
 
+See [./docker\_k8s/README.md](./docker_k8s/README.md) for the detailed steps.
 
+In reality, this is completely unnecessary and more expensive to host, so I'll continue with Docker Compose approach for now. In the future, I could look into a proper [ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) for K8s, uploading my images to a container registry, and maybe setting up some CI/CD to build the images.
