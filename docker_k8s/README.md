@@ -85,7 +85,8 @@
 - [Install Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 - [Install Helm](https://helm.sh/docs/intro/install/)
 
-you need the letsencrypt dir with certs already created by Docker Compose init\_TLS cerbot above
+You need `letsencrypt/` with certs already created by Docker Compose init\_TLS cerbot above\
+You can [use scp to copy certs from elsewhere](https://github.com/treatmesubj/Tips-Tricks/blob/master/networking/scp_ssh_file_copy.txt), but you'll need to re-symlink the certs in `live/` to latest in `archive/`
 ```
 $ cd ~/Thesaurus_Rex/docker_k8s/
 $ ls -1
@@ -174,6 +175,7 @@ kind load docker-image waitress-flask-wsgi:latest --name local-dev
 
 Helm install charts
 ```bash
+cd ~/Thesaurus_Rex/docker_k8s/
 helm upgrade --install thesr ./helm/thesr/ --dry-run
 kubectl get all
 kubectl exec --stdin --tty nginx-reverse-proxy-56877cb6cb-4df7x -- /bin/bash

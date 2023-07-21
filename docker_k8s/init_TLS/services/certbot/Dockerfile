@@ -1,3 +1,19 @@
-FROM debian:bookworm
+FROM alpine:latest
 
-RUN apt-get update -y && apt-get install -y certbot
+### Environment variables
+ENV LANG='en_US.UTF-8' \
+    LANGUAGE='en_US.UTF-8' \
+    TERM='xterm' 
+
+### Install Application
+RUN set -x && \
+    apk --no-cache upgrade && \
+    apk add --no-cache --virtual=run-deps \
+      certbot \
+      bash \
+    && \
+    rm -rf /tmp/* \
+           /var/cache/apk/*  \
+           /var/tmp/*
+
+EXPOSE 9999
