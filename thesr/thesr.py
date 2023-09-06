@@ -103,18 +103,14 @@ def get_syns_ants(word):
 def get_etymology(word):
     response = requests.get(f"https://www.etymonline.com/word/{word}")
     soup = BeautifulSoup(response.text, "html.parser")
-    class_elems = soup.select("div[class^='word'] [class^='word__name']")
-    etym_elems = soup.select("div[class^='word'] [class^='word__def']")
+    class_elems = soup.select("div[class^='ant'] > div[class^='word'] [class^='word__name']")
+    etym_elems = soup.select("div[class^='ant'] > div[class^='word'] [class^='word__def']")
     zipped_elems = zip(class_elems, etym_elems)
     homonyms = []
     for class_elem, etym_elem in zipped_elems:
-        if "href" not in class_elem.attrs.keys():
-            etym_text = ""
-            for etym_p_elem in etym_elem.select("p"):
-                etym_text += f"{etym_p_elem.text}\n"
-            homonyms.append(
-                {"etym_desc": etym_text.rstrip("\n"), "word_class": class_elem.text}
-            )
+        homonyms.append(
+            {"etym_desc": etym_elem.text.rstrip("\n"), "word_class": class_elem.text}
+        )
     return homonyms
 
 
