@@ -44,6 +44,7 @@
 - clean up
     - `$ docker system prune --all`
     - `$ docker ps`
+    - `$ cd ..`
 - back up a copy of letsencrypt files
     - `$ cp -r letsencrypt/ ~`
 - **Go Live**
@@ -70,6 +71,14 @@
     - FYI: apparently NGINX needs to be restarted to pick up the new cert
         - `$ docker compose down`
         - `$ docker compose up -d`
+
+#### Manual Certbot Renew
+- `$ docker exec -it certbot bash`
+- `$ certbot renew --dry-run`
+- `$ certbot renew`
+- `$ exit`
+- `$ cp -r letsencrypt/ ~`
+- `$ cp -r ~/letsencrypt ~/letsencrypt_bak`
 
 ---
 
