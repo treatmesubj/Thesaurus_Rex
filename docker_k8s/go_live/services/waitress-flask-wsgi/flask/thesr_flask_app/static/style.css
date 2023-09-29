@@ -31,9 +31,15 @@ input[type=text] {
     border-radius: 4px;
 }
 
+input[type=checkbox] {
+    cursor: pointer;
+}
+
 input[type=submit] {
     background-color: rgb(135,206,250);
     color: black;
     border-color: white;
     border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.5em;
 }
