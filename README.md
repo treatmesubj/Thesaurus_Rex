@@ -62,7 +62,7 @@ purport (v.)
 ### [thesr.online](https://thesr.online)
 Check out Thesaurus-Rex's [Docker](https://www.docker.com/) (Compose) containerized web experience built with an [NGINX](https://www.nginx.com/) hardened reverse proxy & TLS/SSL encryption container in front of a containerized [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/) web server & [Flask](https://flask.palletsprojects.com/en/2.2.x/) framework Python application.\
 It's running on a [ufw](https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29) firewalled Debian virtual machine in the cloud courtesy of [Linode](https://www.linode.com/).\
-[fail2ban](https://github.com/fail2ban/fail2ban) protects the server from bruteforce attacks.\
+[fail2ban](https://github.com/fail2ban/fail2ban) protects the server from bruteforce attacks. Though, RSA asymetric cryptographic public-encrypt-key/private-decrypt-key pairs are used for administration of the host; OpenSSH server's password authentication is disabled.\
 I bought the [thesr.online](https://thesr.online) domain from [Hover](https://www.hover.com/).\
 The TLS/SSL cryptographic certificate for the [thesr.online](https://thesr.online) domain is validated & signed by the [Let's Encrypt](https://letsencrypt.org/) [open source](https://github.com/letsencrypt/boulder) certificate authority.
 
@@ -70,7 +70,7 @@ The TLS/SSL cryptographic certificate for the [thesr.online](https://thesr.onlin
 
 #### The Internet's Spooky
 [https://thesr.online](https://thesr.online) has been on the internet for about 2 weeks now (5/12/23).\
-Here's a geo-map of thousands of malicious IP addresses that tried to bruteforce guess my server credentials to gain control of my server from just some of the logs.\
+Here's a geo-map of thousands of malicious IP addresses that tried to bruteforce guess my credentials to gain control of my server from just some of the logs.\
 Also, here's a sample of the latest traffic to my server from the logs, showing probably botnets, trying to extract credentials, upload binary data, and exploit old software vulnerabilities.
 
 ![](./images/sshers.png)\
