@@ -85,6 +85,8 @@ def get_syns_ants(word):
         posTabs = sanjay['tuna']['resultsData']['definitionData']['definitions']
     except TypeError:
         return
+    except KeyError:
+        return
 
     homonyms = []
     for tab in posTabs:
