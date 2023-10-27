@@ -4,7 +4,6 @@ import urllib.parse
 import re
 import json
 import random
-from spellchecker import SpellChecker
 import os
 from rich.console import Console
 import argparse
@@ -114,6 +113,14 @@ def get_etymology(word):
     return homonyms
 
 
+def get_spell_check_candidates(word):
+    response = requests.get(f"https://www.merriam-webster.com/dictionary/{word}")
+    soup = BeautifulSoup(response.text, "html.parser")
+    candidate_elems = soup.select("p.spelling-suggestions")
+    candidates = [c.text for c in candidate_elems]
+    return candidates
+
+
 class Word:
     def __init__(self, word, console=None):
         self.spelling = word
@@ -166,11 +173,9 @@ class Word:
                 else:
                     print(f"{{ {homonym['word_class']}: {homonym['definition']} }}")
         else:
-            print(f"Is {self.spelling} a word?")
-            candidates = SpellChecker().candidates(self.spelling)
-            if candidates:
-                candidates.discard(self.spelling)
-                print(f"Did you mean {candidates}?")
+            print("Sorry, no definitions found")
+            candidates = get_spell_check_candidates(self.spelling)
+            print(f"Did you mean {candidates}?")
         print("-" * 80, "\n")
 
     def show_etymology(self):
