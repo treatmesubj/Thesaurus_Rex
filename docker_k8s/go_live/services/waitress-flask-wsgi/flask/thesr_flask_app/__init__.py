@@ -61,7 +61,9 @@ def thesr(request_form):
                 )
         except Exception as e:
             print(e)
+            candidates = get_spell_check_candidates(word_spelling)
             definitions_str = "nothin'"
+            definitions_str = f"nothin'\nDid you mean {candidates}?"
 
     # etymology
     etymology_str = ""
