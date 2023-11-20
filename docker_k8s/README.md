@@ -73,6 +73,7 @@
         - `$ docker compose up -d`
 
 #### Manual Certbot Renew
+- `$ docker container ls`
 - `$ docker exec -it certbot bash`
 - `$ certbot renew --dry-run`
 - `$ certbot renew`
