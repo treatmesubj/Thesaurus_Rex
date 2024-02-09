@@ -27,59 +27,62 @@
         }
     ```
 
-- `$ cd init_TLS`
+- `cd init_TLS`
 - fire up docker containers
-    - `$ docker compose up -d`
+    - `docker compose up -d`
 - check NGINX is all good
-    - `$ curl localhost`
+    - `curl localhost`
     - check that you mounted stuff correctly
 - hop in certbot container and create TLS key/cert
-    - `$ docker exec -it cerbot bash`
-    - `$ certbot certonly --webroot`
+    - `docker exec -it cerbot bash`
+    - `certbot certonly --webroot`
         - webroot: `/letsencrypt`
     - congrats
 
 - bring down the `init_TLS` docker containers
-    - `$ docker compose down`
+    - `docker compose down`
 - clean up
-    - `$ docker system prune --all`
-    - `$ docker ps`
-    - `$ cd ..`
+    - `docker system prune --all`
+    - `docker ps`
+    - `cd ..`
 - back up a copy of letsencrypt files
-    - `$ cp -r letsencrypt/ ~`
+    - `cp -r letsencrypt/ ~`
 - **Go Live**
-    - `$ cd go_live`
-    - `$ docker compose up -d`
+    - `cd go_live`
+    - `docker compose up -d`
 
 ---
 
 - check NGINX logs (official NGINX Docker image symlinks access & error logs to stdout & stderr)
-    - `$ docker logs {your-container-id-here} -f`
+    - `docker logs {your-container-id-here} -f`
 
 - Set Up `certbot`
-    - `$ docker exec -it go_live-certbot-1 bash`
+    - `docker exec -it go_live-certbot-1 bash`
     - verify `certbot` works
-        - `$ certbot renew --dry-run`
+        - `certbot renew --dry-run`
     - add a cron job for certbot to renew cert before expiry
-        - `$ docker exec -it go_live-certbot-1 bash`
-        - `$ apt update && apt install cron`
-        - `$ cron` (background)
-        - `$ apt install vim`
-        - `$ export EDITOR='vim'`
-        - `$ crontab /etc/cron.d/certbot`
-        - `$ crontab -l`
+        - `docker exec -it go_live-certbot-1 bash`
+        - `apt update && apt install cron`
+        - `cron` (background)
+        - `apt install vim`
+        - `export EDITOR='vim'`
+        - `crontab /etc/cron.d/certbot`
+        - `crontab -l`
     - FYI: apparently NGINX needs to be restarted to pick up the new cert
-        - `$ docker compose down`
-        - `$ docker compose up -d`
+        - `docker compose down`
+        - `docker compose up -d`
 
 #### Manual Certbot Renew
-- `$ docker container ls`
-- `$ docker exec -it certbot bash`
-- `$ certbot renew --dry-run`
-- `$ certbot renew`
-- `$ exit`
-- `$ cp -r letsencrypt/ ~`
-- `$ cp -r ~/letsencrypt ~/letsencrypt_bak`
+- `docker container ls`
+- `docker exec -it certbot bash`
+- `certbot renew --dry-run`
+- `certbot renew`
+- `exit`
+- `cp -r ~/letsencrypt ~/letsencrypt_bak`
+- `cp -r Thesaurus_Rex/docker_k8s/letsencrypt/ ~`
+- `cd Thesaurus_Rex/docker_k8s/go_live`
+- `docker compose down`
+- `docker compose up -d`
 
 ---
 
