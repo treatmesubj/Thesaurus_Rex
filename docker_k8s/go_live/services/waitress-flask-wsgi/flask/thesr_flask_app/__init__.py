@@ -8,7 +8,8 @@ from flask import (
     redirect,
     request,
 )
-#from waitress import serve
+
+# from waitress import serve
 from thesr.thesr import *
 
 # initialise app
@@ -74,8 +75,10 @@ def thesr(request_form):
                 thesr_word.etymology is not None and len(thesr_word.etymology) > 0
             ), f"no etymonline homonyms for {word_spelling}"
             for homonym in thesr_word.etymology:
-                etymology_str += (
-                    f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}\n"
+                etymology_str += "{word_class}:\n    {etym_desc}\n{dashes}\n".format(
+                    word_class=homonym["word_class"],
+                    etym_desc=homonym["etym_desc"].replace("\n", "\n    "),
+                    dashes="-" * 20,
                 )
         except Exception as e:
             print(e)
@@ -107,4 +110,4 @@ def thesr(request_form):
 
 if __name__ == "__main__":
     app.run()
-    #serve(app, host='0.0.0.0', port=8000, url_scheme='https')
+    # serve(app, host='0.0.0.0', port=8000, url_scheme='https')

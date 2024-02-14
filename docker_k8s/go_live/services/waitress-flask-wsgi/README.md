@@ -1,6 +1,7 @@
 - [Flask package setup](https://flask.palletsprojects.com/en/2.2.x/patterns/packages/)
 
 I had to create a new Python venv just for flask because I had wack dependency issues
+- [my py venv notes](https://github.com/treatmesubj/Tips-Tricks/blob/master/configs/Python/venv)
 
 ## Flask Dev
 - $ `cd ./flask`
