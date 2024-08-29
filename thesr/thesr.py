@@ -74,38 +74,47 @@ def get_syns_ants(word):
         "html.parser",
     )
     script_elem = soup.select_one("script#preloaded-state")
-    script = re.search(r"window.__PRELOADED_STATE__ = ({.*})", script_elem.text).group(1)
+    script = re.search(r"window.__PRELOADED_STATE__ = ({.*})", script_elem.text).group(
+        1
+    )
     # clean JSON
     script = script.replace(":undefined", ':"undefined"')
     script = script.replace(":null", ':"null"')
 
     sanjay = json.loads(script)
 
+    homonyms = []
     try:
-        posTabs = sanjay['tuna']['resultsData']['definitionData']['definitions']
+        posTabs = sanjay["lexigraph"]["thesaurusData"]["data"]["slugs"][0]["entries"][
+            -1
+        ]["partOfSpeechGroups"]
+        for pos in posTabs:
+            for defi in pos["shortDefinitions"]:
+                homonyms.append(
+                    {
+                        "word_class": pos["partOfSpeech"],
+                        "definition": defi["shortDef"],
+                        "synonyms": [s["targetWord"] for s in defi["synonyms"]],
+                        "antonyms": [s["targetWord"] for s in defi["antonyms"]],
+                    }
+                )
+        # .lexigraph.thesaurusData.data.slugs[0].entries[-1].partOfSpeechGroups[0].shortDefinitions[0].synonyms[1].targetSlug
     except TypeError:
         return
     except KeyError:
         return
-
-    homonyms = []
-    for tab in posTabs:
-        homonyms.append(
-            {
-                "word_class": tab["pos"],
-                "definition": tab["definition"],
-                "synonyms": [s["term"] for s in tab["synonyms"]],
-                "antonyms": [s["term"] for s in tab["antonyms"]],
-            }
-        )
     return homonyms
 
 
 def get_etymology(word):
     response = requests.get(f"https://www.etymonline.com/word/{word}")
     soup = BeautifulSoup(response.text, "html.parser")
-    class_elems = soup.select("div[class^='ant'] > div[class^='word'] [class^='word__name']")
-    etym_elems = soup.select("div[class^='ant'] > div[class^='word'] [class^='word__def']")
+    class_elems = soup.select(
+        "div[class^='ant'] > div[class^='word'] [class^='word__name']"
+    )
+    etym_elems = soup.select(
+        "div[class^='ant'] > div[class^='word'] [class^='word__def']"
+    )
     zipped_elems = zip(class_elems, etym_elems)
     homonyms = []
     for class_elem, etym_elem in zipped_elems:
