@@ -99,9 +99,7 @@ def get_syns_ants(word):
                     }
                 )
         # .lexigraph.thesaurusData.data.slugs[0].entries[-1].partOfSpeechGroups[0].shortDefinitions[0].synonyms[1].targetSlug
-    except TypeError:
-        return
-    except KeyError:
+    except Exception:
         return
     return homonyms
 
