@@ -152,7 +152,7 @@ nodes:
 kind create cluster --name local-dev --config kind_config.yaml
 
 kind get clusters
-kind get nodes --name local-dev
+kubectl get nodes --name local-dev
 kubectl cluster-info
 kubectl get all
 # kubectl proxy  # to expose cluster to localhost
@@ -167,14 +167,10 @@ Docker build images
 ```bash
 docker images
 
-cd ~/Thesaurus_Rex/docker_k8s/go_live/services/nginx-reverse-proxy/
-docker build -t nginx-reverse-proxy:latest .
-
-cd ~/Thesaurus_Rex/docker_k8s/go_live/services/certbot/
-docker build -t certbot:latest .
-
-cd ~/Thesaurus_Rex/docker_k8s/go_live/services/waitress-flask-wsgi/
-docker build -t waitress-flask-wsgi:latest .
+cd ~/Thesaurus_Rex/docker_k8s/go_live/services/
+docker build -t nginx-reverse-proxy:latest ./nginx-reverse-proxy/
+docker build -t certbot:latest ./certbot/
+docker build -t waitress-flask-wsgi:latest ./waitress-flask-wsgi/
 
 docker images
 ```
