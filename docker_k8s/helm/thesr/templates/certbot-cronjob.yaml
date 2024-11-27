@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: CronJob
+metadata:
+  name: certbot
+spec:
+  schedule: "* * * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            network/go-live-default: "true"
+            service: certbot
+        spec:
+          containers:
+            - image: certbot
+              name: certbot
+              imagePullPolicy: Never
+              command:
+                - /bin/sh
+                - -c
+                - date; echo Hello from the Kubernetes cluster
+              stdin: true
+              tty: true
+              volumeMounts:
+                - mountPath: {{ .Values.mounts.letsencrypt.container.root }}
+                  name: certbot-hostpathroot
+                - mountPath: {{ .Values.mounts.letsencrypt.container.certs }}
+                  name: certbot-hostpathcerts
+          hostname: certbot
+          restartPolicy: OnFailure
+          volumes:
+            - hostPath:
+                path: {{ .Values.mounts.letsencrypt.host.root }}
+                type: Directory
+              name: certbot-hostpathroot
+            - hostPath:
+                path: {{ .Values.mounts.letsencrypt.host.certs }}
+                type: Directory
+              name: certbot-hostpathcerts
+status: {}
+
