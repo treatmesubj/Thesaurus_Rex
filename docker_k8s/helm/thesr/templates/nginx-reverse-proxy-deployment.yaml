@@ -1,29 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: ./kompose convert -f docker-compose.yml --volumes hostPath -c
-    kompose.version: 1.29.0 (997957870)
   creationTimestamp: null
   labels:
-    io.kompose.service: nginx-reverse-proxy
+    service: nginx-reverse-proxy
   name: nginx-reverse-proxy
 spec:
   replicas: 2
   selector:
     matchLabels:
-      io.kompose.service: nginx-reverse-proxy
+      service: nginx-reverse-proxy
   strategy:
     type: Recreate
   template:
     metadata:
-      annotations:
-        kompose.cmd: ./kompose convert -f docker-compose.yml --volumes hostPath -c
-        kompose.version: 1.29.0 (997957870)
       creationTimestamp: null
       labels:
-        io.kompose.network/go-live-default: "true"
-        io.kompose.service: nginx-reverse-proxy
+        network/go-live-default: "true"
+        service: nginx-reverse-proxy
     spec:
       containers:
         - image: nginx-reverse-proxy
