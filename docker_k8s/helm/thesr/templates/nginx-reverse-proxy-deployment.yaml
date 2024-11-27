@@ -28,19 +28,19 @@ spec:
             - containerPort: 80
           resources: {}
           volumeMounts:
-            - mountPath: /letsencrypt/
-              name: nginx-reverse-proxy-hostpath0
-            - mountPath: /etc/letsencrypt/
-              name: nginx-reverse-proxy-hostpath1
+            - mountPath: {{ .Values.mounts.letsencrypt.container.root }}
+              name: nginx-reverse-proxy-hostpathroot
+            - mountPath: {{ .Values.mounts.letsencrypt.container.certs }}
+              name: nginx-reverse-proxy-hostpathcerts
       hostname: nginx-reverse-proxy
       restartPolicy: Always
       volumes:
         - hostPath:
-            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
+            path: {{ .Values.mounts.letsencrypt.host.root }}
             type: Directory
-          name: nginx-reverse-proxy-hostpath0
+          name: nginx-reverse-proxy-hostpathroot
         - hostPath:
-            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/certs/
+            path: {{ .Values.mounts.letsencrypt.host.certs }}
             type: Directory
-          name: nginx-reverse-proxy-hostpath1
+          name: nginx-reverse-proxy-hostpathcerts
 status: {}

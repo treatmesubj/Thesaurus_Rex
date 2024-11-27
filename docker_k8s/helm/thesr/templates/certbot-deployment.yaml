@@ -29,19 +29,19 @@ spec:
           stdin: true
           tty: true
           volumeMounts:
-            - mountPath: /letsencrypt/
-              name: certbot-hostpath0
-            - mountPath: /etc/letsencrypt/
-              name: certbot-hostpath1
+            - mountPath: {{ .Values.mounts.letsencrypt.container.root }}
+              name: certbot-hostpathroot
+            - mountPath: {{ .Values.mounts.letsencrypt.container.certs }}
+              name: certbot-hostpathcerts
       hostname: certbot
       restartPolicy: Always
       volumes:
         - hostPath:
-            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
+            path: {{ .Values.mounts.letsencrypt.host.root }}
             type: Directory
-          name: certbot-hostpath0
+          name: certbot-hostpathroot
         - hostPath:
-            path: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/certs/
+            path: {{ .Values.mounts.letsencrypt.host.certs }}
             type: Directory
-          name: certbot-hostpath1
+          name: certbot-hostpathcerts
 status: {}
