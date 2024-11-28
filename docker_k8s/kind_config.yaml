@@ -3,7 +3,7 @@ kind: Cluster
 nodes:
   - role: control-plane
     extraMounts:
-      - hostPath: /mnt/c/Users/JohnHupperts/Documents/personal/Thesaurus_Rex/docker_k8s/letsencrypt
+      - hostPath: /home/rock/Documents/Thesaurus_Rex/docker_k8s/letsencrypt
         containerPath: /home/root/letsencrypt/
     extraPortMappings:
     - containerPort: 80

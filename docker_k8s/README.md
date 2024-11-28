@@ -91,6 +91,7 @@
 - [Install Kompose](https://github.com/kubernetes/kompose)
 - [Install Docker](https://docs.docker.com/engine/install/debian/)
     - [Docker user group](https://docs.docker.com/engine/install/linux-postinstall/)
+        - may also need `sudo chmod 666 /var/run/docker.sock`
 - [Install Kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
     - easiest to first [install Go](https://go.dev/doc/install)
         - put Go bins on `$PATH`; [my bashrc](https://github.com/treatmesubj/Tips-Tricks/blob/master/configs/Linux/Bash/.bashrc_john.sh)

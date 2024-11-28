@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: certbot
 spec:
-  schedule: "* * * * *"
+  schedule: "0 0 15 * *"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
   jobTemplate:
@@ -21,7 +21,7 @@ spec:
               command:
                 - /bin/sh
                 - -c
-                - date; echo Hello from the Kubernetes cluster
+                - certbot renew --dry-run
               stdin: true
               tty: true
               volumeMounts:
@@ -41,4 +41,3 @@ spec:
                 type: Directory
               name: certbot-hostpathcerts
 status: {}
-
