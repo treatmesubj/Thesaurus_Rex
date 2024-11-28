@@ -1,3 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: waitress-flask-wsgi
+  name: waitress-flask-wsgi
+spec:
+  ports:
+    - name: "8000"
+      port: 8000
+      targetPort: 8000
+  selector:
+    service: waitress-flask-wsgi
+status:
+  loadBalancer: {}
+
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
