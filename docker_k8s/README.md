@@ -165,7 +165,9 @@ Allow kubectl binary to port-forward K8s to localhost low ports
 sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/bin/kubectl
 ```
 
-Docker build images
+Docker build images;\
+Kind cluster/control-plane host OS does not have Docker, so can't pull images;\
+you must pull/build images yourself (on your own host OS) & load those images into Kind
 ```bash
 docker images
 
