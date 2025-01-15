@@ -157,6 +157,7 @@ kubectl get nodes --name local-dev
 kubectl cluster-info
 kubectl get all
 # kubectl proxy  # to expose cluster to localhost
+# kind delete cluster --name local-dev
 ```
 
 Allow kubectl binary to port-forward K8s to localhost low ports
