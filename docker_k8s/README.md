@@ -151,6 +151,7 @@ nodes:
 
 ```bash
 kind create cluster --name local-dev --config kind_config.yaml
+# minikube start && minikube mount /home/rock/Documents/Thesaurus_Rex/docker_k8s/letsencrypt:/home/root/letsencrypt//home/root/letsencrypt/
 
 kind get clusters
 kubectl get nodes --name local-dev
@@ -184,6 +185,7 @@ Kind load images into cluster local registry
 kind load docker-image nginx-reverse-proxy:latest --name local-dev
 kind load docker-image certbot:latest --name local-dev
 kind load docker-image waitress-flask-wsgi:latest --name local-dev
+# minikube cache add certbot
 ```
 
 Helm install charts
@@ -193,4 +195,12 @@ helm upgrade --install thesr ./helm/thesr/ --dry-run
 kubectl get all
 kubectl exec --stdin --tty nginx-reverse-proxy-56877cb6cb-4df7x -- /bin/bash
 # curl -k https://localhost
+```
+
+---
+certbot testing
+```bash
+kubectl create job --from=cronjob/certbot certbot-test
+kubectl exec -it certbot-<pod> -- bash
+certbot renew --dry-run
 ```
