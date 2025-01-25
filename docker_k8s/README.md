@@ -204,3 +204,14 @@ kubectl create job --from=cronjob/certbot certbot-test
 kubectl exec -it certbot-<pod> -- bash
 certbot renew --dry-run
 ```
+
+---
+minkube DNS problems
+```bash
+# DNS via home router/modem is pretty shaky
+# coredns i/o timeout
+# even the minikube node/control-plane struggles
+minikube ssh  # into control plane
+sudo vi /etc/resolv.conf
+# nameserver 8.8.8.8
+```
