@@ -186,6 +186,8 @@ kind load docker-image nginx-reverse-proxy:latest --name local-dev
 kind load docker-image certbot:latest --name local-dev
 kind load docker-image waitress-flask-wsgi:latest --name local-dev
 # minikube image load certbot
+# minikube image load nginx-reverse-proxy
+# minikube image load waitress-flask-wsgi
 ```
 
 Helm install charts
