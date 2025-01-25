@@ -151,7 +151,7 @@ nodes:
 
 ```bash
 kind create cluster --name local-dev --config kind_config.yaml
-# minikube start && minikube mount ./letsencrypt:/home/root/letsencrypt/
+# minikube start --mount-string ./letsencrypt:/home/root/letsencrypt/ --mount
 
 kind get clusters
 kubectl get nodes --name local-dev
