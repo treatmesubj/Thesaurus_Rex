@@ -217,3 +217,11 @@ minikube ssh  # into control plane
 sudo vi /etc/resolv.conf
 # nameserver 8.8.8.8
 ```
+
+---
+app testing
+```
+bash
+k port-forward svc/nginx-reverse-proxy 8080:80
+k port-forward svc/nginx-reverse-proxy 8080:443
+```
