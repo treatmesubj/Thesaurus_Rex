@@ -220,8 +220,21 @@ sudo vi /etc/resolv.conf
 
 ---
 app testing
-```
-bash
+```bash
+# checking application via node
+minikube service nginx-reverse-proxy
+# |-----------|---------------------|-------------|---------------------------|
+# | NAMESPACE |        NAME         | TARGET PORT |            URL            |
+# |-----------|---------------------|-------------|---------------------------|
+# | default   | nginx-reverse-proxy | https/443   | http://192.168.49.2:30111 |
+# |           |                     | http/80     | http://192.168.49.2:30112 |
+# |-----------|---------------------|-------------|---------------------------|
+
+# checking pods directly
+k port-forward svc/waitress-flask-wsgi 8080:8000
+# http://127.0.0.1:8080
 k port-forward svc/nginx-reverse-proxy 8080:80
+# http://127.0.0.1:8080
 k port-forward svc/nginx-reverse-proxy 8080:443
+# https://127.0.0.1:8080
 ```
