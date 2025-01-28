@@ -6,6 +6,7 @@ cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 k cluster-info
 
 # mount volumes to node
+create an sc, local pv, and pvc
 
 # nginx ingress controller
 # https://medium.com/@alesson.viana/installing-the-nginx-ingress-controller-on-k3s-df2c68cae3c8

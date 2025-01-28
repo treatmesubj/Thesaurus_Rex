@@ -1,0 +1,107 @@
+---
+
+# storage class
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+provisioner: kubernetes.io/no-provisioner
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+
+---
+
+# local volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: example-vol
+  labels:
+    coolvol: yep
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  local:
+    path: /home/rock/Documents/Thesaurus_Rex/docker_k8s/test-pv
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+              - thinkpad
+
+---
+
+# volume claim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: example-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      coolvol: yep
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+spec:
+  containers:
+    - name: volume-test
+      image: nginx:stable-alpine
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - name: vol
+          mountPath: /data
+      ports:
+        - containerPort: 80
+  volumes:
+    - name: vol
+      persistentVolumeClaim:
+        claimName: example-pvc
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                  - thinkpad
+
+---
+
+# hostPath is dangerous
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: hostpath-example
+# spec:
+#   containers:
+#   - name: hostpath-container
+#     image: nginx
+#     volumeMounts:
+#     - name: hostpath-volume
+#       mountPath: /var/www/html
+#   volumes:
+#   - name: hostpath-volume
+#     hostPath:
+#       path: /var/data
+#       type: Directory
