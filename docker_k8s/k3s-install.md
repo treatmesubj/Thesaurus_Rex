@@ -8,6 +8,13 @@ k cluster-info
 # mount volumes to node
 create an sc, local pv, and pvc
 
+# loadbalancer access
+k -n kube-system get svc traefik
+
 # nginx ingress controller
 # https://medium.com/@alesson.viana/installing-the-nginx-ingress-controller-on-k3s-df2c68cae3c8
+
+# uninstall
+# https://thriveread.com/uninstall-and-remove-k3s-completely/
 ```
+

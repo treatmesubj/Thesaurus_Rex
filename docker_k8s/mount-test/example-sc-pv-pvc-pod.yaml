@@ -27,7 +27,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /home/rock/Documents/Thesaurus_Rex/docker_k8s/test-pv
+    path: /home/rock/Documents/Thesaurus_Rex/docker_k8s/mount-test/test-pv
   nodeAffinity:
     required:
       nodeSelectorTerms:

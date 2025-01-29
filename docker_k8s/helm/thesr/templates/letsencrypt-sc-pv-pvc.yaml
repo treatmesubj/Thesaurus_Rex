@@ -1,0 +1,57 @@
+---
+
+# storage class
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+provisioner: kubernetes.io/no-provisioner
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+
+---
+
+# local volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: letsencrypt-vol
+  labels:
+    lets: yep
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  local:
+    path: /home/rock/Documents/Thesaurus_Rex/docker_k8s/letsencrypt
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+              - thinkpad
+
+---
+
+# volume claim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: letsencrypt-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      lets: yep

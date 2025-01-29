@@ -1,8 +1,0 @@
-mounts:
-  letsencrypt:
-    host:
-      root: /home/root/letsencrypt/
-      certs: /home/root/letsencrypt/certs/
-    container:
-      root: /letsencrypt/
-      certs: /etc/letsencrypt/

@@ -1,13 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: go-live-default
+  name: go-live
 spec:
   ingress:
     - from:
-        - podSelector:
-            matchLabels:
-              network/go-live-default: "true"
+      - podSelector:
+          matchLabels:
+            network/go-live: "true"
   podSelector:
     matchLabels:
-      network/go-live-default: "true"
+      network/go-live: "true"

@@ -35,7 +35,7 @@ spec:
       template:
         metadata:
           labels:
-            network/go-live-default: "true"
+            network/go-live: "true"
             service: certbot
         spec:
           containers:
@@ -53,19 +53,23 @@ spec:
                   containerPort: 80
                   protocol: TCP
               volumeMounts:
-                - mountPath: {{ .Values.mounts.letsencrypt.container.root }}
-                  name: certbot-hostpathroot
-                - mountPath: {{ .Values.mounts.letsencrypt.container.certs }}
-                  name: certbot-hostpathcerts
+                - name: letsencrypt-vol
+                  mountPath: /letsencrypt
+                - name: letsencrypt-vol
+                  mountPath: /etc/letsencrypt
           hostname: certbot
           restartPolicy: OnFailure
           volumes:
-            - hostPath:
-                path: {{ .Values.mounts.letsencrypt.host.root }}
-                type: Directory
-              name: certbot-hostpathroot
-            - hostPath:
-                path: {{ .Values.mounts.letsencrypt.host.certs }}
-                type: Directory
-              name: certbot-hostpathcerts
+            - name: letsencrypt-vol
+              persistentVolumeClaim:
+                claimName: letsencrypt-pvc
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: kubernetes.io/hostname
+                        operator: In
+                        values:
+                          - thinkpad
 status: {}

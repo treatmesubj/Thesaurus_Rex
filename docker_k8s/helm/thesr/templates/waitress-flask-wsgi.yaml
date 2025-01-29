@@ -32,7 +32,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        network/go-live-default: "true"
+        network/go-live: "true"
         service: waitress-flask-wsgi
     spec:
       containers:
