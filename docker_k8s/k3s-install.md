@@ -1,6 +1,7 @@
 ```bash
 # https://loganmarchione.com/2022/03/k3s-single-node-cluster-for-noobs/
-curl -sfL https://get.k3s.io |  sh -s - --disable traefik --write-kubeconfig-mode 644
+# no traefik
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --disable=traefik" K3S_KUBECONFIG_MODE="644" sh -s -
 sudo systemctl status k3s.service
 cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 k cluster-info
