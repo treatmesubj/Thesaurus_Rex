@@ -36,8 +36,7 @@ spec:
   selector:
     matchLabels:
       service: nginx-reverse-proxy
-  strategy:
-    type: Recreate
+  strategy: {}
   template:
     metadata:
       labels:

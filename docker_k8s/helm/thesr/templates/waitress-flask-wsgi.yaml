@@ -30,7 +30,6 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         network/go-live: "true"
         service: waitress-flask-wsgi

@@ -16,6 +16,10 @@ docker save nginx-reverse-proxy | sudo k3s ctr images import -
 docker save waitress-flask-wsgi | sudo k3s ctr images import -
 sudo k3s ctr images ls
 
+# nginx pod mount probs
+# cannot load certificate "/etc/letsencrypt/live/thesr.online/fullchain.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/letsencrypt/live/thesr.online/fullchain.pem, r) error:10000080:BIO routines::no such file)
+
+
 # nginx ingress controller
 # https://medium.com/@alesson.viana/installing-the-nginx-ingress-controller-on-k3s-df2c68cae3c8
 
