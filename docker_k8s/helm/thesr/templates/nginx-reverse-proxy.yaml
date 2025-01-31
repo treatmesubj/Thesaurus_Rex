@@ -53,7 +53,7 @@ spec:
           resources: {}
           volumeMounts:
             - name: letsencrypt-vol
-              mountPath: /letsencrypt
+              mountPath: /letsencrypt/certs
             - name: letsencrypt-vol
               mountPath: /etc/letsencrypt
       hostname: nginx-reverse-proxy
