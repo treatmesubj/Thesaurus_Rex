@@ -3,7 +3,7 @@ FROM alpine:latest
 ### Environment variables
 ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US.UTF-8' \
-    TERM='xterm' 
+    TERM='xterm'
 
 ### Install Application
 RUN set -x && \
