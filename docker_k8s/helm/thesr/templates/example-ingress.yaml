@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-ingress
+  # namespace: ingress-nginx
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              # name: nginx-reverse-proxy
+              # port:
+              #   number: 80
+              name: waitress-flask-wsgi
+              port:
+                number: 8000
