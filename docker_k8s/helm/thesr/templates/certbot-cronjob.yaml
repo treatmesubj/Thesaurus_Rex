@@ -58,6 +58,10 @@ spec:
                 - name: letsencrypt-vol
                   mountPath: /etc/letsencrypt
           hostname: certbot
+          dnsConfig:
+            options:
+              - name: ndots
+                value: "1"
           restartPolicy: OnFailure
           volumes:
             - name: letsencrypt-vol

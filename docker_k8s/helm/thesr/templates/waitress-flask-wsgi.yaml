@@ -42,5 +42,9 @@ spec:
             - containerPort: 8000
           resources: {}
       hostname: waitress-flask-wsgi
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "1"
       restartPolicy: Always
 status: {}
