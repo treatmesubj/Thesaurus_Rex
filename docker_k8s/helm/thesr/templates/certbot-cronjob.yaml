@@ -30,6 +30,7 @@ spec:
   failedJobsHistoryLimit: 1
   jobTemplate:
     spec:
+      backoffLimit: 1
       completions: 1
       template:
         metadata:
@@ -43,7 +44,7 @@ spec:
               command:
                 - /bin/sh
                 - -c
-                - sleep 9999
+                - certbot renew
               stdin: true
               tty: true
               ports:
@@ -60,7 +61,7 @@ spec:
             options:
               - name: ndots
                 value: "1"
-          restartPolicy: OnFailure
+          restartPolicy: Never
           volumes:
             - name: letsencrypt-vol
               persistentVolumeClaim:
