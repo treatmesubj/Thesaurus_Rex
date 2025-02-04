@@ -16,6 +16,7 @@ spec:
       protocol: TCP
   selector:
     service: certbot
+  type: ClusterIP
 
 ---
 

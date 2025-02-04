@@ -20,7 +20,7 @@ spec:
       targetPort: 80
   selector:
     service: nginx-reverse-proxy
-  type: ClusterIP
+  type: LoadBalancer
 
 ---
 
@@ -76,19 +76,24 @@ spec:
 
 ---
 
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: test-ingress
-spec:
-  ingressClassName: nginx
-  rules:
-  - http:
-      paths:
-        - backend:
-            service:
-              name: nginx-reverse-proxy
-              port:
-                number: 80
-          path: /
-          pathType: Prefix
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: test-ingress
+# spec:
+#   ingressClassName: nginx
+#   tls:
+#     - hosts:
+#       - thesr.online
+#     secretName: blah
+#   rules:
+#   - host: thesr.online
+#     http:
+#       paths:
+#         - backend:
+#             service:
+#               name: nginx-reverse-proxy
+#               port:
+#                 number: 80
+#           path: /
+#           pathType: Prefix

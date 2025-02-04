@@ -14,6 +14,7 @@ docker save certbot > certbot.tar
 sudo k3s ctr images import certbot.tar
 docker save nginx-reverse-proxy | sudo k3s ctr images import -
 docker save waitress-flask-wsgi | sudo k3s ctr images import -
+docker save certbot | sudo k3s ctr images import -
 sudo k3s ctr images ls
 
 # install my helm chart
@@ -24,10 +25,10 @@ k get svc nginx-reverse-proxy  # ports
 # nginx ingress controller
 # https://medium.com/@alesson.viana/installing-the-nginx-ingress-controller-on-k3s-df2c68cae3c8
 # https://kubernetes.github.io/ingress-nginx/deploy/
-helm upgrade --install ingress-nginx ingress-nginx \
-  --repo https://kubernetes.github.io/ingress-nginx \
-  --namespace ingress-nginx --create-namespace
-kubectl get service --namespace ingress-nginx ingress-nginx-controller --output wide --watch
+# helm upgrade --install ingress-nginx ingress-nginx \
+#   --repo https://kubernetes.github.io/ingress-nginx \
+#   --namespace ingress-nginx --create-namespace
+# kubectl get service --namespace ingress-nginx ingress-nginx-controller --output wide --watch
 
 # stop everything
 helm uninstall thesr
@@ -41,4 +42,3 @@ cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 # uninstall
 # https://thriveread.com/uninstall-and-remove-k3s-completely/
 ```
-
