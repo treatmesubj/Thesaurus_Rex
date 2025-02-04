@@ -5,6 +5,10 @@ metadata:
     service: nginx-reverse-proxy
   name: nginx-reverse-proxy
 spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
   ports:
     - name: https
       protocol: TCP
@@ -16,8 +20,7 @@ spec:
       targetPort: 80
   selector:
     service: nginx-reverse-proxy
-status:
-  loadBalancer: {}
+  type: ClusterIP
 
 ---
 
@@ -36,7 +39,6 @@ spec:
   template:
     metadata:
       labels:
-        network/go-live: "true"
         service: nginx-reverse-proxy
     spec:
       containers:
@@ -71,4 +73,22 @@ spec:
                     operator: In
                     values:
                       - thinkpad
-status: {}
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+        - backend:
+            service:
+              name: nginx-reverse-proxy
+              port:
+                number: 80
+          path: /
+          pathType: Prefix

@@ -20,7 +20,6 @@ sudo k3s ctr images ls
 helm upgrade --install thesr ./helm/thesr/ --dry-run
 k get node -o wide  # internal-ip
 k get svc nginx-reverse-proxy  # ports
-curl http://192.168.1.47:30112
 
 # nginx ingress controller
 # https://medium.com/@alesson.viana/installing-the-nginx-ingress-controller-on-k3s-df2c68cae3c8
@@ -30,11 +29,14 @@ helm upgrade --install ingress-nginx ingress-nginx \
   --namespace ingress-nginx --create-namespace
 kubectl get service --namespace ingress-nginx ingress-nginx-controller --output wide --watch
 
-
 # stop everything
 helm uninstall thesr
 /usr/local/bin/k3s-killall.sh
+sudo rm -rf /var/lib/rancher/k3s
 
+# restart
+sudo systemctl restart k3s
+cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 
 # uninstall
 # https://thriveread.com/uninstall-and-remove-k3s-completely/

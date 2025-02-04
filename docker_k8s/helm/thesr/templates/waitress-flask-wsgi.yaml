@@ -11,8 +11,6 @@ spec:
       targetPort: 8000
   selector:
     service: waitress-flask-wsgi
-status:
-  loadBalancer: {}
 
 ---
 
@@ -31,7 +29,6 @@ spec:
   template:
     metadata:
       labels:
-        network/go-live: "true"
         service: waitress-flask-wsgi
     spec:
       containers:
@@ -47,4 +44,3 @@ spec:
           - name: ndots
             value: "1"
       restartPolicy: Always
-status: {}

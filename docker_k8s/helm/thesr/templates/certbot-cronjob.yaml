@@ -16,8 +16,6 @@ spec:
       protocol: TCP
   selector:
     service: certbot
-status:
-  loadBalancer: {}
 
 ---
 
@@ -35,7 +33,6 @@ spec:
       template:
         metadata:
           labels:
-            network/go-live: "true"
             service: certbot
         spec:
           containers:
@@ -76,4 +73,3 @@ spec:
                         operator: In
                         values:
                           - thinkpad
-status: {}
