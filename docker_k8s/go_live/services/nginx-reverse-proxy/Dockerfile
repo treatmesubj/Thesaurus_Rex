@@ -8,7 +8,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 RUN mkdir /etc/nginx/sites-available
 RUN mkdir /etc/nginx/sites-enabled
 COPY ./nginx/ /etc/nginx
-RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default 
+RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 EXPOSE 443
 EXPOSE 80
