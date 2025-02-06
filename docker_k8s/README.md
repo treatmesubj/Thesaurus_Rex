@@ -92,10 +92,6 @@
 - [Install Docker](https://docs.docker.com/engine/install/debian/)
     - [Docker user group](https://docs.docker.com/engine/install/linux-postinstall/)
         - may also need `sudo chmod 666 /var/run/docker.sock`
-- [Install Kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
-    - easiest to first [install Go](https://go.dev/doc/install)
-        - put Go bins on `$PATH`; [my bashrc](https://github.com/treatmesubj/Tips-Tricks/blob/master/configs/Linux/Bash/.bashrc_john.sh)
-    - then, `go install sigs.k8s.io/kind@v0.20.0`
 - [Install Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 - [Install Helm](https://helm.sh/docs/intro/install/)
 
@@ -118,76 +114,32 @@ mkdir helm
 mv ./go_live/docker_compose/ ./helm/thesr/
 rm kompose
 # add `imagePullPolicy: Never` to each of ./helm/thesr/templates/*deployment.yaml
-# per https://kind.sigs.k8s.io/docs/user/quick-start/#loading-an-image-into-your-cluster
 # so k8s doesn't try to pull images from external registries
-#
-# ensure volume paths are correct in deployment templates
 ```
 
-Kind cluster setup
-- Kind (K8s in Docker) runs the K8s node/host as a Docker container itself, so to mount local directories in the pods, we need to first mount it in the Kind node, from which it will be mounted into the pods
-- Also for Kind, `extraPortMappings` allow the local host to make requests to an Ingress controller over ports 80/443; [Kind Ingress docs](https://kind.sigs.k8s.io/docs/user/ingress/)
-- Create `kind_config.yaml` with below contents
-```yaml
-apiVersion: kind.x-k8s.io/v1alpha4
-kind: Cluster
-nodes:
-  - role: control-plane
-    extraMounts:
-      - hostPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
-        containerPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
-    extraPortMappings:
-    - containerPort: 80
-      hostPort: 80
-      protocol: TCP
-    - containerPort: 443
-      hostPort: 443
-      protocol: TCP
-#  - role: worker
-#    extraMounts:
-#      - hostPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
-#        containerPath: /mnt/c/Users/JohnHupperts/Documents/Programming_Projects/Thesaurus_Rex/docker_k8s/letsencrypt/
-```
-
+Install k3s
 ```bash
-kind create cluster --name local-dev --config kind_config.yaml
-# minikube start --mount-string ./letsencrypt:/home/root/letsencrypt/ --mount
-
-kind get clusters
-kubectl get nodes --name local-dev
-kubectl cluster-info
-kubectl get all
-# kubectl proxy  # to expose cluster to localhost
-# kind delete cluster --name local-dev
+# no traefik
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --disable=traefik" K3S_KUBECONFIG_MODE="644" sh -s -
+sudo systemctl status k3s.service
+cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+k cluster-info
 ```
 
-Allow kubectl binary to port-forward K8s to localhost low ports
+Build images
 ```bash
-sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/bin/kubectl
+docker build ./go_live/services/certbot/ -t certbot
+docker build ./go_live/services/nginx-reverse-proxy/ -t nginx-reverse-proxy
+docker build ./go_live/services/waitress-flask-wsgi/ -t waitress-flask-wsgi
 ```
 
-Docker build images;\
-Kind cluster/control-plane host OS does not have Docker, so can't pull images;\
-you must pull/build images yourself (on your own host OS) & load those images into Kind
+Import images into k3s
 ```bash
-docker images
-
-cd ~/Thesaurus_Rex/docker_k8s/go_live/services/
-docker build -t nginx-reverse-proxy:latest ./nginx-reverse-proxy/
-docker build -t certbot:latest ./certbot/
-docker build -t waitress-flask-wsgi:latest ./waitress-flask-wsgi/
-
-docker images
-```
-
-Kind load images into cluster local registry
-```bash
-kind load docker-image nginx-reverse-proxy:latest --name local-dev
-kind load docker-image certbot:latest --name local-dev
-kind load docker-image waitress-flask-wsgi:latest --name local-dev
-# minikube image load certbot
-# minikube image load nginx-reverse-proxy
-# minikube image load waitress-flask-wsgi
+docker image ls
+docker save nginx-reverse-proxy | sudo k3s ctr images import -
+docker save waitress-flask-wsgi | sudo k3s ctr images import -
+docker save certbot | sudo k3s ctr images import -
+sudo k3s ctr images ls
 ```
 
 Helm install charts
@@ -195,46 +147,38 @@ Helm install charts
 cd ~/Thesaurus_Rex/docker_k8s/
 helm upgrade --install thesr ./helm/thesr/ --dry-run
 kubectl get all
-kubectl exec --stdin --tty nginx-reverse-proxy-56877cb6cb-4df7x -- /bin/bash
-# curl -k https://localhost
+# # nginx ingress controller
+# https://medium.com/@alesson.viana/installing-the-nginx-ingress-controller-on-k3s-df2c68cae3c8
+# https://kubernetes.github.io/ingress-nginx/deploy/
+# helm upgrade --install ingress-nginx ingress-nginx \
+#   --repo https://kubernetes.github.io/ingress-nginx \
+#   --namespace ingress-nginx --create-namespace
+# kubectl get service --namespace ingress-nginx ingress-nginx-controller --output wide --watch
+```
+
+stop everything
+```bash
+helm uninstall thesr
+/usr/local/bin/k3s-killall.sh
+sudo rm -rf /var/lib/rancher/k3s
+```
+
+restart
+```bash
+sudo systemctl restart k3s
+cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+```
+
+uninstall
+```
+https://thriveread.com/uninstall-and-remove-k3s-completely/
 ```
 
 ---
+
 certbot testing
 ```bash
 kubectl create job --from=cronjob/certbot certbot-test
 kubectl exec -it certbot-<pod> -- bash
 certbot renew --dry-run
-```
-
----
-minkube DNS problems
-```bash
-# DNS via home router/modem is pretty shaky
-# coredns i/o timeout
-# even the minikube node/control-plane struggles
-minikube ssh  # into control plane
-sudo vi /etc/resolv.conf
-# nameserver 8.8.8.8
-```
-
----
-app testing
-```bash
-# checking application via node
-minikube service nginx-reverse-proxy
-# |-----------|---------------------|-------------|---------------------------|
-# | NAMESPACE |        NAME         | TARGET PORT |            URL            |
-# |-----------|---------------------|-------------|---------------------------|
-# | default   | nginx-reverse-proxy | https/443   | http://192.168.49.2:30111 |
-# |           |                     | http/80     | http://192.168.49.2:30112 |
-# |-----------|---------------------|-------------|---------------------------|
-
-# checking pods directly
-k port-forward svc/waitress-flask-wsgi 8080:8000
-# http://127.0.0.1:8080
-k port-forward svc/nginx-reverse-proxy 8080:80
-# http://127.0.0.1:8080
-k port-forward svc/nginx-reverse-proxy 8080:443
-# https://127.0.0.1:8080
 ```
