@@ -77,14 +77,18 @@ Also, here's a sample of the latest traffic to my server from the logs, showing 
 ![](./images/nginx_tail.png)
 
 ### [Docker Compose](https://docs.docker.com/compose/) -> [Kubernetes](https://kubernetes.io/)
-Venture capitalists & the media have been slow to catch on to my revolutionary [thesr.online](https://thesr.online), but in anticipation of its imminent virality & demand for scale, I've migrated from Docker Compose to a Kubernetes cluster w/ Helm to orchestrate the deployment of my containerized apps as self-healing pods and auto-scale across nodes.
-
 I first used [Kompose](https://github.com/kubernetes/kompose) to roughly translate my Docker Compose files to K8s resources.\
-Then, I used [Kind](https://kind.sigs.k8s.io/) (K8s in Docker) to run a local cluster to develop and test my project.\
-I used [Helm](https://helm.sh) to deploy the workload to my cluster.
+Then, I used [k3s](https://k3s.io/) to run a local cluster to develop and test my project.\
+I learned, asked, and answered some StackOverflow questions about [Linux network
+interfaces](https://stackoverflow.com/a/79406073/11255791) and more about
+[Linux DNS resolution
+configuration](https://stackoverflow.com/a/79407204/11255791).\
+I used [Helm](https://helm.sh) to deploy the workload to my cluster.\
+My Nginx reverse proxy remains in place as a `Deployment` mounting the
+Letsencrypt certifcates via `PersistentVolumeClaim` and a `LoadBalancer` service routes
+external traffic to Nginx.\
+A `CronJob` attempts to renew my Letsencrypt certificates every 15 days.
 
 See [docker\_k8s/README.md](./docker_k8s/README.md) for the detailed steps.
 
-In reality, this is completely unnecessary and more expensive to host, so I'll continue with Docker Compose approach for now. In the future, I could look into a proper [ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) for K8s, uploading my images to a container registry, proper Persistent Volume Claims (PVCs), and maybe setting up some CI/CD to build the images.
-
-![](./images/k8s_thesr.gif)
+![](./images/k3s-demo.gif)
