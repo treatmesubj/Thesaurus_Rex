@@ -60,7 +60,7 @@ purport (v.)
 
 ## [Thesaurus-Rex Web Server](./docker_k8s)
 ### [thesr.online](https://thesr.online)
-Check out Thesaurus-Rex's [Docker](https://www.docker.com/) (Compose) containerized web experience built with an [NGINX](https://www.nginx.com/) hardened reverse proxy & TLS/SSL encryption container in front of a containerized [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/) web server & [Flask](https://flask.palletsprojects.com/en/2.2.x/) framework Python application.\
+Check out Thesaurus-Rex's ~~[Docker](https://www.docker.com/) (Compose)~~ [Kubernetes](https://kubernetes.io/) containerized web experience built with an [NGINX](https://www.nginx.com/) hardened reverse proxy & TLS/SSL encryption container in front of a containerized [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/) web server & [Flask](https://flask.palletsprojects.com/en/2.2.x/) framework Python application.\
 It's running on a [ufw](https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29) firewalled Debian virtual machine in the cloud courtesy of [Linode](https://www.linode.com/).\
 [fail2ban](https://github.com/fail2ban/fail2ban) protects the server from bruteforce attacks. Though, RSA asymetric cryptographic public-encrypt-key/private-decrypt-key pairs are used for administration of the host; OpenSSH server's password authentication is disabled.\
 I bought the [thesr.online](https://thesr.online) domain from [Hover](https://www.hover.com/).\
