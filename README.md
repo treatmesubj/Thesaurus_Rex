@@ -91,4 +91,6 @@ A `CronJob` attempts to renew my Letsencrypt certificates every 15 days.
 
 See [docker\_k8s/README.md](./docker_k8s/README.md) for the detailed steps.
 
+*Update (02/12/25):* Turns out k8s IPv6 needs some extra configuration, so I've removed the IPv6 DNS AAAA record for `thesr.online` for now.
+
 ![](./images/k3s-demo.gif)
