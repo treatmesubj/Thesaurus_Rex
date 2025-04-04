@@ -108,10 +108,10 @@ def get_etymology(word):
     response = requests.get(f"https://www.etymonline.com/word/{word}")
     soup = BeautifulSoup(response.text, "html.parser")
     class_elems = soup.select(
-        "div[class^='ant'] > div[class^='word'] [class^='word__name']"
+        "section[class^='prose'] [id^='#etymonline']"
     )
     etym_elems = soup.select(
-        "div[class^='ant'] > div[class^='word'] [class^='word__def']"
+        "section[class^='prose'] section"
     )
     zipped_elems = zip(class_elems, etym_elems)
     homonyms = []
