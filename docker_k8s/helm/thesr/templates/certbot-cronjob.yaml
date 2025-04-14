@@ -54,6 +54,7 @@ spec:
               volumeMounts:
                 - name: letsencrypt-vol
                   mountPath: /letsencrypt
+                # https://eff-certbot.readthedocs.io/en/stable/using.html#where-are-my-certificates
                 - name: letsencrypt-vol
                   mountPath: /etc/letsencrypt
                   subPath: certs
