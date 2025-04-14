@@ -53,9 +53,10 @@ spec:
                   protocol: TCP
               volumeMounts:
                 - name: letsencrypt-vol
-                  mountPath: /letsencrypt/certs
+                  mountPath: /letsencrypt
                 - name: letsencrypt-vol
                   mountPath: /etc/letsencrypt
+                  subPath: certs
           hostname: certbot
           dnsConfig:
             options:

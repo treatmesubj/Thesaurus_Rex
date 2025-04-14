@@ -27,7 +27,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /home/rock/Documents/Thesaurus_Rex/docker_k8s/letsencrypt/certs
+    path: /home/rock/Documents/Thesaurus_Rex/docker_k8s/letsencrypt
   nodeAffinity:
     required:
       nodeSelectorTerms:
