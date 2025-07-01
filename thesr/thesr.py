@@ -85,21 +85,19 @@ def get_syns_ants(word):
 
     homonyms = []
     try:
-        posTabs = sanjay["lexigraph"]["thesaurusData"]["data"]["slugs"][0]["entries"][
-            -1
-        ]["partOfSpeechGroups"]
+        posTabs = sanjay['dcomWeb']['thesaurusRes']['data'][0]['entries'][-1]['partOfSpeechBlocks']
         for pos in posTabs:
-            for defi in pos["shortDefinitions"]:
+            for defi in pos["definitions"]:
                 homonyms.append(
                     {
                         "word_class": pos["partOfSpeech"],
-                        "definition": defi["shortDef"],
-                        "synonyms": [s["targetWord"] for s in defi["synonyms"]],
-                        "antonyms": [s["targetWord"] for s in defi["antonyms"]],
+                        "definition": defi["shortText"],
+                        "synonyms": [s["entry"]["headword"] for s in defi.get("synonyms", [])],
+                        "antonyms": [s["entry"]["headword"] for s in defi.get("antonyms", [])],
                     }
                 )
-        # .lexigraph.thesaurusData.data.slugs[0].entries[-1].partOfSpeechGroups[0].shortDefinitions[0].synonyms[1].targetSlug
     except Exception:
+        breakpoint()
         return
     return homonyms
 
