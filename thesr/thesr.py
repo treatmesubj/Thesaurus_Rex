@@ -106,7 +106,7 @@ def get_etymology(word):
     response = requests.get(f"https://www.etymonline.com/word/{word}")
     soup = BeautifulSoup(response.text, "html.parser")
     class_elems = soup.select(
-        "section[class^='prose'] [id^='#etymonline']"
+        "section[class^='prose'] h2"
     )
     etym_elems = soup.select(
         "section[class^='prose'] section"
