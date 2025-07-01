@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="thesr",
-    version="0.0.12",
+    version="0.0.13",
     license="gpl-3.0",
     author="John Hupperts",
     author_email="jrock4503@hotmail.com",
@@ -15,7 +15,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/treatmesubj/Thesaurus_Rex",
-    download_url="https://github.com/treatmesubj/Thesaurus_Rex/archive/refs/tags/v0.0.12.tar.gz",
+    download_url="https://github.com/treatmesubj/Thesaurus_Rex/archive/refs/tags/v0.0.13.tar.gz",
     packages=["thesr"],
     package_dir={"Thesaurus_Rex": "thesr"},
     project_urls={
