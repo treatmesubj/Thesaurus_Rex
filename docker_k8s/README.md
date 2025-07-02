@@ -128,9 +128,9 @@ k cluster-info
 
 Build images
 ```bash
-docker build ./go_live/services/certbot/ -t certbot
-docker build ./go_live/services/nginx-reverse-proxy/ -t nginx-reverse-proxy
-docker build ./go_live/services/waitress-flask-wsgi/ -t waitress-flask-wsgi
+docker build --no-cache ./go_live/services/certbot/ -t certbot
+docker build --no-cache ./go_live/services/nginx-reverse-proxy/ -t nginx-reverse-proxy
+docker build --no-cache ./go_live/services/waitress-flask-wsgi/ -t waitress-flask-wsgi
 ```
 
 Import images into k3s
