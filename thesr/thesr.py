@@ -97,7 +97,6 @@ def get_syns_ants(word):
                     }
                 )
     except Exception:
-        breakpoint()
         return
     return homonyms
 
