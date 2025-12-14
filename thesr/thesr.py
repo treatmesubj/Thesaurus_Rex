@@ -73,29 +73,20 @@ def get_syns_ants(word):
         response.text,
         "html.parser",
     )
-    script_elem = soup.select_one("script#preloaded-state")
-    script = re.search(r"window.__PRELOADED_STATE__ = ({.*})", script_elem.text).group(
-        1
-    )
-    # clean JSON
-    script = script.replace(":undefined", ':"undefined"')
-    script = script.replace(":null", ':"null"')
-
-    sanjay = json.loads(script)
-
     homonyms = []
     try:
-        posTabs = sanjay['dcomWeb']['thesaurusRes']['data'][0]['entries'][-1]['partOfSpeechBlocks']
-        for pos in posTabs:
-            for defi in pos["definitions"]:
-                homonyms.append(
-                    {
-                        "word_class": pos["partOfSpeech"],
-                        "definition": defi["shortText"],
-                        "synonyms": [s["entry"]["headword"] for s in defi.get("synonyms", [])],
-                        "antonyms": [s["entry"]["headword"] for s in defi.get("antonyms", [])],
-                    }
-                )
+        guys = script_elem = soup.select("#synonyms-antonyms div.definition-block")
+        for guy in guys:
+            syns = guy.select(".synonym-antonym-panel")[0:1]
+            ants = guy.select(".synonym-antonym-panel")[1:2]
+            homonyms.append(
+                {
+                    "word_class": guy.select_one("div.definition-header div.part-of-speech-label").text,
+                    "definition": guy.select_one("div.definition-header div.definition span").text,
+                    "synonyms": [s.text.strip() for s in syns[0].select("a.word-chip")] if syns else [],
+                    "antonyms": [s.text.strip() for s in ants[0].select("a.word-chip")] if ants else [],
+                }
+            )
     except Exception:
         return
     return homonyms
