@@ -76,4 +76,4 @@ spec:
                       - key: kubernetes.io/hostname
                         operator: In
                         values:
-                          - thinkpad
+                          - localhost
