@@ -42,7 +42,7 @@ metadata:
   namespace: default
 spec:
   concurrencyPolicy: Forbid
-  schedule: '0 1 * * *' # cron spec of time, here, 1 AM
+  schedule: '0 0 16 * *' # 16th, each month
   jobTemplate:
     spec:
       backoffLimit: 2 # this has very low chance of failing, as all this does
