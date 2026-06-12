@@ -68,34 +68,24 @@ def get_defs(word):
 
 
 def get_syns_ants(word):
-    response = requests.get(f"http://www.thesaurus.com/browse/{word}")
+    response = requests.get(f"https://www.thesaurus.com/browse/{word}")
     soup = BeautifulSoup(
         response.text,
         "html.parser",
     )
-    script_elem = soup.select_one("script#preloaded-state")
-    script = re.search(r"window.__PRELOADED_STATE__ = ({.*})", script_elem.text).group(
-        1
-    )
-    # clean JSON
-    script = script.replace(":undefined", ':"undefined"')
-    script = script.replace(":null", ':"null"')
-
-    sanjay = json.loads(script)
+    definition_blocks = soup.select("#synonyms-antonyms .definition-block")
 
     homonyms = []
     try:
-        posTabs = sanjay['dcomWeb']['thesaurusRes']['data'][0]['entries'][-1]['partOfSpeechBlocks']
-        for pos in posTabs:
-            for defi in pos["definitions"]:
-                homonyms.append(
-                    {
-                        "word_class": pos["partOfSpeech"],
-                        "definition": defi["shortText"],
-                        "synonyms": [s["entry"]["headword"] for s in defi.get("synonyms", [])],
-                        "antonyms": [s["entry"]["headword"] for s in defi.get("antonyms", [])],
-                    }
-                )
+        for defi in definition_blocks:
+            homonyms.append(
+                {
+                    "word_class": defi.select_one(".part-of-speech-label").text.strip(),
+                    "definition": defi.select_one(".definition").text.strip(),
+                    "synonyms": [s.text.strip() for s in defi.select(".synonym-antonym-panel")[0].select("a")],
+                    "antonyms": [s.text.strip() for s in defi.select(".synonym-antonym-panel")[1].select("a")],
+                }
+            )
     except Exception:
         return
     return homonyms
@@ -179,7 +169,7 @@ class Word:
                 else:
                     print(f"{{ {homonym['word_class']}: {homonym['definition']} }}")
         else:
-            print("Sorry, no definitions found")
+            print(f"Sorry, no definitions found for {self.spelling}")
             candidates = get_spell_check_candidates(self.spelling)
             print(f"Did you mean {candidates}?")
         print("-" * 80, "\n")
