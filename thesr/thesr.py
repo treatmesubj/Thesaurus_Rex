@@ -4,6 +4,7 @@ import urllib.parse
 import re
 import json
 import random
+from spellchecker import SpellChecker
 import os
 from rich.console import Console
 import argparse
@@ -28,7 +29,7 @@ urllib3_cn.allowed_gai_family = _allowed_gai_family
 
 
 def get_random_word():
-    response = requests.get("https://www.merriam-webster.com/word-of-the-day/calendar")
+    response = requests.get("https://web.archive.org/web/https://www.merriam-webster.com/word-of-the-day/calendar")
     soup = BeautifulSoup(
         response.text,
         "html.parser",
@@ -42,7 +43,7 @@ def get_random_word():
 
 
 def get_defs(word):
-    response = requests.get(f"https://www.merriam-webster.com/dictionary/{word}")
+    response = requests.get(f"https://web.archive.org/web/https://www.merriam-webster.com/dictionary/{word}")
     soup = BeautifulSoup(
         response.text,
         "html.parser",
@@ -68,23 +69,22 @@ def get_defs(word):
 
 
 def get_syns_ants(word):
-    response = requests.get(f"http://www.thesaurus.com/browse/{word}")
+    response = requests.get(f"https://www.thesaurus.com/browse/{word}")
     soup = BeautifulSoup(
         response.text,
         "html.parser",
     )
+    definition_blocks = soup.select("#synonyms-antonyms .definition-block")
+
     homonyms = []
     try:
-        guys = script_elem = soup.select("#synonyms-antonyms div.definition-block")
-        for guy in guys:
-            syns = guy.select(".synonym-antonym-panel")[0:1]
-            ants = guy.select(".synonym-antonym-panel")[1:2]
+        for defi in definition_blocks:
             homonyms.append(
                 {
-                    "word_class": guy.select_one("div.definition-header div.part-of-speech-label").text,
-                    "definition": guy.select_one("div.definition-header div.definition span").text,
-                    "synonyms": [s.text.strip() for s in syns[0].select("a.word-chip")] if syns else [],
-                    "antonyms": [s.text.strip() for s in ants[0].select("a.word-chip")] if ants else [],
+                    "word_class": defi.select_one(".part-of-speech-label").text.strip(),
+                    "definition": defi.select_one(".definition").text.strip(),
+                    "synonyms": [s.text.strip() for s in defi.select(".synonym-antonym-panel")[0].select("a")],
+                    "antonyms": [s.text.strip() for s in defi.select(".synonym-antonym-panel")[1].select("a")],
                 }
             )
     except Exception:
@@ -108,14 +108,6 @@ def get_etymology(word):
             {"etym_desc": etym_elem.text.rstrip("\n"), "word_class": class_elem.text}
         )
     return homonyms
-
-
-def get_spell_check_candidates(word):
-    response = requests.get(f"https://www.merriam-webster.com/dictionary/{word}")
-    soup = BeautifulSoup(response.text, "html.parser")
-    candidate_elems = soup.select("p.spelling-suggestions")
-    candidates = [c.text for c in candidate_elems]
-    return candidates
 
 
 class Word:
@@ -170,9 +162,11 @@ class Word:
                 else:
                     print(f"{{ {homonym['word_class']}: {homonym['definition']} }}")
         else:
-            print("Sorry, no definitions found")
-            candidates = get_spell_check_candidates(self.spelling)
-            print(f"Did you mean {candidates}?")
+            print(f"Sorry, no definitions found for {self.spelling}")
+            candidates = SpellChecker().candidates(self.spelling)
+            if candidates:
+                candidates.discard(self.spelling)
+                print(f"Did you mean {candidates}?")
         print("-" * 80, "\n")
 
     def show_etymology(self):
