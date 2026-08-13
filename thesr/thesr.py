@@ -79,12 +79,19 @@ def get_syns_ants(word):
     homonyms = []
     try:
         for defi in definition_blocks:
+            synonyms = []
+            antonyms = []
+            for panel in defi.select(".synonym-antonym-panel"):
+                if panel.select_one('.synonym-antonym-panel-label').text == 'Synonyms':
+                    synonyms = [s.text.strip() for s in panel.select("a")]
+                if panel.select_one('.synonym-antonym-panel-label').text == 'Antonyms':
+                    antonyms = [s.text.strip() for s in panel.select("a")]
             homonyms.append(
                 {
                     "word_class": defi.select_one(".part-of-speech-label").text.strip(),
                     "definition": defi.select_one(".definition").text.strip(),
-                    "synonyms": [s.text.strip() for s in defi.select(".synonym-antonym-panel")[0].select("a")],
-                    "antonyms": [s.text.strip() for s in defi.select(".synonym-antonym-panel")[1].select("a")],
+                    "synonyms": synonyms,
+                    "antonyms": antonyms
                 }
             )
     except Exception:
