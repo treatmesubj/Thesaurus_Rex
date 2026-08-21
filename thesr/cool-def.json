@@ -1,0 +1,1247 @@
+[
+  {
+    "meta": {
+      "id": "cool:1",
+      "uuid": "8549736b-a491-49b2-a2ad-1083d4630057",
+      "sort": "041937000",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "cool",
+        "cooler",
+        "coolest",
+        "coolish",
+        "coolly",
+        "coolness",
+        "coolnesses",
+        "cooly",
+        "keep a cool head",
+        "keeping a cool head",
+        "keeps a cool head",
+        "kept a cool head"
+      ],
+      "offensive": false
+    },
+    "hom": 1,
+    "hwi": {
+      "hw": "cool",
+      "prs": [
+        {
+          "mw": "ˈkül",
+          "sound": {
+            "audio": "cool_101",
+            "ref": "c",
+            "stat": "1"
+          }
+        }
+      ]
+    },
+    "fl": "adjective",
+    "ins": [
+      {
+        "if": "cool*er"
+      },
+      {
+        "if": "cool*est"
+      }
+    ],
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}moderately cold {bc}lacking in warmth "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "The plant grows best in {wi}cool{/wi} climates."
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2 a",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}marked by steady {d_link|dispassionate|dispassionate} calmness and self-control "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "a {wi}cool{/wi} and calculating businessperson"
+                      },
+                      {
+                        "t": "They stayed {wi}cool{/wi} through the emergency."
+                      },
+                      {
+                        "t": "It's important to {phrase}keep a cool head{/phrase} {gloss}=remain calm{/gloss} in a crisis."
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ],
+            [
+              "sense",
+              {
+                "sn": "b",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}lacking ardor or friendliness "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "a {wi}cool{/wi} impersonal manner"
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ],
+            [
+              "sense",
+              {
+                "sn": "c",
+                "sls": [
+                  "of jazz"
+                ],
+                "dt": [
+                  [
+                    "text",
+                    "{bc}marked by restrained emotion and the frequent use of {d_link|counterpoint|counterpoint:1}"
+                  ]
+                ]
+              }
+            ],
+            [
+              "sense",
+              {
+                "sn": "d",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}free from tensions or violence "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "We used to fight, but we're {wi}cool{/wi} now."
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "3",
+                "dt": [
+                  [
+                    "uns",
+                    [
+                      [
+                        [
+                          "text",
+                          "used as an intensive "
+                        ],
+                        [
+                          "vis",
+                          [
+                            {
+                              "t": "a {wi}cool{/wi} million dollars"
+                            }
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "4",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}marked by deliberate effrontery or lack of due respect or discretion "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "a {wi}cool{/wi} reply"
+                      },
+                      {
+                        "t": "got a {wi}cool{/wi} reception"
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "5",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}facilitating or suggesting relief from heat "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "a {wi}cool{/wi} dress"
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "6 a",
+                "sls": [
+                  "of a color"
+                ],
+                "dt": [
+                  [
+                    "text",
+                    "{bc}producing an impression of being cool"
+                  ]
+                ],
+                "sdsense": {
+                  "sd": "specifically",
+                  "dt": [
+                    [
+                      "text",
+                      "{bc}of a hue in the range violet through blue to green"
+                    ]
+                  ]
+                }
+              }
+            ],
+            [
+              "sense",
+              {
+                "sn": "b",
+                "sls": [
+                  "of a musical tone"
+                ],
+                "dt": [
+                  [
+                    "text",
+                    "{bc}relatively lacking in {d_link|timbre|timbre} or resonance {dx_def}see {dxt|resonance||2a}{/dx_def}"
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sen",
+              {
+                "sn": "7",
+                "sls": [
+                  "informal"
+                ]
+              }
+            ],
+            [
+              "sense",
+              {
+                "sn": "a",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}very good {bc}{sx|excellent||} "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "That was a really {wi}cool{/wi} movie."
+                      }
+                    ]
+                  ]
+                ],
+                "sdsense": {
+                  "sd": "also",
+                  "dt": [
+                    [
+                      "text",
+                      "{bc}{sx|all right||} "
+                    ],
+                    [
+                      "vis",
+                      [
+                        {
+                          "t": "Is getting together Friday night {wi}cool{/wi} with you?"
+                        }
+                      ]
+                    ]
+                  ]
+                }
+              }
+            ],
+            [
+              "sense",
+              {
+                "sn": "b",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}very fashionable, impressive, or appealing in a way that is generally approved of especially by young people "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "… not happy with the new shoes … because they were not \"{wi}cool{/wi}.\"",
+                        "aq": {
+                          "auth": "Celestine Sibley"
+                        }
+                      },
+                      {
+                        "t": "… while over 90% of children think superheroes are {ldquo}{wi}cool{/wi},{rdquo} it was their costume and their ability to save the world they admired most …",
+                        "aq": {
+                          "auth": "Nicole Goodwin"
+                        }
+                      },
+                      {
+                        "t": "Those looking for a {wi}cool{/wi} place to grab a drink with friends will want to check out this list of six special Southern California bars.",
+                        "aq": {
+                          "auth": "Vanessa Franco and Anne Valdespino"
+                        }
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "uros": [
+      {
+        "ure": "cool*ish",
+        "prs": [
+          {
+            "mw": "ˈkü-lish",
+            "sound": {
+              "audio": "cool_102",
+              "ref": "c",
+              "stat": "1"
+            }
+          }
+        ],
+        "fl": "adjective"
+      },
+      {
+        "ure": "cool*ly",
+        "vrs": [
+          {
+            "vl": "or less commonly",
+            "va": "cooly",
+            "prs": [
+              {
+                "mw": "ˈkü(l)-lē",
+                "sound": {
+                  "audio": "cool_104",
+                  "ref": "c",
+                  "stat": "1"
+                }
+              }
+            ]
+          }
+        ],
+        "fl": "adverb"
+      },
+      {
+        "ure": "cool*ness",
+        "prs": [
+          {
+            "mw": "ˈkül-nəs",
+            "sound": {
+              "audio": "cool_103",
+              "ref": "c",
+              "stat": "1"
+            }
+          }
+        ],
+        "fl": "noun"
+      }
+    ],
+    "syns": [
+      {
+        "pl": "synonyms",
+        "pt": [
+          [
+            "text",
+            "{sc}cool{/sc} {sc}composed{/sc} {sc}collected{/sc} {sc}unruffled{/sc} {sc}imperturbable{/sc} {sc}nonchalant{/sc} mean free from agitation or excitement. {sc}cool{/sc} may imply calmness, deliberateness, or dispassionateness. "
+          ],
+          [
+            "vis",
+            [
+              {
+                "t": "kept a {it}cool{/it} head"
+              }
+            ]
+          ],
+          [
+            "text",
+            " {sc}composed{/sc} implies freedom from agitation as a result of self-discipline or a sedate disposition. "
+          ],
+          [
+            "vis",
+            [
+              {
+                "t": "the {it}composed{/it} pianist gave a flawless concert"
+              }
+            ]
+          ],
+          [
+            "text",
+            " {sc}collected{/sc} implies a concentration of mind that eliminates distractions especially in moments of crisis. "
+          ],
+          [
+            "vis",
+            [
+              {
+                "t": "the nurse stayed calm and {it}collected{/it}"
+              }
+            ]
+          ],
+          [
+            "text",
+            " {sc}unruffled{/sc} suggests apparent serenity and poise in the face of setbacks or in the midst of excitement. "
+          ],
+          [
+            "vis",
+            [
+              {
+                "t": "harried but {it}unruffled{/it}"
+              }
+            ]
+          ],
+          [
+            "text",
+            " {sc}imperturbable{/sc} implies coolness or assurance even under severe provocation. "
+          ],
+          [
+            "vis",
+            [
+              {
+                "t": "the speaker remained {it}imperturbable{/it} despite the heckling"
+              }
+            ]
+          ],
+          [
+            "text",
+            " {sc}nonchalant{/sc} stresses an easy coolness of manner or casualness that suggests indifference or unconcern. "
+          ],
+          [
+            "vis",
+            [
+              {
+                "t": "a {it}nonchalant{/it} driver"
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "et": [
+      [
+        "text",
+        "Middle English {it}col,{/it} going back to Old English {it}cōl,{/it} going back to West Germanic {it}*kōlu-{/it} (whence also Middle Dutch {it}coele{/it} \"moderately cold\" and, from a variant {it}*kōlja-,{/it} Old High German {it}kuoli{/it}), lengthened-grade derivative from the base of {it}*kalan-{/it} \"to be cold\" {ma}{mat|cold:1|}{/ma}"
+      ]
+    ],
+    "date": "before 12th century{ds||1||}",
+    "shortdef": [
+      "moderately cold : lacking in warmth",
+      "marked by steady dispassionate calmness and self-control",
+      "lacking ardor or friendliness"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool:2",
+      "uuid": "6245ca11-1d87-497e-8903-5c5431ac758b",
+      "sort": "041938000",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "cool",
+        "cooled",
+        "cooling",
+        "cools"
+      ],
+      "offensive": false
+    },
+    "hom": 2,
+    "hwi": {
+      "hw": "cool"
+    },
+    "fl": "verb",
+    "ins": [
+      {
+        "if": "cooled"
+      },
+      {
+        "if": "cool*ing"
+      },
+      {
+        "if": "cools"
+      }
+    ],
+    "def": [
+      {
+        "vd": "intransitive verb",
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}to become cool {bc}lose heat or warmth "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "placed the pie in the window to {wi}cool{/wi}"
+                      }
+                    ]
+                  ],
+                  [
+                    "uns",
+                    [
+                      [
+                        [
+                          "text",
+                          "sometimes used with {it}off{/it} or {it}down{/it}"
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}to lose ardor or passion "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "His anger {wi}cooled{/wi}."
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      },
+      {
+        "vd": "transitive verb",
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}to make cool {bc}impart a feeling of {a_link|coolness} to "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "{wi}cooled{/wi} the room with a fan"
+                      }
+                    ]
+                  ],
+                  [
+                    "uns",
+                    [
+                      [
+                        [
+                          "text",
+                          "often used with {it}off{/it} or {it}down{/it} "
+                        ],
+                        [
+                          "vis",
+                          [
+                            {
+                              "t": "A swim {wi}cooled{/wi} us off a little."
+                            }
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2 a",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}to moderate the heat, excitement, or force of {bc}{sx|calm||} "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "{wi}cooled{/wi} her growing anger"
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ],
+            [
+              "sense",
+              {
+                "sn": "b",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}to slow or lessen the growth or activity of "
+                  ],
+                  [
+                    "uns",
+                    [
+                      [
+                        [
+                          "text",
+                          "usually used with {it}off{/it} or {it}down{/it} "
+                        ],
+                        [
+                          "vis",
+                          [
+                            {
+                              "t": "wants to {wi}cool{/wi} off the economy without freezing it",
+                              "aq": {
+                                "source": "{it}Newsweek{/it}"
+                              }
+                            },
+                            {
+                              "t": "… moved to {wi}cool{/wi} down the economy.",
+                              "aq": {
+                                "auth": "Sidney Rutberg"
+                              }
+                            }
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "dxnls": [
+      "see also {dxt|cool it||}, {dxt|cool one's heels||}"
+    ],
+    "et": [
+      [
+        "text",
+        "Middle English {it}colen,{/it} going back to Old English {it}cōlian,{/it} verbal derivative from Germanic {it}*kōl-{/it} {et_link|cool:1|cool:1} (whence also Old Saxon {it}colon{/it} \"to become cool,\" Old High German {it}kuolēn{/it})"
+      ]
+    ],
+    "date": "before 12th century{ds|i|1||}",
+    "shortdef": [
+      "to become cool : lose heat or warmth —sometimes used with off or down",
+      "to lose ardor or passion",
+      "to make cool : impart a feeling of coolness to —often used with off or down"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool:3",
+      "uuid": "1663348e-049b-4b46-98f5-7fef8f90cc01",
+      "sort": "041939000",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "cool",
+        "cools"
+      ],
+      "offensive": false
+    },
+    "hom": 3,
+    "hwi": {
+      "hw": "cool"
+    },
+    "fl": "noun",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}a cool time, place, or situation "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "the {wi}cool{/wi} of the evening"
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2 a",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}absence of excitement or emotional involvement {bc}{sx|detachment||} "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "… his ardor, her {wi}cool{/wi}, his earthiness, her spirituality.",
+                        "aq": {
+                          "auth": "Hubert Saal"
+                        }
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ],
+            [
+              "sense",
+              {
+                "sn": "b",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}{sx|poise||}, {sx|composure||} "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "The player lost his {wi}cool{/wi} and began yelling at the referee."
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "3",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}{sx|hipness||}"
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "et": [
+      [
+        "text",
+        "Middle English {it}cole,{/it} derivative of {it}col{/it} {et_link|cool:1|cool:1}"
+      ]
+    ],
+    "date": "15th century{ds||1||}",
+    "shortdef": [
+      "a cool time, place, or situation",
+      "absence of excitement or emotional involvement : detachment",
+      "poise, composure"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool:4",
+      "uuid": "f7ef9391-1115-4ba6-9b35-2b46a7c6dea9",
+      "sort": "041940000",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "cool"
+      ],
+      "offensive": false
+    },
+    "hom": 4,
+    "hwi": {
+      "hw": "cool"
+    },
+    "fl": "adverb",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "{bc}in a casual and nonchalant manner "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "play it {wi}cool{/wi}"
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "et": [
+      [
+        "text",
+        "derivative of {et_link|cool:1|cool:1}"
+      ]
+    ],
+    "date": "1968",
+    "shortdef": [
+      "in a casual and nonchalant manner"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool beans",
+      "uuid": "db686afe-2b04-4eeb-9d0a-09e40f704696",
+      "sort": "041942000",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "cool beans"
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool beans"
+    },
+    "fl": "interjection",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "uns",
+                    [
+                      [
+                        [
+                          "text",
+                          "used like {it}cool{/it} to express agreement or approval "
+                        ],
+                        [
+                          "vis",
+                          [
+                            {
+                              "t": "… there was no denying his claim; he indeed had a pair of Evening Grosbeaks on his feeder. {it}Cool beans{/it}!",
+                              "aq": {
+                                "auth": "Mike O'Connor"
+                              }
+                            },
+                            {
+                              "t": "\"{wi}Cool beans{/wi},\" she answered, giving me a thumbs-up.",
+                              "aq": {
+                                "auth": "R. J. Palacio"
+                              }
+                            }
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "date": "1985",
+    "shortdef": [
+      "—used like cool to express agreement or approval"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool it",
+      "uuid": "0fea0a87-6297-42ef-818b-61ea3659ee3c",
+      "sort": "041950500",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "cool it",
+        "cooled it",
+        "cooling it",
+        "cools it"
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool it"
+    },
+    "fl": "phrase",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "{bc}to calm down {bc}go easy "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "The word went out to the young to {wi}cool it{/wi}.",
+                        "aq": {
+                          "auth": "W. M. Young"
+                        }
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "to calm down : go easy"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool one's heels",
+      "uuid": "18f6bf47-30e9-4f8e-bc8e-5ce0c98a00cc",
+      "sort": "041950600",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "cool her heels",
+        "cool his heels",
+        "cool its heels",
+        "cool my heels",
+        "cool one's heels",
+        "cool our heels",
+        "cool their heels",
+        "cool your heels",
+        "cooled her heels",
+        "cooled his heels",
+        "cooled its heels",
+        "cooled my heels",
+        "cooled one's heels",
+        "cooled our heels",
+        "cooled their heels",
+        "cooled your heels",
+        "cooling her heels",
+        "cooling his heels",
+        "cooling its heels",
+        "cooling my heels",
+        "cooling one's heels",
+        "cooling our heels",
+        "cooling their heels",
+        "cooling your heels",
+        "cools her heels",
+        "cools his heels",
+        "cools its heels",
+        "cools one's heels",
+        "cools their heels"
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool one's heels"
+    },
+    "fl": "phrase",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "{bc}to wait or be kept waiting for a long time especially from or as if from disdain or discourtesy"
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "to wait or be kept waiting for a long time especially from or as if from disdain or discourtesy"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool customer",
+      "uuid": "b546b158-14a5-4b06-955d-cbb9c6b43bf6",
+      "sort": "352223000",
+      "src": "ld",
+      "section": "idioms",
+      "stems": [
+        "cool customer"
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool customer"
+    },
+    "fl": "noun",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "{bc}someone who remains calm and is not easily upset"
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "someone who remains calm and is not easily upset"
+    ]
+  },
+  {
+    "meta": {
+      "id": "blow one's cool",
+      "uuid": "cc0b4d2e-3e31-4875-9934-4b303b6ece8c",
+      "sort": "023245300",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "blew her cool",
+        "blew his cool",
+        "blew its cool",
+        "blew my cool",
+        "blew one's cool",
+        "blew our cool",
+        "blew our cools",
+        "blew their cool",
+        "blew their cools",
+        "blew your cool",
+        "blow her cool",
+        "blow his cool",
+        "blow its cool",
+        "blow my cool",
+        "blow one's cool",
+        "blow our cool",
+        "blow our cools",
+        "blow their cool",
+        "blow their cools",
+        "blow your cool",
+        "blow your cools",
+        "blowing her cool",
+        "blowing his cool",
+        "blowing its cool",
+        "blowing my cool",
+        "blowing one's cool",
+        "blowing our cool",
+        "blowing our cools",
+        "blowing their cool",
+        "blowing their cools",
+        "blowing your cool",
+        "blowing your cools",
+        "blown her cool",
+        "blown his cool",
+        "blown its cool",
+        "blown my cool",
+        "blown one's cool",
+        "blown our cool",
+        "blown our cools",
+        "blown their cool",
+        "blown their cools",
+        "blown your cool",
+        "blown your cools",
+        "blows her cool",
+        "blows his cool",
+        "blows its cool",
+        "blows one's cool"
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "blow one's cool"
+    },
+    "fl": "phrase",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "{bc}to lose one's composure"
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "date": "1961",
+    "shortdef": [
+      "to lose one's composure"
+    ]
+  },
+  {
+    "meta": {
+      "id": "calm, cool, and collected",
+      "uuid": "07edc40f-603e-4ec6-bf58-5a5e4ec221fe",
+      "sort": "351621000",
+      "src": "ld",
+      "section": "idioms",
+      "stems": [
+        "calm, cool, and collected"
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "calm, cool, and collected"
+    },
+    "fl": "phrase",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "{bc}not upset {bc}not very bothered by things "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "My brother is always {it}calm, cool, and collected{/it}."
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "not upset : not very bothered by things"
+    ]
+  }
+]
