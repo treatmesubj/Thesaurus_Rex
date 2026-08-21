@@ -1,0 +1,5172 @@
+[
+  {
+    "meta": {
+      "id": "cool",
+      "uuid": "56f3f2dd-47ba-4194-ae39-cc07b8a93bf0",
+      "src": "coll_thes",
+      "section": "alpha",
+      "target": {
+        "tuuid": "8549736b-a491-49b2-a2ad-1083d4630057",
+        "tsrc": "collegiate"
+      },
+      "stems": [
+        "cool",
+        "cooler",
+        "coolest",
+        "coolish",
+        "coolly",
+        "coolness",
+        "coolnesses",
+        "cooly"
+      ],
+      "syns": [
+        [
+          "à la mode",
+          "au courant",
+          "chic",
+          "exclusive",
+          "fashionable",
+          "fresh",
+          "happening",
+          "hip",
+          "in",
+          "modish",
+          "sharp",
+          "smart",
+          "snappy",
+          "stylish",
+          "supercool",
+          "swell",
+          "swish",
+          "trendy",
+          "voguish"
+        ],
+        [
+          "aloof",
+          "antisocial",
+          "asocial",
+          "buttoned-up",
+          "cold",
+          "cold-eyed",
+          "detached",
+          "distant",
+          "dry",
+          "frosty",
+          "offish",
+          "remote",
+          "standoff",
+          "standoffish",
+          "unbending",
+          "unclubbable",
+          "unsociable"
+        ],
+        [
+          "calm",
+          "collected",
+          "composed",
+          "coolheaded",
+          "equal",
+          "level",
+          "limpid",
+          "peaceful",
+          "placid",
+          "possessed",
+          "recollected",
+          "sedate",
+          "self-composed",
+          "self-possessed",
+          "serene",
+          "smooth",
+          "together",
+          "tranquil",
+          "undisturbed",
+          "unperturbed",
+          "unruffled",
+          "unshaken",
+          "untroubled",
+          "unworried"
+        ],
+        [
+          "algid",
+          "arctic",
+          "bitter",
+          "bone-chilling",
+          "chill",
+          "chilly",
+          "cold",
+          "coldish",
+          "coolish",
+          "freezing",
+          "frigid",
+          "frosty",
+          "gelid",
+          "glacial",
+          "ice-cold",
+          "icy",
+          "nipping",
+          "nippy",
+          "numbing",
+          "polar",
+          "shivery",
+          "snappy",
+          "wintry"
+        ],
+        [
+          "antiseptic",
+          "arctic",
+          "brittle",
+          "chill",
+          "chilly",
+          "clammy",
+          "cold",
+          "cold-blooded",
+          "cold-eyed",
+          "coldish",
+          "frigid",
+          "frosty",
+          "frozen",
+          "gelid",
+          "glacial",
+          "hard-eyed",
+          "icy",
+          "uncordial",
+          "unfriendly",
+          "unsympathetic",
+          "wintry"
+        ],
+        [
+          "au courant",
+          "def",
+          "downtown",
+          "groovy",
+          "hep",
+          "hip",
+          "in",
+          "mod",
+          "now",
+          "trendy",
+          "turned-on",
+          "with-it"
+        ],
+        [
+          "A-OK",
+          "A1",
+          "awesome",
+          "bang-up",
+          "banner",
+          "beautiful",
+          "blue-chip",
+          "blue-ribbon",
+          "boffo",
+          "bonny",
+          "boss",
+          "brag",
+          "brave",
+          "bully",
+          "bumper",
+          "capital",
+          "choice",
+          "classic",
+          "corking",
+          "crackerjack",
+          "cracking",
+          "dandy",
+          "divine",
+          "dope",
+          "down",
+          "dynamite",
+          "excellent",
+          "fab",
+          "fabulous",
+          "famous",
+          "fantabulous",
+          "fantastic",
+          "fine",
+          "first-class",
+          "first-rate",
+          "first-string",
+          "five-star",
+          "four-star",
+          "frontline",
+          "gangbusters",
+          "gilt-edged",
+          "gone",
+          "grand",
+          "great",
+          "groovy",
+          "heavenly",
+          "high-class",
+          "hot",
+          "hype",
+          "immense",
+          "jim-dandy",
+          "keen",
+          "lovely",
+          "marvelous",
+          "mean",
+          "neat",
+          "nifty",
+          "noble",
+          "number one",
+          "numero uno",
+          "out-of-sight",
+          "par excellence",
+          "peachy",
+          "peachy keen",
+          "phat",
+          "prime",
+          "primo",
+          "prize",
+          "prizewinning",
+          "quality",
+          "radical",
+          "righteous",
+          "sensational",
+          "slick",
+          "splendid",
+          "stellar",
+          "sterling",
+          "superb",
+          "superior",
+          "superlative",
+          "supernal",
+          "swell",
+          "terrific",
+          "tip-top",
+          "top",
+          "top-notch",
+          "top-of-the-line",
+          "top-shelf",
+          "topflight",
+          "topping",
+          "unsurpassed",
+          "wizard",
+          "wonderful"
+        ]
+      ],
+      "ants": [
+        [
+          "dowdy",
+          "out",
+          "outmoded",
+          "styleless",
+          "unchic",
+          "uncool",
+          "unfashionable",
+          "unmodish",
+          "unstylish"
+        ],
+        [
+          "cordial",
+          "friendly",
+          "sociable",
+          "social",
+          "warm"
+        ],
+        [
+          "agitated",
+          "discomposed",
+          "disturbed",
+          "flustered",
+          "perturbed",
+          "unglued",
+          "unhinged",
+          "unstrung",
+          "upset"
+        ],
+        [
+          "ardent",
+          "blazing",
+          "boiling",
+          "broiling",
+          "burning",
+          "fervent",
+          "fervid",
+          "fiery",
+          "glowing",
+          "hot",
+          "igneous",
+          "molten",
+          "piping hot",
+          "red-hot",
+          "roasting",
+          "scalding",
+          "scorching",
+          "searing",
+          "seething",
+          "sizzling",
+          "sultry",
+          "sweltering",
+          "torrid",
+          "ultrahot",
+          "warming",
+          "white-hot"
+        ],
+        [
+          "cordial",
+          "friendly",
+          "genial",
+          "happy",
+          "hearty",
+          "sympathetic",
+          "warm",
+          "warm-blooded",
+          "warmhearted"
+        ],
+        [
+          "out",
+          "uncool",
+          "unhip",
+          "untrendy"
+        ],
+        [
+          "atrocious",
+          "awful",
+          "execrable",
+          "lousy",
+          "pathetic",
+          "poor",
+          "rotten",
+          "terrible",
+          "vile",
+          "wretched"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool"
+    },
+    "fl": "adjective",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "sls": [
+                  "slang"
+                ],
+                "dt": [
+                  [
+                    "text",
+                    "being in the latest or current fashion "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "had a {it}cool{/it} new hairstyle"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "à la mode",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "a la mode"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "au courant"
+                    },
+                    {
+                      "wd": "chic"
+                    },
+                    {
+                      "wd": "exclusive"
+                    },
+                    {
+                      "wd": "fashionable"
+                    },
+                    {
+                      "wd": "fresh",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "happening"
+                    },
+                    {
+                      "wd": "hip"
+                    },
+                    {
+                      "wd": "in"
+                    },
+                    {
+                      "wd": "modish"
+                    },
+                    {
+                      "wd": "sharp"
+                    },
+                    {
+                      "wd": "smart"
+                    },
+                    {
+                      "wd": "snappy"
+                    },
+                    {
+                      "wd": "stylish"
+                    },
+                    {
+                      "wd": "supercool"
+                    },
+                    {
+                      "wd": "swell"
+                    },
+                    {
+                      "wd": "swish"
+                    },
+                    {
+                      "wd": "trendy"
+                    },
+                    {
+                      "wd": "voguish"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "downtown"
+                    },
+                    {
+                      "wd": "edgy"
+                    },
+                    {
+                      "wd": "funky"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "dapper"
+                    },
+                    {
+                      "wd": "dashing"
+                    },
+                    {
+                      "wd": "dressy"
+                    },
+                    {
+                      "wd": "kicky"
+                    },
+                    {
+                      "wd": "natty"
+                    },
+                    {
+                      "wd": "rakish"
+                    },
+                    {
+                      "wd": "sassy"
+                    },
+                    {
+                      "wd": "saucy"
+                    },
+                    {
+                      "wd": "spiffy"
+                    },
+                    {
+                      "wd": "spruce"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "chichi"
+                    },
+                    {
+                      "wd": "classy"
+                    },
+                    {
+                      "wd": "flossy"
+                    },
+                    {
+                      "wd": "haute",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "haut"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "nobby"
+                    },
+                    {
+                      "wd": "posh"
+                    },
+                    {
+                      "wd": "ritzy"
+                    },
+                    {
+                      "wd": "soigné",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "soignée"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "swank",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "swanky"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "elegant"
+                    },
+                    {
+                      "wd": "graceful"
+                    },
+                    {
+                      "wd": "handsome"
+                    },
+                    {
+                      "wd": "majestic"
+                    },
+                    {
+                      "wd": "refined"
+                    },
+                    {
+                      "wd": "sophisticated"
+                    },
+                    {
+                      "wd": "stately"
+                    },
+                    {
+                      "wd": "tasteful"
+                    },
+                    {
+                      "wd": "understated"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "doggish"
+                    },
+                    {
+                      "wd": "doggy"
+                    },
+                    {
+                      "wd": "flashy"
+                    },
+                    {
+                      "wd": "gallant"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "dandyish"
+                    },
+                    {
+                      "wd": "dudish"
+                    },
+                    {
+                      "wd": "foppish"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "ultrachic"
+                    },
+                    {
+                      "wd": "ultracool"
+                    },
+                    {
+                      "wd": "ultrahip"
+                    },
+                    {
+                      "wd": "ultraposh"
+                    },
+                    {
+                      "wd": "ultrasmart"
+                    },
+                    {
+                      "wd": "ultrasophisticated"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "cheesy"
+                    },
+                    {
+                      "wd": "tacky"
+                    },
+                    {
+                      "wd": "unattractive"
+                    },
+                    {
+                      "wd": "unbecoming"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "graceless"
+                    },
+                    {
+                      "wd": "inelegant"
+                    },
+                    {
+                      "wd": "tasteless"
+                    },
+                    {
+                      "wd": "trashy"
+                    },
+                    {
+                      "wd": "unhandsome"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "frowsy",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "frowzy"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "sloppy"
+                    },
+                    {
+                      "wd": "slovenly"
+                    },
+                    {
+                      "wd": "unkempt"
+                    },
+                    {
+                      "wd": "untidy"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "disheveled",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "dishevelled"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "messy"
+                    },
+                    {
+                      "wd": "mussy"
+                    },
+                    {
+                      "wd": "rumpled"
+                    },
+                    {
+                      "wd": "wrinkled"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "shabby"
+                    },
+                    {
+                      "wd": "sleazy"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "dowdy"
+                    },
+                    {
+                      "wd": "out"
+                    },
+                    {
+                      "wd": "outmoded"
+                    },
+                    {
+                      "wd": "styleless"
+                    },
+                    {
+                      "wd": "unchic"
+                    },
+                    {
+                      "wd": "uncool"
+                    },
+                    {
+                      "wd": "unfashionable"
+                    },
+                    {
+                      "wd": "unmodish"
+                    },
+                    {
+                      "wd": "unstylish"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2",
+                "dt": [
+                  [
+                    "text",
+                    "having or showing a lack of friendliness or interest in others "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "the locals were {it}cool{/it} towards outsiders"
+                      },
+                      {
+                        "t": "the schoolmaster's {it}cool{/it} manner did not encourage chitchat"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "aloof"
+                    },
+                    {
+                      "wd": "antisocial"
+                    },
+                    {
+                      "wd": "asocial"
+                    },
+                    {
+                      "wd": "buttoned-up"
+                    },
+                    {
+                      "wd": "cold"
+                    },
+                    {
+                      "wd": "cold-eyed"
+                    },
+                    {
+                      "wd": "detached"
+                    },
+                    {
+                      "wd": "distant"
+                    },
+                    {
+                      "wd": "dry"
+                    },
+                    {
+                      "wd": "frosty"
+                    },
+                    {
+                      "wd": "offish"
+                    },
+                    {
+                      "wd": "remote"
+                    },
+                    {
+                      "wd": "standoff"
+                    },
+                    {
+                      "wd": "standoffish"
+                    },
+                    {
+                      "wd": "unbending"
+                    },
+                    {
+                      "wd": "unclubbable"
+                    },
+                    {
+                      "wd": "unsociable"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "indrawn"
+                    },
+                    {
+                      "wd": "introverted"
+                    },
+                    {
+                      "wd": "nongregarious"
+                    },
+                    {
+                      "wd": "recessive"
+                    },
+                    {
+                      "wd": "reclusive"
+                    },
+                    {
+                      "wd": "reserved"
+                    },
+                    {
+                      "wd": "unsocial"
+                    },
+                    {
+                      "wd": "withdrawn"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "misanthropic"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "apathetic"
+                    },
+                    {
+                      "wd": "hard"
+                    },
+                    {
+                      "wd": "indifferent"
+                    },
+                    {
+                      "wd": "unconcerned"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "clinical"
+                    },
+                    {
+                      "wd": "dispassionate"
+                    },
+                    {
+                      "wd": "impersonal"
+                    },
+                    {
+                      "wd": "professional"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "disinterested"
+                    },
+                    {
+                      "wd": "incurious"
+                    },
+                    {
+                      "wd": "uninterested"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "reticent"
+                    },
+                    {
+                      "wd": "silent"
+                    },
+                    {
+                      "wd": "taciturn"
+                    },
+                    {
+                      "wd": "uncommunicative"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "diffident"
+                    },
+                    {
+                      "wd": "shy"
+                    },
+                    {
+                      "wd": "timid"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "cliquey"
+                    },
+                    {
+                      "wd": "cliquish"
+                    },
+                    {
+                      "wd": "clubbish"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "boon"
+                    },
+                    {
+                      "wd": "clubbable",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "clubable"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "clubby"
+                    },
+                    {
+                      "wd": "companionable"
+                    },
+                    {
+                      "wd": "convivial"
+                    },
+                    {
+                      "wd": "extroverted",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "extraverted"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "gregarious"
+                    },
+                    {
+                      "wd": "outgoing"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "communicative"
+                    },
+                    {
+                      "wd": "expansive"
+                    },
+                    {
+                      "wd": "garrulous"
+                    },
+                    {
+                      "wd": "talkative"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "affable"
+                    },
+                    {
+                      "wd": "folksy"
+                    },
+                    {
+                      "wd": "genial"
+                    },
+                    {
+                      "wd": "gracious"
+                    },
+                    {
+                      "wd": "hospitable"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "agreeable"
+                    },
+                    {
+                      "wd": "amiable"
+                    },
+                    {
+                      "wd": "congenial"
+                    },
+                    {
+                      "wd": "kindly"
+                    },
+                    {
+                      "wd": "neighborly"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "cordial"
+                    },
+                    {
+                      "wd": "friendly"
+                    },
+                    {
+                      "wd": "sociable"
+                    },
+                    {
+                      "wd": "social"
+                    },
+                    {
+                      "wd": "warm"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "3",
+                "dt": [
+                  [
+                    "text",
+                    "free from emotional or mental agitation "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "in a crisis keep a {it}cool{/it} head, even if no one else is"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "calm"
+                    },
+                    {
+                      "wd": "collected"
+                    },
+                    {
+                      "wd": "composed"
+                    },
+                    {
+                      "wd": "coolheaded"
+                    },
+                    {
+                      "wd": "equal"
+                    },
+                    {
+                      "wd": "level"
+                    },
+                    {
+                      "wd": "limpid"
+                    },
+                    {
+                      "wd": "peaceful"
+                    },
+                    {
+                      "wd": "placid"
+                    },
+                    {
+                      "wd": "possessed"
+                    },
+                    {
+                      "wd": "recollected"
+                    },
+                    {
+                      "wd": "sedate"
+                    },
+                    {
+                      "wd": "self-composed"
+                    },
+                    {
+                      "wd": "self-possessed"
+                    },
+                    {
+                      "wd": "serene"
+                    },
+                    {
+                      "wd": "smooth"
+                    },
+                    {
+                      "wd": "together"
+                    },
+                    {
+                      "wd": "tranquil"
+                    },
+                    {
+                      "wd": "undisturbed"
+                    },
+                    {
+                      "wd": "unperturbed"
+                    },
+                    {
+                      "wd": "unruffled"
+                    },
+                    {
+                      "wd": "unshaken"
+                    },
+                    {
+                      "wd": "untroubled"
+                    },
+                    {
+                      "wd": "unworried"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "even"
+                    },
+                    {
+                      "wd": "even-keeled"
+                    },
+                    {
+                      "wd": "steady"
+                    },
+                    {
+                      "wd": "well-adjusted"
+                    },
+                    {
+                      "wd": "well-balanced"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "imperturbable"
+                    },
+                    {
+                      "wd": "nerveless"
+                    },
+                    {
+                      "wd": "unflappable"
+                    },
+                    {
+                      "wd": "unshakable"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "centered"
+                    },
+                    {
+                      "wd": "disciplined"
+                    },
+                    {
+                      "wd": "equable"
+                    },
+                    {
+                      "wd": "self-contained"
+                    },
+                    {
+                      "wd": "self-controlled"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "affable"
+                    },
+                    {
+                      "wd": "breezy"
+                    },
+                    {
+                      "wd": "devil-may-care"
+                    },
+                    {
+                      "wd": "easygoing"
+                    },
+                    {
+                      "wd": "happy-go-lucky"
+                    },
+                    {
+                      "wd": "laid-back"
+                    },
+                    {
+                      "wd": "loosey-goosey"
+                    },
+                    {
+                      "wd": "mellow"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "carefree"
+                    },
+                    {
+                      "wd": "nonchalant"
+                    },
+                    {
+                      "wd": "unconcerned"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "assured"
+                    },
+                    {
+                      "wd": "confident"
+                    },
+                    {
+                      "wd": "self-assured"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "aloof"
+                    },
+                    {
+                      "wd": "detached"
+                    },
+                    {
+                      "wd": "dispassionate"
+                    },
+                    {
+                      "wd": "indifferent"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "bovine"
+                    },
+                    {
+                      "wd": "impassive"
+                    },
+                    {
+                      "wd": "phlegmatic"
+                    },
+                    {
+                      "wd": "sober"
+                    },
+                    {
+                      "wd": "stolid"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "relaxed"
+                    },
+                    {
+                      "wd": "relieved"
+                    },
+                    {
+                      "wd": "tranquilized",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "tranquillized"
+                        }
+                      ]
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "at peace"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "anxious"
+                    },
+                    {
+                      "wd": "bothered"
+                    },
+                    {
+                      "wd": "distressed"
+                    },
+                    {
+                      "wd": "uneasy"
+                    },
+                    {
+                      "wd": "unquiet"
+                    },
+                    {
+                      "wd": "unsettled"
+                    },
+                    {
+                      "wd": "worried"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "jittery"
+                    },
+                    {
+                      "wd": "jumpy"
+                    },
+                    {
+                      "wd": "nervous"
+                    },
+                    {
+                      "wd": "restless"
+                    },
+                    {
+                      "wd": "skittish"
+                    },
+                    {
+                      "wd": "tense"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "high-strung"
+                    },
+                    {
+                      "wd": "unstable"
+                    },
+                    {
+                      "wd": "uptight"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "agitated"
+                    },
+                    {
+                      "wd": "discomposed"
+                    },
+                    {
+                      "wd": "disturbed"
+                    },
+                    {
+                      "wd": "flustered"
+                    },
+                    {
+                      "wd": "perturbed"
+                    },
+                    {
+                      "wd": "unglued"
+                    },
+                    {
+                      "wd": "unhinged"
+                    },
+                    {
+                      "wd": "unstrung"
+                    },
+                    {
+                      "wd": "upset"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "4",
+                "dt": [
+                  [
+                    "text",
+                    "having a low or subnormal temperature "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "a {it}cool{/it} basement that would be perfect for storing wine"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "algid"
+                    },
+                    {
+                      "wd": "arctic"
+                    },
+                    {
+                      "wd": "bitter"
+                    },
+                    {
+                      "wd": "bone-chilling"
+                    },
+                    {
+                      "wd": "chill"
+                    },
+                    {
+                      "wd": "chilly"
+                    },
+                    {
+                      "wd": "cold"
+                    },
+                    {
+                      "wd": "coldish"
+                    },
+                    {
+                      "wd": "coolish"
+                    },
+                    {
+                      "wd": "freezing"
+                    },
+                    {
+                      "wd": "frigid"
+                    },
+                    {
+                      "wd": "frosty"
+                    },
+                    {
+                      "wd": "gelid"
+                    },
+                    {
+                      "wd": "glacial"
+                    },
+                    {
+                      "wd": "ice-cold"
+                    },
+                    {
+                      "wd": "icy"
+                    },
+                    {
+                      "wd": "nipping"
+                    },
+                    {
+                      "wd": "nippy"
+                    },
+                    {
+                      "wd": "numbing"
+                    },
+                    {
+                      "wd": "polar"
+                    },
+                    {
+                      "wd": "shivery"
+                    },
+                    {
+                      "wd": "snappy"
+                    },
+                    {
+                      "wd": "wintry",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "wintery"
+                        }
+                      ]
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "cryogenic"
+                    },
+                    {
+                      "wd": "subfreezing"
+                    },
+                    {
+                      "wd": "subzero"
+                    },
+                    {
+                      "wd": "ultracold"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "cutting"
+                    },
+                    {
+                      "wd": "keen"
+                    },
+                    {
+                      "wd": "penetrating"
+                    },
+                    {
+                      "wd": "piercing"
+                    },
+                    {
+                      "wd": "sharp"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "bracing"
+                    },
+                    {
+                      "wd": "brisk"
+                    },
+                    {
+                      "wd": "crisp"
+                    },
+                    {
+                      "wd": "invigorating"
+                    },
+                    {
+                      "wd": "rigorous"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "chilled"
+                    },
+                    {
+                      "wd": "cooled"
+                    },
+                    {
+                      "wd": "frosted"
+                    },
+                    {
+                      "wd": "frozen"
+                    },
+                    {
+                      "wd": "iced"
+                    },
+                    {
+                      "wd": "refrigerated"
+                    },
+                    {
+                      "wd": "unheated"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "lukewarm"
+                    },
+                    {
+                      "wd": "tepid"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "heated"
+                    },
+                    {
+                      "wd": "overheated"
+                    },
+                    {
+                      "wd": "reheated"
+                    },
+                    {
+                      "wd": "warmed"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "snug"
+                    },
+                    {
+                      "wd": "toasty"
+                    },
+                    {
+                      "wd": "warm"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "feverish"
+                    },
+                    {
+                      "wd": "flushed"
+                    },
+                    {
+                      "wd": "inflamed",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "enflamed"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "canicular"
+                    },
+                    {
+                      "wd": "equatorial"
+                    },
+                    {
+                      "wd": "muggy"
+                    },
+                    {
+                      "wd": "steamy"
+                    },
+                    {
+                      "wd": "summery"
+                    },
+                    {
+                      "wd": "tropical"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "ardent"
+                    },
+                    {
+                      "wd": "blazing"
+                    },
+                    {
+                      "wd": "boiling"
+                    },
+                    {
+                      "wd": "broiling"
+                    },
+                    {
+                      "wd": "burning"
+                    },
+                    {
+                      "wd": "fervent"
+                    },
+                    {
+                      "wd": "fervid"
+                    },
+                    {
+                      "wd": "fiery"
+                    },
+                    {
+                      "wd": "glowing"
+                    },
+                    {
+                      "wd": "hot"
+                    },
+                    {
+                      "wd": "igneous"
+                    },
+                    {
+                      "wd": "molten"
+                    },
+                    {
+                      "wd": "piping hot"
+                    },
+                    {
+                      "wd": "red-hot"
+                    },
+                    {
+                      "wd": "roasting"
+                    },
+                    {
+                      "wd": "scalding"
+                    },
+                    {
+                      "wd": "scorching"
+                    },
+                    {
+                      "wd": "searing"
+                    },
+                    {
+                      "wd": "seething"
+                    },
+                    {
+                      "wd": "sizzling"
+                    },
+                    {
+                      "wd": "sultry"
+                    },
+                    {
+                      "wd": "sweltering"
+                    },
+                    {
+                      "wd": "torrid"
+                    },
+                    {
+                      "wd": "ultrahot"
+                    },
+                    {
+                      "wd": "warming"
+                    },
+                    {
+                      "wd": "white-hot"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "5",
+                "dt": [
+                  [
+                    "text",
+                    "lacking in friendliness or warmth of feeling "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "directed a {it}cool{/it} glance at the student who was sneaking into class late"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "antiseptic"
+                    },
+                    {
+                      "wd": "arctic"
+                    },
+                    {
+                      "wd": "brittle"
+                    },
+                    {
+                      "wd": "chill"
+                    },
+                    {
+                      "wd": "chilly"
+                    },
+                    {
+                      "wd": "clammy"
+                    },
+                    {
+                      "wd": "cold"
+                    },
+                    {
+                      "wd": "cold-blooded"
+                    },
+                    {
+                      "wd": "cold-eyed"
+                    },
+                    {
+                      "wd": "coldish"
+                    },
+                    {
+                      "wd": "frigid"
+                    },
+                    {
+                      "wd": "frosty"
+                    },
+                    {
+                      "wd": "frozen"
+                    },
+                    {
+                      "wd": "gelid"
+                    },
+                    {
+                      "wd": "glacial"
+                    },
+                    {
+                      "wd": "hard-eyed"
+                    },
+                    {
+                      "wd": "icy"
+                    },
+                    {
+                      "wd": "uncordial"
+                    },
+                    {
+                      "wd": "unfriendly"
+                    },
+                    {
+                      "wd": "unsympathetic"
+                    },
+                    {
+                      "wd": "wintry",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "wintery"
+                        }
+                      ]
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "bloodless"
+                    },
+                    {
+                      "wd": "coldhearted"
+                    },
+                    {
+                      "wd": "hard-hearted"
+                    },
+                    {
+                      "wd": "heartless"
+                    },
+                    {
+                      "wd": "kindless"
+                    },
+                    {
+                      "wd": "pitiless"
+                    },
+                    {
+                      "wd": "uncaring"
+                    },
+                    {
+                      "wd": "unfeeling"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "reserved"
+                    },
+                    {
+                      "wd": "soulless"
+                    },
+                    {
+                      "wd": "undemonstrative"
+                    },
+                    {
+                      "wd": "unemotional"
+                    },
+                    {
+                      "wd": "unresponsive"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "apathetic"
+                    },
+                    {
+                      "wd": "indifferent"
+                    },
+                    {
+                      "wd": "unenthusiastic"
+                    },
+                    {
+                      "wd": "uninterested"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "aloof"
+                    },
+                    {
+                      "wd": "detached"
+                    },
+                    {
+                      "wd": "dispassionate"
+                    },
+                    {
+                      "wd": "impersonal"
+                    },
+                    {
+                      "wd": "offish"
+                    },
+                    {
+                      "wd": "standoffish"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "antisocial"
+                    },
+                    {
+                      "wd": "unsociable"
+                    },
+                    {
+                      "wd": "unsocial"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "compassionate"
+                    },
+                    {
+                      "wd": "kind"
+                    },
+                    {
+                      "wd": "kindhearted"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "demonstrative"
+                    },
+                    {
+                      "wd": "emotional"
+                    },
+                    {
+                      "wd": "expressive"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "eager"
+                    },
+                    {
+                      "wd": "enthusiastic"
+                    },
+                    {
+                      "wd": "passionate"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "cordial"
+                    },
+                    {
+                      "wd": "friendly"
+                    },
+                    {
+                      "wd": "genial"
+                    },
+                    {
+                      "wd": "happy"
+                    },
+                    {
+                      "wd": "hearty"
+                    },
+                    {
+                      "wd": "sympathetic"
+                    },
+                    {
+                      "wd": "warm"
+                    },
+                    {
+                      "wd": "warm-blooded"
+                    },
+                    {
+                      "wd": "warmhearted"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "6",
+                "sls": [
+                  "slang"
+                ],
+                "dt": [
+                  [
+                    "text",
+                    "keenly aware of and responsive to the latest developments especially in fashion and entertainment "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "a Greek island that's the current favorite of the {it}cool{/it} crowd"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "au courant"
+                    },
+                    {
+                      "wd": "def",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "downtown"
+                    },
+                    {
+                      "wd": "groovy"
+                    },
+                    {
+                      "wd": "hep"
+                    },
+                    {
+                      "wd": "hip"
+                    },
+                    {
+                      "wd": "in"
+                    },
+                    {
+                      "wd": "mod"
+                    },
+                    {
+                      "wd": "now"
+                    },
+                    {
+                      "wd": "trendy"
+                    },
+                    {
+                      "wd": "turned-on"
+                    },
+                    {
+                      "wd": "with-it"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "à la mode",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "a la mode"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "chic"
+                    },
+                    {
+                      "wd": "fashionable"
+                    },
+                    {
+                      "wd": "modish"
+                    },
+                    {
+                      "wd": "sharp"
+                    },
+                    {
+                      "wd": "smart"
+                    },
+                    {
+                      "wd": "snappy"
+                    },
+                    {
+                      "wd": "stylish"
+                    },
+                    {
+                      "wd": "voguish"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "geeky"
+                    },
+                    {
+                      "wd": "nerdish"
+                    },
+                    {
+                      "wd": "nerdy"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "dowdy"
+                    },
+                    {
+                      "wd": "styleless"
+                    },
+                    {
+                      "wd": "unfashionable"
+                    },
+                    {
+                      "wd": "unstylish"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "out"
+                    },
+                    {
+                      "wd": "uncool"
+                    },
+                    {
+                      "wd": "unhip"
+                    },
+                    {
+                      "wd": "untrendy"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "7",
+                "sls": [
+                  "slang"
+                ],
+                "dt": [
+                  [
+                    "text",
+                    "of the very best kind "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "a really {it}cool{/it} garage band that's starting to get some attention from the music industry"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "A-OK"
+                    },
+                    {
+                      "wd": "A1"
+                    },
+                    {
+                      "wd": "awesome"
+                    },
+                    {
+                      "wd": "bang-up"
+                    },
+                    {
+                      "wd": "banner"
+                    },
+                    {
+                      "wd": "beautiful"
+                    },
+                    {
+                      "wd": "blue-chip"
+                    },
+                    {
+                      "wd": "blue-ribbon"
+                    },
+                    {
+                      "wd": "boffo"
+                    },
+                    {
+                      "wd": "bonny",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "bonnie"
+                        }
+                      ],
+                      "wsls": [
+                        "chiefly British"
+                      ]
+                    },
+                    {
+                      "wd": "boss",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "brag"
+                    },
+                    {
+                      "wd": "brave"
+                    },
+                    {
+                      "wd": "bully"
+                    },
+                    {
+                      "wd": "bumper"
+                    },
+                    {
+                      "wd": "capital"
+                    },
+                    {
+                      "wd": "choice"
+                    },
+                    {
+                      "wd": "classic"
+                    },
+                    {
+                      "wd": "corking"
+                    },
+                    {
+                      "wd": "crackerjack"
+                    },
+                    {
+                      "wd": "cracking"
+                    },
+                    {
+                      "wd": "dandy"
+                    },
+                    {
+                      "wd": "divine"
+                    },
+                    {
+                      "wd": "dope",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "down",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "dynamite"
+                    },
+                    {
+                      "wd": "excellent"
+                    },
+                    {
+                      "wd": "fab"
+                    },
+                    {
+                      "wd": "fabulous"
+                    },
+                    {
+                      "wd": "famous"
+                    },
+                    {
+                      "wd": "fantabulous",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "fantastic"
+                    },
+                    {
+                      "wd": "fine"
+                    },
+                    {
+                      "wd": "first-class"
+                    },
+                    {
+                      "wd": "first-rate"
+                    },
+                    {
+                      "wd": "first-string"
+                    },
+                    {
+                      "wd": "five-star"
+                    },
+                    {
+                      "wd": "four-star"
+                    },
+                    {
+                      "wd": "frontline"
+                    },
+                    {
+                      "wd": "gangbusters",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "gangbuster"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "gilt-edged",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "gilt-edge"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "gone",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "grand"
+                    },
+                    {
+                      "wd": "great"
+                    },
+                    {
+                      "wd": "groovy"
+                    },
+                    {
+                      "wd": "heavenly"
+                    },
+                    {
+                      "wd": "high-class"
+                    },
+                    {
+                      "wd": "hot"
+                    },
+                    {
+                      "wd": "hype",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "immense"
+                    },
+                    {
+                      "wd": "jim-dandy"
+                    },
+                    {
+                      "wd": "keen"
+                    },
+                    {
+                      "wd": "lovely"
+                    },
+                    {
+                      "wd": "marvelous",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "marvellous"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "mean"
+                    },
+                    {
+                      "wd": "neat"
+                    },
+                    {
+                      "wd": "nifty"
+                    },
+                    {
+                      "wd": "noble"
+                    },
+                    {
+                      "wd": "number one",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "No. 1"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "numero uno"
+                    },
+                    {
+                      "wd": "out-of-sight",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "par excellence"
+                    },
+                    {
+                      "wd": "peachy"
+                    },
+                    {
+                      "wd": "peachy keen"
+                    },
+                    {
+                      "wd": "phat",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "prime"
+                    },
+                    {
+                      "wd": "primo",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "prize"
+                    },
+                    {
+                      "wd": "prizewinning"
+                    },
+                    {
+                      "wd": "quality"
+                    },
+                    {
+                      "wd": "radical",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "righteous",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "sensational"
+                    },
+                    {
+                      "wd": "slick"
+                    },
+                    {
+                      "wd": "splendid"
+                    },
+                    {
+                      "wd": "stellar"
+                    },
+                    {
+                      "wd": "sterling"
+                    },
+                    {
+                      "wd": "superb"
+                    },
+                    {
+                      "wd": "superior"
+                    },
+                    {
+                      "wd": "superlative"
+                    },
+                    {
+                      "wd": "supernal"
+                    },
+                    {
+                      "wd": "swell"
+                    },
+                    {
+                      "wd": "terrific"
+                    },
+                    {
+                      "wd": "tip-top"
+                    },
+                    {
+                      "wd": "top"
+                    },
+                    {
+                      "wd": "top-notch"
+                    },
+                    {
+                      "wd": "top-of-the-line"
+                    },
+                    {
+                      "wd": "top-shelf"
+                    },
+                    {
+                      "wd": "topflight"
+                    },
+                    {
+                      "wd": "topping",
+                      "wsls": [
+                        "chiefly British"
+                      ]
+                    },
+                    {
+                      "wd": "unsurpassed"
+                    },
+                    {
+                      "wd": "wizard",
+                      "wsls": [
+                        "chiefly British"
+                      ]
+                    },
+                    {
+                      "wd": "wonderful"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "acceptable"
+                    },
+                    {
+                      "wd": "adequate"
+                    },
+                    {
+                      "wd": "all right"
+                    },
+                    {
+                      "wd": "decent"
+                    },
+                    {
+                      "wd": "good"
+                    },
+                    {
+                      "wd": "OK",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "okay"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "passable"
+                    },
+                    {
+                      "wd": "satisfactory"
+                    },
+                    {
+                      "wd": "tolerable"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "better"
+                    },
+                    {
+                      "wd": "exceptional"
+                    },
+                    {
+                      "wd": "fancy"
+                    },
+                    {
+                      "wd": "high-grade"
+                    },
+                    {
+                      "wd": "high-test"
+                    },
+                    {
+                      "wd": "premium"
+                    },
+                    {
+                      "wd": "select"
+                    },
+                    {
+                      "wd": "special"
+                    },
+                    {
+                      "wd": "superfine"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "classical"
+                    },
+                    {
+                      "wd": "standard"
+                    },
+                    {
+                      "wd": "traditional"
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "out of this world"
+                    },
+                    {
+                      "wd": "too much"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "bad"
+                    },
+                    {
+                      "wd": "inferior"
+                    },
+                    {
+                      "wd": "low-grade"
+                    },
+                    {
+                      "wd": "substandard"
+                    },
+                    {
+                      "wd": "unsatisfactory"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "mediocre"
+                    },
+                    {
+                      "wd": "middling"
+                    },
+                    {
+                      "wd": "second-class"
+                    },
+                    {
+                      "wd": "second-rate"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "atrocious"
+                    },
+                    {
+                      "wd": "awful"
+                    },
+                    {
+                      "wd": "execrable"
+                    },
+                    {
+                      "wd": "lousy"
+                    },
+                    {
+                      "wd": "pathetic"
+                    },
+                    {
+                      "wd": "poor"
+                    },
+                    {
+                      "wd": "rotten"
+                    },
+                    {
+                      "wd": "terrible"
+                    },
+                    {
+                      "wd": "vile"
+                    },
+                    {
+                      "wd": "wretched"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "being in the latest or current fashion",
+      "having or showing a lack of friendliness or interest in others",
+      "free from emotional or mental agitation"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool",
+      "uuid": "36bee743-219d-4988-8355-22ca97f9669a",
+      "src": "coll_thes",
+      "section": "alpha",
+      "target": {
+        "tuuid": "6245ca11-1d87-497e-8903-5c5431ac758b",
+        "tsrc": "collegiate"
+      },
+      "stems": [
+        "cool",
+        "cool one's heels",
+        "cooled",
+        "cooling",
+        "cools"
+      ],
+      "syns": [
+        [
+          "chill",
+          "refrigerate"
+        ],
+        [
+          "calm (down)",
+          "chill out",
+          "hush",
+          "pipe down",
+          "quiet",
+          "settle (down)"
+        ]
+      ],
+      "ants": [
+        [
+          "heat",
+          "toast",
+          "warm"
+        ],
+        [
+          "act up",
+          "carry on",
+          "cut up"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool"
+    },
+    "fl": "verb",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "to cause to lose heat "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "{it}cool{/it} your drinks in the icy mountain stream"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "chill"
+                    },
+                    {
+                      "wd": "refrigerate"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "air-condition"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "freeze"
+                    },
+                    {
+                      "wd": "frost"
+                    },
+                    {
+                      "wd": "ice"
+                    },
+                    {
+                      "wd": "quick-freeze"
+                    },
+                    {
+                      "wd": "supercool"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "ventilate"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "bake"
+                    },
+                    {
+                      "wd": "boil"
+                    },
+                    {
+                      "wd": "broil"
+                    },
+                    {
+                      "wd": "steam"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "heat-treat"
+                    },
+                    {
+                      "wd": "temper"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "microwave"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "heat"
+                    },
+                    {
+                      "wd": "toast"
+                    },
+                    {
+                      "wd": "warm"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2",
+                "dt": [
+                  [
+                    "text",
+                    "to become still and orderly "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "after the recess, tempers had {it}cooled{/it}, and we could have a civil, rational discussion"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "calm (down)"
+                    },
+                    {
+                      "wd": "chill out",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "hush"
+                    },
+                    {
+                      "wd": "pipe down"
+                    },
+                    {
+                      "wd": "quiet"
+                    },
+                    {
+                      "wd": "settle (down)"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "dry up"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "relax"
+                    },
+                    {
+                      "wd": "tranquilize",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "tranquillize"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "unwind"
+                    },
+                    {
+                      "wd": "zone out"
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "cool it"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "clown (around)"
+                    },
+                    {
+                      "wd": "fool around"
+                    },
+                    {
+                      "wd": "horse around"
+                    },
+                    {
+                      "wd": "monkey (around)"
+                    },
+                    {
+                      "wd": "show off"
+                    },
+                    {
+                      "wd": "skylark"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "act up"
+                    },
+                    {
+                      "wd": "carry on"
+                    },
+                    {
+                      "wd": "cut up"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "to cause to lose heat",
+      "to become still and orderly"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool",
+      "uuid": "bd903724-a806-4b56-8e8f-bca876a84c00",
+      "src": "coll_thes",
+      "section": "alpha",
+      "target": {
+        "tuuid": "1663348e-049b-4b46-98f5-7fef8f90cc01",
+        "tsrc": "collegiate"
+      },
+      "stems": [
+        "cool",
+        "cools"
+      ],
+      "syns": [
+        [
+          "coldness",
+          "detachment",
+          "dispassion",
+          "dispassionateness"
+        ],
+        [
+          "coolness",
+          "fashionableness",
+          "hip",
+          "hipness",
+          "hipsterism",
+          "modishness",
+          "stylishness",
+          "trendiness",
+          "voguishness"
+        ],
+        [
+          "aplomb",
+          "calmness",
+          "collectedness",
+          "composedness",
+          "composure",
+          "coolness",
+          "countenance",
+          "equanimity",
+          "equilibrium",
+          "imperturbability",
+          "placidity",
+          "repose",
+          "sangfroid",
+          "self-composedness",
+          "self-possession",
+          "serenity",
+          "tranquility",
+          "tranquilness"
+        ]
+      ],
+      "ants": [
+        [
+          "unfashionableness"
+        ],
+        [
+          "agitation",
+          "discomposure",
+          "perturbation"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool"
+    },
+    "fl": "noun",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "the absence of emotional involvement "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "the judge's customary {it}cool{/it} stood her in good stead during the sensational trial"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "coldness"
+                    },
+                    {
+                      "wd": "detachment"
+                    },
+                    {
+                      "wd": "dispassion"
+                    },
+                    {
+                      "wd": "dispassionateness"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "equitability"
+                    },
+                    {
+                      "wd": "equitableness"
+                    },
+                    {
+                      "wd": "fairness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "disinterest"
+                    },
+                    {
+                      "wd": "disinterestedness"
+                    },
+                    {
+                      "wd": "impartiality"
+                    },
+                    {
+                      "wd": "nonpartisanship"
+                    },
+                    {
+                      "wd": "objectivity"
+                    },
+                    {
+                      "wd": "unbiasedness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "balance"
+                    },
+                    {
+                      "wd": "rationality"
+                    },
+                    {
+                      "wd": "rationalness"
+                    },
+                    {
+                      "wd": "reasonability"
+                    },
+                    {
+                      "wd": "reasonableness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "calm"
+                    },
+                    {
+                      "wd": "calmness"
+                    },
+                    {
+                      "wd": "peace"
+                    },
+                    {
+                      "wd": "peacefulness"
+                    },
+                    {
+                      "wd": "placidity"
+                    },
+                    {
+                      "wd": "quiet"
+                    },
+                    {
+                      "wd": "quietness"
+                    },
+                    {
+                      "wd": "quietude"
+                    },
+                    {
+                      "wd": "repose"
+                    },
+                    {
+                      "wd": "restfulness"
+                    },
+                    {
+                      "wd": "sereneness"
+                    },
+                    {
+                      "wd": "serenity"
+                    },
+                    {
+                      "wd": "tranquility",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "tranquillity"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "tranquilness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "reserve"
+                    },
+                    {
+                      "wd": "undemonstrativeness"
+                    },
+                    {
+                      "wd": "unresponsiveness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "apathy"
+                    },
+                    {
+                      "wd": "indifference"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "emotionalism"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "bias"
+                    },
+                    {
+                      "wd": "favor"
+                    },
+                    {
+                      "wd": "one-sidedness"
+                    },
+                    {
+                      "wd": "partiality"
+                    },
+                    {
+                      "wd": "partisanship"
+                    },
+                    {
+                      "wd": "prejudice"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2",
+                "dt": [
+                  [
+                    "text",
+                    "the quality or state of being fashionable "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "a designer who was the arbiter of {it}cool{/it}"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "coolness"
+                    },
+                    {
+                      "wd": "fashionableness"
+                    },
+                    {
+                      "wd": "hip"
+                    },
+                    {
+                      "wd": "hipness"
+                    },
+                    {
+                      "wd": "hipsterism"
+                    },
+                    {
+                      "wd": "modishness"
+                    },
+                    {
+                      "wd": "stylishness"
+                    },
+                    {
+                      "wd": "trendiness"
+                    },
+                    {
+                      "wd": "voguishness"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "chic"
+                    },
+                    {
+                      "wd": "chicness"
+                    },
+                    {
+                      "wd": "dapperness"
+                    },
+                    {
+                      "wd": "elegance"
+                    },
+                    {
+                      "wd": "poshness"
+                    },
+                    {
+                      "wd": "smartness"
+                    },
+                    {
+                      "wd": "style"
+                    },
+                    {
+                      "wd": "swank"
+                    },
+                    {
+                      "wd": "swankiness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "class"
+                    },
+                    {
+                      "wd": "grace"
+                    },
+                    {
+                      "wd": "gracefulness"
+                    },
+                    {
+                      "wd": "majesty"
+                    },
+                    {
+                      "wd": "stateliness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "artfulness"
+                    },
+                    {
+                      "wd": "polish"
+                    },
+                    {
+                      "wd": "sophistication"
+                    },
+                    {
+                      "wd": "taste"
+                    },
+                    {
+                      "wd": "tastefulness"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "flashiness"
+                    },
+                    {
+                      "wd": "garishness"
+                    },
+                    {
+                      "wd": "gaudiness"
+                    },
+                    {
+                      "wd": "gracelessness"
+                    },
+                    {
+                      "wd": "grotesqueness"
+                    },
+                    {
+                      "wd": "tackiness"
+                    },
+                    {
+                      "wd": "tastelessness"
+                    },
+                    {
+                      "wd": "tawdriness"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "unfashionableness"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "3",
+                "dt": [
+                  [
+                    "text",
+                    "evenness of emotions or temper "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "despite the flood of insults, the fledgling stand-up comic never lost his {it}cool{/it}"
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "aplomb"
+                    },
+                    {
+                      "wd": "calmness"
+                    },
+                    {
+                      "wd": "collectedness"
+                    },
+                    {
+                      "wd": "composedness"
+                    },
+                    {
+                      "wd": "composure"
+                    },
+                    {
+                      "wd": "coolness"
+                    },
+                    {
+                      "wd": "countenance"
+                    },
+                    {
+                      "wd": "equanimity"
+                    },
+                    {
+                      "wd": "equilibrium"
+                    },
+                    {
+                      "wd": "imperturbability"
+                    },
+                    {
+                      "wd": "placidity"
+                    },
+                    {
+                      "wd": "repose"
+                    },
+                    {
+                      "wd": "sangfroid"
+                    },
+                    {
+                      "wd": "self-composedness"
+                    },
+                    {
+                      "wd": "self-possession"
+                    },
+                    {
+                      "wd": "serenity"
+                    },
+                    {
+                      "wd": "tranquility",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "tranquillity"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "tranquilness"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "assurance"
+                    },
+                    {
+                      "wd": "confidence"
+                    },
+                    {
+                      "wd": "poise"
+                    },
+                    {
+                      "wd": "self-assurance"
+                    },
+                    {
+                      "wd": "self-assuredness"
+                    },
+                    {
+                      "wd": "self-confidence"
+                    },
+                    {
+                      "wd": "self-trust"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "easygoingness"
+                    },
+                    {
+                      "wd": "laid-backness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "apathy"
+                    },
+                    {
+                      "wd": "detachment"
+                    },
+                    {
+                      "wd": "impassivity"
+                    },
+                    {
+                      "wd": "indifference"
+                    },
+                    {
+                      "wd": "insensibility"
+                    },
+                    {
+                      "wd": "numbness"
+                    },
+                    {
+                      "wd": "phlegm"
+                    },
+                    {
+                      "wd": "unconcern"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "alarm",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "alarum"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "anxiety"
+                    },
+                    {
+                      "wd": "anxiousness"
+                    },
+                    {
+                      "wd": "apprehension"
+                    },
+                    {
+                      "wd": "apprehensiveness"
+                    },
+                    {
+                      "wd": "care"
+                    },
+                    {
+                      "wd": "concern"
+                    },
+                    {
+                      "wd": "disquiet"
+                    },
+                    {
+                      "wd": "solicitude"
+                    },
+                    {
+                      "wd": "uneasiness"
+                    },
+                    {
+                      "wd": "worry"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "excitability"
+                    },
+                    {
+                      "wd": "excitableness"
+                    },
+                    {
+                      "wd": "nervousness"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "disturbance"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "agitation"
+                    },
+                    {
+                      "wd": "discomposure"
+                    },
+                    {
+                      "wd": "perturbation"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "the absence of emotional involvement",
+      "the quality or state of being fashionable",
+      "evenness of emotions or temper"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool it",
+      "uuid": "f97a1f7f-a752-4ac7-9e44-cb5a51cd886a",
+      "src": "CTenhance",
+      "section": "phrases",
+      "stems": [
+        "cool it",
+        "cooling it",
+        "cooled it",
+        "cools it"
+      ],
+      "syns": [
+        [
+          "calm (down)",
+          "chill out",
+          "cool",
+          "hush",
+          "quiet",
+          "pipe down",
+          "settle (down)"
+        ]
+      ],
+      "ants": [
+        [
+          "act up",
+          "carry on",
+          "cut up"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool it"
+    },
+    "fl": "phrase",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "to become still and orderly "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "You need to {it}cool it{/it} before we all get in trouble."
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "calm (down)"
+                    },
+                    {
+                      "wd": "chill out",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "cool"
+                    },
+                    {
+                      "wd": "hush"
+                    },
+                    {
+                      "wd": "quiet"
+                    },
+                    {
+                      "wd": "pipe down"
+                    },
+                    {
+                      "wd": "settle (down)"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "dry up"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "relax"
+                    },
+                    {
+                      "wd": "tranquilize",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "tranquillize"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "unwind"
+                    },
+                    {
+                      "wd": "zone out"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "clown (around)"
+                    },
+                    {
+                      "wd": "fool around"
+                    },
+                    {
+                      "wd": "horse around"
+                    },
+                    {
+                      "wd": "monkey (around)"
+                    },
+                    {
+                      "wd": "show off"
+                    },
+                    {
+                      "wd": "skylark"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "act up"
+                    },
+                    {
+                      "wd": "carry on"
+                    },
+                    {
+                      "wd": "cut up"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "to become still and orderly"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool one's heels",
+      "uuid": "718661e6-aa6d-4962-b87e-bb98245d55a6",
+      "src": "CTenhance",
+      "section": "phrases",
+      "stems": [
+        "cool one's heels",
+        "cool her heels",
+        "cool his heels",
+        "cool their heels"
+      ],
+      "syns": [
+        [
+          "await",
+          "bide",
+          "hold on",
+          "stay",
+          "wait"
+        ]
+      ],
+      "ants": [],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool one's heels"
+    },
+    "fl": "phrase",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "to remain in place in readiness or expectation of something "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "They {it}cooled their heels{/it} at the table for almost half an hour before the waiter appeared."
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "await"
+                    },
+                    {
+                      "wd": "bide"
+                    },
+                    {
+                      "wd": "hold on"
+                    },
+                    {
+                      "wd": "stay"
+                    },
+                    {
+                      "wd": "wait"
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "hang around"
+                    },
+                    {
+                      "wd": "linger"
+                    },
+                    {
+                      "wd": "remain"
+                    },
+                    {
+                      "wd": "stick around"
+                    },
+                    {
+                      "wd": "tarry"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "stand by"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "anticipate"
+                    },
+                    {
+                      "wd": "expect"
+                    },
+                    {
+                      "wd": "watch (for)"
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "bide one's time"
+                    },
+                    {
+                      "wd": "hold one's breath"
+                    },
+                    {
+                      "wd": "sit tight"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "to remain in place in readiness or expectation of something"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool (down)",
+      "uuid": "f3802883-9bc5-49ca-a44e-9d4c7b47d93f",
+      "src": "CTcompile",
+      "section": "alpha",
+      "stems": [
+        "cool (down)",
+        "cool down"
+      ],
+      "syns": [
+        [
+          "calm (down)",
+          "settle (down)",
+          "belt up",
+          "clam up",
+          "dry up",
+          "dummy up",
+          "hush",
+          "pipe down",
+          "quiet (down)",
+          "shut up",
+          "haw",
+          "hem"
+        ]
+      ],
+      "ants": [
+        [
+          "speak",
+          "talk",
+          "pipe up",
+          "sound off",
+          "speak out",
+          "speak up",
+          "spout (off)",
+          "talk up"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool (down)"
+    },
+    "fl": "verb",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "as in {it}calm (down){/it}, {it}settle (down){/it}"
+                  ]
+                ],
+                "sim_list": [
+                  [
+                    {
+                      "wd": "calm (down)"
+                    },
+                    {
+                      "wd": "settle (down)"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "belt up",
+                      "wsls": [
+                        "British"
+                      ]
+                    },
+                    {
+                      "wd": "clam up"
+                    },
+                    {
+                      "wd": "dry up"
+                    },
+                    {
+                      "wd": "dummy up"
+                    },
+                    {
+                      "wd": "hush"
+                    },
+                    {
+                      "wd": "pipe down"
+                    },
+                    {
+                      "wd": "quiet (down)"
+                    },
+                    {
+                      "wd": "shut up"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "haw"
+                    },
+                    {
+                      "wd": "hem"
+                    }
+                  ]
+                ],
+                "opp_list": [
+                  [
+                    {
+                      "wd": "speak"
+                    },
+                    {
+                      "wd": "talk"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "pipe up"
+                    },
+                    {
+                      "wd": "sound off"
+                    },
+                    {
+                      "wd": "speak out"
+                    },
+                    {
+                      "wd": "speak up"
+                    },
+                    {
+                      "wd": "spout (off)"
+                    },
+                    {
+                      "wd": "talk up"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "as in calm (down), settle (down)"
+    ]
+  },
+  {
+    "meta": {
+      "id": "cool (off or down)",
+      "uuid": "43ae6dec-4f71-4012-83f1-bfdcaccfa6dc",
+      "src": "CTcompile",
+      "section": "alpha",
+      "stems": [
+        "cool (off or down)",
+        "cool off or down"
+      ],
+      "syns": [
+        [
+          "chill out",
+          "relax",
+          "calm (down)",
+          "simmer down",
+          "hush",
+          "quiet (down)"
+        ]
+      ],
+      "ants": [
+        [
+          "blow up",
+          "flare (up)",
+          "flip (out)",
+          "anger",
+          "fulminate",
+          "rage",
+          "rant",
+          "rave",
+          "snap",
+          "snarl",
+          "sputter",
+          "storm",
+          "tee off",
+          "vent",
+          "vituperate",
+          "bristle",
+          "burn",
+          "foam",
+          "fume",
+          "glare",
+          "glower",
+          "seethe",
+          "sizzle",
+          "smolder",
+          "steam",
+          "warm"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "cool (off or down)"
+    },
+    "fl": "verb",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "as in {it}relax{/it}, {it}chill out{/it}"
+                  ]
+                ],
+                "sim_list": [
+                  [
+                    {
+                      "wd": "chill out",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "relax"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "calm (down)"
+                    },
+                    {
+                      "wd": "simmer down"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "hush"
+                    },
+                    {
+                      "wd": "quiet (down)"
+                    }
+                  ]
+                ],
+                "opp_list": [
+                  [
+                    {
+                      "wd": "blow up"
+                    },
+                    {
+                      "wd": "flare (up)"
+                    },
+                    {
+                      "wd": "flip (out)",
+                      "wsls": [
+                        "slang"
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "anger"
+                    },
+                    {
+                      "wd": "fulminate"
+                    },
+                    {
+                      "wd": "rage"
+                    },
+                    {
+                      "wd": "rant"
+                    },
+                    {
+                      "wd": "rave"
+                    },
+                    {
+                      "wd": "snap"
+                    },
+                    {
+                      "wd": "snarl"
+                    },
+                    {
+                      "wd": "sputter"
+                    },
+                    {
+                      "wd": "storm"
+                    },
+                    {
+                      "wd": "tee off"
+                    },
+                    {
+                      "wd": "vent"
+                    },
+                    {
+                      "wd": "vituperate"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "bristle"
+                    },
+                    {
+                      "wd": "burn"
+                    },
+                    {
+                      "wd": "foam"
+                    },
+                    {
+                      "wd": "fume"
+                    },
+                    {
+                      "wd": "glare"
+                    },
+                    {
+                      "wd": "glower"
+                    },
+                    {
+                      "wd": "seethe"
+                    },
+                    {
+                      "wd": "sizzle"
+                    },
+                    {
+                      "wd": "smolder",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "smoulder"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "steam"
+                    },
+                    {
+                      "wd": "warm"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "as in relax, chill out"
+    ]
+  },
+  {
+    "meta": {
+      "id": "blow one's cool",
+      "uuid": "9f177c89-c0cc-4ba5-851a-6dbe9f895f94",
+      "src": "CTenhance",
+      "section": "phrases",
+      "stems": [
+        "blow one's cool",
+        "blow my cool",
+        "blow your cool",
+        "blow his cool",
+        "blow her cool",
+        "blow its cool",
+        "blow our cool",
+        "blow our cools",
+        "blow your cools",
+        "blow their cool",
+        "blow their cools",
+        "blows his cool",
+        "blows her cool",
+        "blows its cool",
+        "blew my cool",
+        "blew your cool",
+        "blew his cool",
+        "blew her cool",
+        "blew its cool",
+        "blew our cool",
+        "blew our cools",
+        "blow your cools",
+        "blew their cool",
+        "blew their cools",
+        "blowing my cool",
+        "blowing your cool",
+        "blowing his cool",
+        "blowing her cool",
+        "blowing its cool",
+        "blowing our cool",
+        "blowing our cools",
+        "blowing your cools",
+        "blowing their cool",
+        "blowing their cools",
+        "blown my cool",
+        "blown your cool",
+        "blown his cool",
+        "blown her cool",
+        "blown its cool",
+        "blown our cool",
+        "blown our cools",
+        "blown your cools",
+        "blown their cool"
+      ],
+      "syns": [
+        [
+          "blow up",
+          "flare (up)",
+          "flip (out)"
+        ],
+        [
+          "break down",
+          "break up",
+          "crack",
+          "flip (out)",
+          "freak (out)",
+          "melt down",
+          "wig (out)"
+        ]
+      ],
+      "ants": [
+        [
+          "calm (down)",
+          "simmer down"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "blow one's cool"
+    },
+    "fl": "phrase",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "to become very angry "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "He {it}blew his cool{/it} when the tailgater rear-ended him."
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "blow up"
+                    },
+                    {
+                      "wd": "flare (up)"
+                    },
+                    {
+                      "wd": "flip (out)",
+                      "wsls": [
+                        "slang"
+                      ]
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "anger"
+                    },
+                    {
+                      "wd": "fulminate"
+                    },
+                    {
+                      "wd": "rage"
+                    },
+                    {
+                      "wd": "rant"
+                    },
+                    {
+                      "wd": "rave"
+                    },
+                    {
+                      "wd": "snap"
+                    },
+                    {
+                      "wd": "snarl"
+                    },
+                    {
+                      "wd": "sputter"
+                    },
+                    {
+                      "wd": "storm"
+                    },
+                    {
+                      "wd": "tee off"
+                    },
+                    {
+                      "wd": "vent"
+                    },
+                    {
+                      "wd": "vituperate"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "bristle"
+                    },
+                    {
+                      "wd": "burn"
+                    },
+                    {
+                      "wd": "foam"
+                    },
+                    {
+                      "wd": "fume"
+                    },
+                    {
+                      "wd": "glare"
+                    },
+                    {
+                      "wd": "glower"
+                    },
+                    {
+                      "wd": "seethe"
+                    },
+                    {
+                      "wd": "sizzle"
+                    },
+                    {
+                      "wd": "smolder",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "smoulder"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "steam"
+                    },
+                    {
+                      "wd": "warm"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "burst"
+                    },
+                    {
+                      "wd": "explode"
+                    },
+                    {
+                      "wd": "flare (out)"
+                    },
+                    {
+                      "wd": "flash"
+                    },
+                    {
+                      "wd": "inflame",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "enflame"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "madden"
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "blow a gasket"
+                    },
+                    {
+                      "wd": "blow one's stack"
+                    },
+                    {
+                      "wd": "blow one's top"
+                    },
+                    {
+                      "wd": "fly into a rage"
+                    },
+                    {
+                      "wd": "fly off the handle"
+                    },
+                    {
+                      "wd": "forget oneself"
+                    },
+                    {
+                      "wd": "go ballistic"
+                    },
+                    {
+                      "wd": "have a fit"
+                    },
+                    {
+                      "wd": "hit the ceiling"
+                    },
+                    {
+                      "wd": "hit the roof"
+                    },
+                    {
+                      "wd": "lose one's cool"
+                    },
+                    {
+                      "wd": "lose one's temper"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "chill out",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "cool (off or down)"
+                    },
+                    {
+                      "wd": "relax"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "hush"
+                    },
+                    {
+                      "wd": "quiet (down)"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "calm (down)"
+                    },
+                    {
+                      "wd": "simmer down"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2",
+                "dt": [
+                  [
+                    "text",
+                    "to yield to mental or emotional stress "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "The movie star tolerated the constant attention of the paparazzi, but finally {it}blew her cool{/it} when one asked about her recent divorce."
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "break down"
+                    },
+                    {
+                      "wd": "break up"
+                    },
+                    {
+                      "wd": "crack"
+                    },
+                    {
+                      "wd": "flip (out)",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "freak (out)"
+                    },
+                    {
+                      "wd": "melt down"
+                    },
+                    {
+                      "wd": "wig (out)",
+                      "wsls": [
+                        "slang"
+                      ]
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "choke"
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "fall apart"
+                    },
+                    {
+                      "wd": "go off the deep end"
+                    },
+                    {
+                      "wd": "go to pieces"
+                    },
+                    {
+                      "wd": "lose it"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "to become very angry",
+      "to yield to mental or emotional stress"
+    ]
+  },
+  {
+    "meta": {
+      "id": "lose one's cool",
+      "uuid": "ef9fd94f-6fea-4ceb-a43c-09dd1b77d5c1",
+      "src": "CTenhance",
+      "section": "phrases",
+      "stems": [
+        "lose one's cool",
+        "lose her cool",
+        "lose his cool",
+        "lose their cool"
+      ],
+      "syns": [
+        [
+          "blow up",
+          "flare (up)",
+          "flip (out)"
+        ]
+      ],
+      "ants": [
+        [
+          "calm (down)",
+          "simmer down"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "lose one's cool"
+    },
+    "fl": "phrase",
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "dt": [
+                  [
+                    "text",
+                    "to become very angry "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "He {it}lost his cool{/it} when he couldn't beat the game."
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "blow up"
+                    },
+                    {
+                      "wd": "flare (up)"
+                    },
+                    {
+                      "wd": "flip (out)",
+                      "wsls": [
+                        "slang"
+                      ]
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "anger"
+                    },
+                    {
+                      "wd": "fulminate"
+                    },
+                    {
+                      "wd": "rage"
+                    },
+                    {
+                      "wd": "rant"
+                    },
+                    {
+                      "wd": "rave"
+                    },
+                    {
+                      "wd": "snap"
+                    },
+                    {
+                      "wd": "snarl"
+                    },
+                    {
+                      "wd": "sputter"
+                    },
+                    {
+                      "wd": "storm"
+                    },
+                    {
+                      "wd": "tee off"
+                    },
+                    {
+                      "wd": "vent"
+                    },
+                    {
+                      "wd": "vituperate"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "bristle"
+                    },
+                    {
+                      "wd": "burn"
+                    },
+                    {
+                      "wd": "foam"
+                    },
+                    {
+                      "wd": "fume"
+                    },
+                    {
+                      "wd": "glare"
+                    },
+                    {
+                      "wd": "glower"
+                    },
+                    {
+                      "wd": "seethe"
+                    },
+                    {
+                      "wd": "sizzle"
+                    },
+                    {
+                      "wd": "smolder",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "smoulder"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "steam"
+                    },
+                    {
+                      "wd": "warm"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "burst"
+                    },
+                    {
+                      "wd": "explode"
+                    },
+                    {
+                      "wd": "flare (out)"
+                    },
+                    {
+                      "wd": "flash"
+                    },
+                    {
+                      "wd": "inflame",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "enflame"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "madden"
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "blow a gasket"
+                    },
+                    {
+                      "wd": "blow one's cool"
+                    },
+                    {
+                      "wd": "blow one's stack"
+                    },
+                    {
+                      "wd": "blow one's top"
+                    },
+                    {
+                      "wd": "fly into a rage"
+                    },
+                    {
+                      "wd": "fly off the handle"
+                    },
+                    {
+                      "wd": "forget oneself"
+                    },
+                    {
+                      "wd": "go ballistic"
+                    },
+                    {
+                      "wd": "have a fit"
+                    },
+                    {
+                      "wd": "hit the ceiling"
+                    },
+                    {
+                      "wd": "hit the roof"
+                    },
+                    {
+                      "wd": "lose one's temper"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "chill out",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "cool (off or down)"
+                    },
+                    {
+                      "wd": "relax"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "hush"
+                    },
+                    {
+                      "wd": "quiet (down)"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "calm (down)"
+                    },
+                    {
+                      "wd": "simmer down"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "to become very angry"
+    ]
+  },
+  {
+    "meta": {
+      "id": "blown one's cool",
+      "uuid": "a3a65c38-5bd1-4532-b6b4-d6b5de0fce93",
+      "src": "CTenhance",
+      "section": "phrases",
+      "stems": [
+        "blown one's cool"
+      ],
+      "syns": [
+        [
+          "blown up",
+          "flared (up)",
+          "flipped (out)"
+        ],
+        [
+          "broken down",
+          "broken up",
+          "cracked",
+          "flipped (out)",
+          "freaked (out)",
+          "melted down",
+          "wigged (out)"
+        ]
+      ],
+      "ants": [
+        [
+          "calmed (down)",
+          "simmered down"
+        ]
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "blown one's cool"
+    },
+    "fl": "phrase",
+    "sls": [
+      "past participle of {d_link|blow one's cool|blow one's cool}"
+    ],
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "to become very angry "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "He {it}blew his cool{/it} when the tailgater rear-ended him."
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "blown up"
+                    },
+                    {
+                      "wd": "flared (up)"
+                    },
+                    {
+                      "wd": "flipped (out)",
+                      "wsls": [
+                        "slang"
+                      ]
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "angered"
+                    },
+                    {
+                      "wd": "fulminated"
+                    },
+                    {
+                      "wd": "raged"
+                    },
+                    {
+                      "wd": "ranted"
+                    },
+                    {
+                      "wd": "raved"
+                    },
+                    {
+                      "wd": "snapped"
+                    },
+                    {
+                      "wd": "snarled"
+                    },
+                    {
+                      "wd": "sputtered"
+                    },
+                    {
+                      "wd": "stormed"
+                    },
+                    {
+                      "wd": "teed off"
+                    },
+                    {
+                      "wd": "vented"
+                    },
+                    {
+                      "wd": "vituperated"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "bristled"
+                    },
+                    {
+                      "wd": "burned",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "burnt"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "foamed"
+                    },
+                    {
+                      "wd": "fumed"
+                    },
+                    {
+                      "wd": "glared"
+                    },
+                    {
+                      "wd": "glowered"
+                    },
+                    {
+                      "wd": "seethed"
+                    },
+                    {
+                      "wd": "sizzled"
+                    },
+                    {
+                      "wd": "smoldered",
+                      "wvrs": [
+                        {
+                          "wvl": "or",
+                          "wva": "smouldered"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "steamed"
+                    },
+                    {
+                      "wd": "warmed"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "burst",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "bursted"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "exploded"
+                    },
+                    {
+                      "wd": "flared (out)"
+                    },
+                    {
+                      "wd": "flashed"
+                    },
+                    {
+                      "wd": "inflamed",
+                      "wvrs": [
+                        {
+                          "wvl": "also",
+                          "wva": "enflamed"
+                        }
+                      ]
+                    },
+                    {
+                      "wd": "maddened"
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "blown a gasket"
+                    },
+                    {
+                      "wd": "blown one's stack"
+                    },
+                    {
+                      "wd": "blown one's top"
+                    },
+                    {
+                      "wd": "flown into a rage"
+                    },
+                    {
+                      "wd": "flown off the handle"
+                    },
+                    {
+                      "wd": "forgotten oneself"
+                    },
+                    {
+                      "wd": "gone ballistic"
+                    },
+                    {
+                      "wd": "had a fit"
+                    },
+                    {
+                      "wd": "hit the ceiling"
+                    },
+                    {
+                      "wd": "hit the roof"
+                    },
+                    {
+                      "wd": "lost one's cool"
+                    },
+                    {
+                      "wd": "lost one's temper"
+                    }
+                  ]
+                ],
+                "near_list": [
+                  [
+                    {
+                      "wd": "chilled out",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "cooled (off or down)"
+                    },
+                    {
+                      "wd": "relaxed"
+                    }
+                  ],
+                  [
+                    {
+                      "wd": "hushed"
+                    },
+                    {
+                      "wd": "quieted (down)"
+                    }
+                  ]
+                ],
+                "ant_list": [
+                  [
+                    {
+                      "wd": "calmed (down)"
+                    },
+                    {
+                      "wd": "simmered down"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2",
+                "dt": [
+                  [
+                    "text",
+                    "to yield to mental or emotional stress "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "The movie star tolerated the constant attention of the paparazzi, but finally {it}blew her cool{/it} when one asked about her recent divorce."
+                      }
+                    ]
+                  ]
+                ],
+                "syn_list": [
+                  [
+                    {
+                      "wd": "broken down"
+                    },
+                    {
+                      "wd": "broken up"
+                    },
+                    {
+                      "wd": "cracked"
+                    },
+                    {
+                      "wd": "flipped (out)",
+                      "wsls": [
+                        "slang"
+                      ]
+                    },
+                    {
+                      "wd": "freaked (out)"
+                    },
+                    {
+                      "wd": "melted down"
+                    },
+                    {
+                      "wd": "wigged (out)",
+                      "wsls": [
+                        "slang"
+                      ]
+                    }
+                  ]
+                ],
+                "rel_list": [
+                  [
+                    {
+                      "wd": "choked"
+                    }
+                  ]
+                ],
+                "phrase_list": [
+                  [
+                    {
+                      "wd": "fallen apart"
+                    },
+                    {
+                      "wd": "gone off the deep end"
+                    },
+                    {
+                      "wd": "gone to pieces"
+                    },
+                    {
+                      "wd": "lost it"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "shortdef": [
+      "to become very angry",
+      "to yield to mental or emotional stress"
+    ]
+  }
+]
