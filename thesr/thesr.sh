@@ -37,7 +37,7 @@ done
 
 
 response=$(
-    curl -s "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/$word?key=$apikey"
+    curl -s "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/$word?key=$websterthesrapikey"
 )
 
 curlies="${response//[^{]}"
