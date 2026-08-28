@@ -40,6 +40,13 @@ response=$(
     curl -s "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/$word?key=$apikey"
 )
 
+curlies="${response//[^{]}"
+countcurlies="${#curlies}"
+if [[ -z "$response" || "$countcurlies" = 0 ]]; then
+    echo "$response"
+    exit 1
+fi
+
 sanjay=$(jq '[
     .[] | .["def"].[0].["sseq"].[].[0].[1].fl = .fl | .["def"].[0].["sseq"].[].[0].[1] |
         {
