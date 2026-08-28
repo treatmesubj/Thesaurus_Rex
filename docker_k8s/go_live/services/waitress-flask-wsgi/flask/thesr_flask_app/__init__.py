@@ -39,10 +39,10 @@ def thesr(request_form):
     synonyms_str = ""
     try:
         assert (
-            thesr_word.thesr_homonyms is not None and len(thesr_word.thesr_homonyms) > 0
-        ), f"no Thesaurus.com homonyms for {word_spelling}"
-        for homonym in thesr_word.thesr_homonyms:
-            synonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} == {homonym['synonyms'][:10]}\n"
+            thesr_word.thesr_homographs is not None and len(thesr_word.thesr_homographs) > 0
+        ), f"no Thesaurus.com homographs for {word_spelling}"
+        for homograph in thesr_word.thesr_homographs:
+            synonyms_str += f"{{ {homograph['word_class']}: {homograph['definition']} }} == {homograph['synonyms'][:10]}\n"
     except Exception as e:
         print(e)
         synonyms_str = "nothin'"
@@ -51,14 +51,14 @@ def thesr(request_form):
     definitions_str = ""
     if "definitions" in request_form.keys():
         try:
-            thesr_word.webster_homonyms = get_defs(word_spelling)
+            thesr_word.webster_homographs = get_defs(word_spelling)
             assert (
-                thesr_word.webster_homonyms is not None
-                and len(thesr_word.webster_homonyms) > 0
-            ), f"no Webster homonyms for {word_spelling}"
-            for homonym in thesr_word.webster_homonyms:
+                thesr_word.webster_homographs is not None
+                and len(thesr_word.webster_homographs) > 0
+            ), f"no Webster homographs for {word_spelling}"
+            for homograph in thesr_word.webster_homographs:
                 definitions_str += (
-                    f"{{ {homonym['word_class']}: {homonym['definition']} }}\n"
+                    f"{{ {homograph['word_class']}: {homograph['definition']} }}\n"
                 )
         except Exception as e:
             print(e)
@@ -73,11 +73,11 @@ def thesr(request_form):
             thesr_word.etymology = get_etymology(word_spelling)
             assert (
                 thesr_word.etymology is not None and len(thesr_word.etymology) > 0
-            ), f"no etymonline homonyms for {word_spelling}"
-            for homonym in thesr_word.etymology:
+            ), f"no etymonline homographs for {word_spelling}"
+            for homograph in thesr_word.etymology:
                 etymology_str += "{word_class}:\n    {etym_desc}\n{dashes}\n".format(
-                    word_class=homonym["word_class"],
-                    etym_desc=homonym["etym_desc"].replace("\n", "\n    "),
+                    word_class=homograph["word_class"],
+                    etym_desc=homograph["etym_desc"].replace("\n", "\n    "),
                     dashes="-" * 20,
                 )
         except Exception as e:
@@ -89,11 +89,11 @@ def thesr(request_form):
     if "antonyms" in request_form.keys():
         try:
             assert (
-                thesr_word.thesr_homonyms is not None
-                and len(thesr_word.thesr_homonyms) > 0
-            ), f"no Thesaurus.com homonyms for {word_spelling}"
-            for homonym in thesr_word.thesr_homonyms:
-                antonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} =/= {homonym['antonyms'][:10]}\n"
+                thesr_word.thesr_homographs is not None
+                and len(thesr_word.thesr_homographs) > 0
+            ), f"no Thesaurus.com homographs for {word_spelling}"
+            for homograph in thesr_word.thesr_homographs:
+                antonyms_str += f"{{ {homograph['word_class']}: {homograph['definition']} }} =/= {homograph['antonyms'][:10]}\n"
         except Exception as e:
             print(e)
             antonyms_str = "nothin'"

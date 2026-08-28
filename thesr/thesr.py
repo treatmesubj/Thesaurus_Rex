@@ -54,16 +54,16 @@ def get_defs(word):
     ]
     zipped_elems = zip(dict_entry_elems, word_class_elems)
 
-    homonyms = []
+    homographs = []
     try:
         for dict_entry_elem, word_class_elem in zipped_elems:
             definitions_elems = dict_entry_elem.select("span.dtText")
             word_class = word_class_elem.text
             for definition_elem in definitions_elems:
                 definition = definition_elem.text[2:]
-                homonyms.append({"definition": definition, "word_class": word_class})
-        if homonyms:
-            return homonyms
+                homographs.append({"definition": definition, "word_class": word_class})
+        if homographs:
+            return homographs
     except Exception:
         return
 
@@ -76,7 +76,7 @@ def get_syns_ants(word):
     )
     definition_blocks = soup.select("#synonyms-antonyms .definition-block")
 
-    homonyms = []
+    homographs = []
     try:
         for defi in definition_blocks:
             synonyms = []
@@ -86,7 +86,7 @@ def get_syns_ants(word):
                     synonyms = [s.text.strip() for s in panel.select("a")]
                 if panel.select_one('.synonym-antonym-panel-label').text == 'Antonyms':
                     antonyms = [s.text.strip() for s in panel.select("a")]
-            homonyms.append(
+            homographs.append(
                 {
                     "word_class": defi.select_one(".part-of-speech-label").text.strip(),
                     "definition": defi.select_one(".definition").text.strip(),
@@ -96,7 +96,7 @@ def get_syns_ants(word):
             )
     except Exception:
         return
-    return homonyms
+    return homographs
 
 
 def get_etymology(word):
@@ -109,32 +109,32 @@ def get_etymology(word):
         "section[class^='prose'] section"
     )
     zipped_elems = zip(class_elems, etym_elems)
-    homonyms = []
+    homographs = []
     for class_elem, etym_elem in zipped_elems:
-        homonyms.append(
+        homographs.append(
             {"etym_desc": etym_elem.text.rstrip("\n"), "word_class": class_elem.text}
         )
-    return homonyms
+    return homographs
 
 
 class Word:
     def __init__(self, word, console=None):
         self.spelling = word
-        self.thesr_homonyms = get_syns_ants(self.spelling)
+        self.thesr_homographs = get_syns_ants(self.spelling)
         self.console = console
 
     def show_syns(self):
         print(f"[{self.spelling}!]", end="\n\n")
         print(f"---Synonyms{'-'*67}")
-        if getattr(self, "thesr_homonyms", None):
-            for homonym in self.thesr_homonyms:
+        if getattr(self, "thesr_homographs", None):
+            for homograph in self.thesr_homographs:
                 if self.console:
                     self.console.print(
-                        f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [green]==[/green] [green]{homonym['synonyms'][:10]}[/green]"
+                        f"[magenta]{{ {homograph['word_class']}: {homograph['definition']} }}[/magenta] [green]==[/green] [green]{homograph['synonyms'][:10]}[/green]"
                     )
                 else:
                     print(
-                        f"{{ {homonym['word_class']}: {homonym['definition']} }} == {homonym['synonyms'][:10]}"
+                        f"{{ {homograph['word_class']}: {homograph['definition']} }} == {homograph['synonyms'][:10]}"
                     )
         else:
             print("Sorry, no synonyms found")
@@ -142,15 +142,15 @@ class Word:
 
     def show_ants(self):
         print(f"---Antonyms{'-'*67}")
-        if getattr(self, "thesr_homonyms", None):
-            for homonym in self.thesr_homonyms:
+        if getattr(self, "thesr_homographs", None):
+            for homograph in self.thesr_homographs:
                 if self.console:
                     self.console.print(
-                        f"[magenta]{{ {homonym['word_class']}: {homonym['definition']} }}[/magenta] [red]=/=[/red] [red]{homonym['antonyms'][:10]}[/red]"
+                        f"[magenta]{{ {homograph['word_class']}: {homograph['definition']} }}[/magenta] [red]=/=[/red] [red]{homograph['antonyms'][:10]}[/red]"
                     )
                 else:
                     print(
-                        f"{{ {homonym['word_class']}: {homonym['definition']} }} =/= {homonym['antonyms'][:10]}"
+                        f"{{ {homograph['word_class']}: {homograph['definition']} }} =/= {homograph['antonyms'][:10]}"
                     )
         else:
             print("Sorry, no antonyms found")
@@ -158,16 +158,16 @@ class Word:
 
     def show_defs(self):
         print(f"---Definitions{'-'*67}")
-        if not getattr(self, "webster_homonyms", None):
-            self.webster_homonyms = get_defs(self.spelling)
-        if getattr(self, "webster_homonyms", None):
-            for homonym in self.webster_homonyms:
+        if not getattr(self, "webster_homographs", None):
+            self.webster_homographs = get_defs(self.spelling)
+        if getattr(self, "webster_homographs", None):
+            for homograph in self.webster_homographs:
                 if self.console:
                     console.print(
-                        f"[magenta]{{ {homonym['word_class']}: [/magenta][yellow]{homonym['definition']}[/yellow] [magenta]}}[/magenta]"
+                        f"[magenta]{{ {homograph['word_class']}: [/magenta][yellow]{homograph['definition']}[/yellow] [magenta]}}[/magenta]"
                     )
                 else:
-                    print(f"{{ {homonym['word_class']}: {homonym['definition']} }}")
+                    print(f"{{ {homograph['word_class']}: {homograph['definition']} }}")
         else:
             print(f"Sorry, no definitions found for {self.spelling}")
             candidates = SpellChecker().candidates(self.spelling)
@@ -181,14 +181,14 @@ class Word:
         if not getattr(self, "etymology", None):
             self.etymology = get_etymology(self.spelling)
         if getattr(self, "etymology", None):
-            for homonym in self.etymology:
+            for homograph in self.etymology:
                 if self.console:
                     console.print(
-                        f"[magenta]{homonym['word_class']}[/magenta]:\n    [white]{homonym['etym_desc']}[/white]\n{'-'*20}"
+                        f"[magenta]{homograph['word_class']}[/magenta]:\n    [white]{homograph['etym_desc']}[/white]\n{'-'*20}"
                     )
                 else:
                     print(
-                        f"{homonym['word_class']}:\n    {homonym['etym_desc']}\n{'-'*20}"
+                        f"{homograph['word_class']}:\n    {homograph['etym_desc']}\n{'-'*20}"
                     )
         else:
             print("Sorry, no etymology found")
