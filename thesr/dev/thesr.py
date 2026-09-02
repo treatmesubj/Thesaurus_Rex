@@ -7,17 +7,8 @@ import argparse
 from rich.console import Console
 
 
-if __name__ == "__main__":
-    console = Console()
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--word", "-w", action="store", required=True)
-    parser.add_argument("--antonyms", "-a", action="store_true")
-    parser.add_argument("--verbose", "-v", action="store_true")
-    args = parser.parse_args()
-    websterthesrapikey = os.getenv("websterthesrapikey")
-
-    response = requests.get(f"https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{args.word}?key={websterthesrapikey}")
+def thesaurus(word, apikey):
+    response = requests.get(f"https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{word}?key={apikey}")
 
     if response.text.count('{') == 0:
         print(response.text)
@@ -36,7 +27,36 @@ if __name__ == "__main__":
         ]
     """).transform(sanjay)
 
+    return sanjay
+
+def dictionary(word, apikey):
+    response = requests.get(f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={apikey}")
+
+    if response.text.count('{') == 0:
+        print(response.text)
+        exit(1)
+
+    sanjay = json.loads(response.text)
+    sanjay = jq("""
+        [.[] | {"fl": .["fl"], "def": .["shortdef"], "etymology": .["et"].[]?.[1]}]
+    """).transform(sanjay)
+
+    return sanjay
+
+
+if __name__ == "__main__":
+    console = Console()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--word", "-w", action="store", required=True)
+    parser.add_argument("--antonyms", "-a", action="store_true")
+    parser.add_argument("--define", "-d", action="store_true")
+    parser.add_argument("--verbose", "-v", action="store_true")
+    args = parser.parse_args()
+
     console.print(f"\n[bright_yellow]\[{args.word}!][/bright_yellow]", end="\n\n")
+
+    sanjay = thesaurus(word=args.word, apikey=os.getenv("websterthesrapikey"))
 
     for homograph in sanjay:
         console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{homograph['def']}[/bright_cyan]")
@@ -45,3 +65,13 @@ if __name__ == "__main__":
         if args.antonyms or args.verbose:
             console.print(f"\t[bright_red]antonyms: {homograph['ants']}[/bright_red]")
         print('\n')
+
+    if args.define or args.verbose:
+        print(f"---Dictionary{'-'*68}")
+        sanjay = dictionary(word=args.word, apikey=os.getenv("websterdictapikey"))
+        for homograph in sanjay:
+            console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{homograph['def'][0]}[/bright_cyan]")
+            for defi in homograph['def'][1:]:
+                console.print(f"\t[bright_cyan]{defi}[/bright_cyan]")
+            console.print(f"[bright_yellow]etymology: {homograph['etymology']}[/bright_yellow]")
+            print('\n')
