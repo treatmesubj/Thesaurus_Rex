@@ -22,7 +22,9 @@ def thesaurus(word, apikey):
                 fl: .fl,
                 def: (.dt.[0].[-1] | rtrim),
                 syns: ([.syn_list.[]?.[].wd] | .[:10]),
-                ants: ([.ant_list.[]?.[].wd] | .[:10])
+                sims: ([.sim_list.[]?.[].wd] | .[:10]),
+                ants: ([.ant_list.[]?.[].wd] | .[:10]),
+                opps: ([.opp_list.[]?.[].wd] | .[:10])
             }
         ]
     """).transform(sanjay)
@@ -38,7 +40,7 @@ def dictionary(word, apikey):
 
     sanjay = json.loads(response.text)
     sanjay = jq("""
-        [.[] | {"fl": .["fl"], "def": .["shortdef"], "etymology": .["et"].[]?.[1]}]
+        [.[] | {"fl": .["fl"], "def": .["shortdef"], "etymology": .["et"].[]?.[1] // null}]
     """).transform(sanjay)
 
     return sanjay
@@ -61,9 +63,15 @@ if __name__ == "__main__":
     for homograph in sanjay:
         console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{homograph['def']}[/bright_cyan]")
         if not args.antonyms:
-            console.print(f"\t[bright_green]synonyms: {homograph['syns']}[/bright_green]")
+            if len(homograph['syns']) >= len(homograph['sims']):
+                console.print(f"\t[bright_green]synonyms: {homograph['syns']}[/bright_green]")
+            else:
+                console.print(f"\t[bright_green]near-synonyms: {homograph['sims']}[/bright_green]")
         if args.antonyms or args.verbose:
-            console.print(f"\t[bright_red]antonyms: {homograph['ants']}[/bright_red]")
+            if len(homograph['ants']) >= len(homograph['opps']):
+                console.print(f"\t[bright_red]antonyms: {homograph['ants']}[/bright_red]")
+            else:
+                console.print(f"\t[bright_red]near-antonyms: {homograph['opps']}[/bright_red]")
         print('\n')
 
     if args.define or args.verbose:
