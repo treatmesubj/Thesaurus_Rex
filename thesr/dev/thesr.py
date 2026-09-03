@@ -12,7 +12,7 @@ def thesaurus(word, apikey):
 
     if response.text.count('{') == 0:
         print(response.text)
-        exit(1)
+        return None
 
     sanjay = json.loads(response.text)
     sanjay = jq("""
@@ -36,7 +36,7 @@ def dictionary(word, apikey):
 
     if response.text.count('{') == 0:
         print(response.text)
-        exit(1)
+        return None
 
     sanjay = json.loads(response.text)
     sanjay = jq("""
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     sanjay = thesaurus(word=args.word, apikey=os.getenv("websterthesrapikey"))
 
-    for homograph in sanjay:
+    for homograph in sanjay or []:
         console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{homograph['def']}[/bright_cyan]")
         if not args.antonyms:
             if len(homograph['syns']) >= len(homograph['sims']):
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     if args.define or args.verbose:
         print(f"---Dictionary{'-'*68}")
         sanjay = dictionary(word=args.word, apikey=os.getenv("websterdictapikey"))
-        for homograph in sanjay:
+        for homograph in sanjay or []:
             console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{homograph['def'][0]}[/bright_cyan]")
             for defi in homograph['def'][1:]:
                 console.print(f"\t[bright_cyan]{defi}[/bright_cyan]")
