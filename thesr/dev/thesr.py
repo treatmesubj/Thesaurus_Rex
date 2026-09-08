@@ -46,6 +46,16 @@ def dictionary(word, apikey):
     return sanjay
 
 
+def rich_console_format(stringy):
+    if stringy is None:
+        return ""
+    return (
+        stringy
+        .replace("{it}", "[i]").replace("{/it}", "[/i]")
+        .replace("{b}", "[bold]").replace("{/b}", "[/bold]")
+    )
+
+
 if __name__ == "__main__":
     console = Console()
 
@@ -61,7 +71,7 @@ if __name__ == "__main__":
     sanjay = thesaurus(word=args.word, apikey=os.getenv("websterthesrapikey"))
 
     for homograph in sanjay or []:
-        console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{homograph['def']}[/bright_cyan]")
+        console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'])}[/bright_cyan]")
         if not args.antonyms:
             if len(homograph['syns']) >= len(homograph['sims']):
                 console.print(f"\t[bright_green]synonyms: {homograph['syns']}[/bright_green]")
@@ -78,8 +88,8 @@ if __name__ == "__main__":
         print(f"---Dictionary{'-'*68}")
         sanjay = dictionary(word=args.word, apikey=os.getenv("websterdictapikey"))
         for homograph in sanjay or []:
-            console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{homograph['def'][0]}[/bright_cyan]")
+            console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'][0])}[/bright_cyan]")
             for defi in homograph['def'][1:]:
-                console.print(f"\t[bright_cyan]{defi}[/bright_cyan]")
-            console.print(f"[bright_yellow]etymology: {homograph['etymology']}[/bright_yellow]")
+                console.print(f"\t[bright_cyan]{rich_console_format(defi)}[/bright_cyan]")
+            console.print(f"[bright_yellow]etymology: {rich_console_format(homograph['etymology'])}[/bright_yellow]")
             print('\n')
