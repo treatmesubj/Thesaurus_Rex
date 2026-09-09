@@ -40,7 +40,7 @@ def dictionary(word, apikey):
 
     sanjay = json.loads(response.text)
     sanjay = jq("""
-        [.[] | {"fl": .["fl"], "def": .["shortdef"], "etymology": .["et"].[]?.[1] // null}]
+        [map(select(.shortdef | length > 0)).[] | {"fl": .["fl"], "def": .["shortdef"], "etymology": .["et"].[]?.[1] // null}]
     """).transform(sanjay)
 
     return sanjay
