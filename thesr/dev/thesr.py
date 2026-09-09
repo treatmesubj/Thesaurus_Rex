@@ -40,7 +40,14 @@ def dictionary(word, apikey):
 
     sanjay = json.loads(response.text)
     sanjay = jq("""
-        [map(select(.shortdef | length > 0)).[] | {"fl": .["fl"], "def": .["shortdef"], "etymology": .["et"].[]?.[1] // null}]
+        [
+        map(select(.shortdef | length > 0)).[] |
+            {
+                "fl": .["fl"],
+                "def": .["shortdef"],
+                "etymology": .["et"]? // [null] | map(walk(if type == "array" then .[-1] else . end))
+            }
+        ]
     """).transform(sanjay)
 
     return sanjay
@@ -91,5 +98,8 @@ if __name__ == "__main__":
             console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'][0])}[/bright_cyan]")
             for defi in homograph['def'][1:]:
                 console.print(f"\t[bright_cyan]{rich_console_format(defi)}[/bright_cyan]")
-            console.print(f"[bright_yellow]etymology: {rich_console_format(homograph['etymology'])}[/bright_yellow]")
+
+            console.print(f"[bright_yellow]etymology: {rich_console_format(homograph['etymology'][0])}[/bright_yellow]")
+            for ety in homograph['etymology'][1:]:
+                console.print(f"\t[bright_yellow]{rich_console_format(ety)}[/bright_yellow]")
             print('\n')
