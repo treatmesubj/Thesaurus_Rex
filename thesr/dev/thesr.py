@@ -99,7 +99,8 @@ if __name__ == "__main__":
             for defi in homograph['def'][1:]:
                 console.print(f"\t[bright_cyan]{rich_console_format(defi)}[/bright_cyan]")
 
-            console.print(f"[bright_yellow]etymology: {rich_console_format(homograph['etymology'][0])}[/bright_yellow]")
-            for ety in homograph['etymology'][1:]:
-                console.print(f"\t[bright_yellow]{rich_console_format(ety)}[/bright_yellow]")
+            if homograph['etymology'][0] is not None:
+                console.print(f"[bright_yellow]etymology: {rich_console_format(homograph['etymology'][0])}[/bright_yellow]")
+                for ety in homograph['etymology'][1:]:
+                  console.print(f"\t[bright_yellow]{rich_console_format(ety)}[/bright_yellow]")
             print('\n')
