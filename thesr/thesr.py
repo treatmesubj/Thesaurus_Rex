@@ -13,8 +13,7 @@ def thesaurus(word, apikey):
     )
 
     if response.text.count("{") == 0:
-        print(response.text)
-        return None
+        return json.loads(f"{{\"error-response\": {response.text}}}")
 
     sanjay = json.loads(response.text)
     sanjay = jq(
@@ -42,8 +41,7 @@ def dictionary(word, apikey):
     )
 
     if response.text.count("{") == 0:
-        print(response.text)
-        return None
+        return json.loads(f"{{\"error-response\": {response.text}}}")
 
     sanjay = json.loads(response.text)
     sanjay = jq(
@@ -103,6 +101,10 @@ etymology:
 
     sanjay = thesaurus(word=args.word, apikey=os.getenv("websterthesrapikey"))
 
+    if 'error-response' in sanjay:
+        console.print(sanjay['error-response'])
+        sanjay = []
+
     for homograph in sanjay or []:
         console.print(
             f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'])}[/bright_cyan]"
@@ -130,6 +132,11 @@ etymology:
     if args.define or args.verbose:
         print(f"---Dictionary{'-'*68}")
         sanjay = dictionary(word=args.word, apikey=os.getenv("websterdictapikey"))
+
+        if 'error-response' in sanjay:
+            console.print(sanjay['error-response'])
+            sanjay = []
+
         for homograph in sanjay or []:
             console.print(
                 f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'][0])}[/bright_cyan]"

@@ -36,9 +36,13 @@ def thesr(request_form):
     word_spelling = request_form["word"]
 
     synonyms_antonyms_str = ""
-    # TODO: handle spellcheck response
+    sanjay = thesaurus(word=word_spelling, apikey=os.getenv("websterthesrapikey"))
+
+    if 'error-response' in sanjay:
+        synonyms_antonyms_str = sanjay['error-response']
+        sanjay = []
+
     try:
-        sanjay = thesaurus(word=word_spelling, apikey=os.getenv("websterthesrapikey"))
         for homograph in sanjay or []:
             synonyms_antonyms_str += f"({homograph['fl']}) {homograph['def']}"
             if len(homograph["syns"]) >= len(homograph["sims"]):
@@ -61,6 +65,11 @@ def thesr(request_form):
     if "definitions" in request_form.keys():
         try:
             sanjay = dictionary(word=word_spelling, apikey=os.getenv("websterdictapikey"))
+
+            if 'error-response' in sanjay:
+                definitions_etymology_str = sanjay['error-response']
+                sanjay = []
+
             for homograph in sanjay or []:
                 definitions_etymology_str += f"({homograph['fl']}) {homograph['def'][0]}"
                 for defi in homograph["def"][1:]:
