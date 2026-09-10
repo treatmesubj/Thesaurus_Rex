@@ -23,8 +23,7 @@ setup(
     },
     install_requires=[
         "requests",
-        "beautifulsoup4",
+        "jq",
         "rich",
-        "pyspellchecker",
     ],
 )

@@ -10,7 +10,8 @@ from flask import (
 )
 
 # from waitress import serve
-from thesr.thesr import *
+import os
+from thesr.thesr import thesaurus, dictionary
 
 # initialise app
 app = Flask(__name__)
@@ -32,79 +33,54 @@ def index(error=None):
 
 @app.route("/thesr")
 def thesr(request_form):
-    thesr_word = Word(request_form["word"])
+    word_spelling = request_form["word"]
 
-    word_spelling = thesr_word.spelling
-    # synonyms
-    synonyms_str = ""
+    synonyms_antonyms_str = ""
+    # TODO: handle spellcheck response
     try:
-        assert (
-            thesr_word.thesr_homonyms is not None and len(thesr_word.thesr_homonyms) > 0
-        ), f"no Thesaurus.com homonyms for {word_spelling}"
-        for homonym in thesr_word.thesr_homonyms:
-            synonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} == {homonym['synonyms'][:10]}\n"
+        sanjay = thesaurus(word=word_spelling, apikey=os.getenv("websterthesrapikey"))
+        for homograph in sanjay or []:
+            synonyms_antonyms_str += f"({homograph['fl']}) {homograph['def']}"
+            if len(homograph["syns"]) >= len(homograph["sims"]):
+                synonyms_antonyms_str += f"\n\tsynonyms: {homograph['syns']}"
+            else:
+                synonyms_antonyms_str += f"\n\tnear-synonyms: {homograph['sims']}"
+
+            if len(homograph["ants"]) > 0 or len(homograph["opps"]) > 0:
+                if len(homograph["ants"]) >= len(homograph["opps"]):
+                    synonyms_antonyms_str += f"\n\tantonyms: {homograph['ants']}"
+                else:
+                    synonyms_antonyms_str += f"\n\tnear-antonyms: {homograph['opps']}"
+            synonyms_antonyms_str += "\n\n"
     except Exception as e:
         print(e)
-        synonyms_str = "nothin'"
+        synonyms_antonyms_str = "nothin'"
 
     # definitions
-    definitions_str = ""
+    definitions_etymology_str = ""
     if "definitions" in request_form.keys():
         try:
-            thesr_word.webster_homonyms = get_defs(word_spelling)
-            assert (
-                thesr_word.webster_homonyms is not None
-                and len(thesr_word.webster_homonyms) > 0
-            ), f"no Webster homonyms for {word_spelling}"
-            for homonym in thesr_word.webster_homonyms:
-                definitions_str += (
-                    f"{{ {homonym['word_class']}: {homonym['definition']} }}\n"
-                )
-        except Exception as e:
-            print(e)
-            candidates = get_spell_check_candidates(word_spelling)
-            definitions_str = "nothin'"
-            definitions_str = f"nothin'\nDid you mean {candidates}?"
+            sanjay = dictionary(word=word_spelling, apikey=os.getenv("websterdictapikey"))
+            for homograph in sanjay or []:
+                definitions_etymology_str += f"({homograph['fl']}) {homograph['def'][0]}"
+                for defi in homograph["def"][1:]:
+                    definitions_etymology_str += f"\n\t{defi}"
 
-    # etymology
-    etymology_str = ""
-    if "etymology" in request_form.keys():
-        try:
-            thesr_word.etymology = get_etymology(word_spelling)
-            assert (
-                thesr_word.etymology is not None and len(thesr_word.etymology) > 0
-            ), f"no etymonline homonyms for {word_spelling}"
-            for homonym in thesr_word.etymology:
-                etymology_str += "{word_class}:\n    {etym_desc}\n{dashes}\n".format(
-                    word_class=homonym["word_class"],
-                    etym_desc=homonym["etym_desc"].replace("\n", "\n    "),
-                    dashes="-" * 20,
-                )
+                if homograph["etymology"][0] is not None:
+                    definitions_etymology_str += f"\netymology:\n\t{homograph['etymology'][0]}"
+                    for ety in homograph["etymology"][1:]:
+                        definitions_etymology_str += f"\n\t{ety}"
+                definitions_etymology_str += "\n\n"
         except Exception as e:
             print(e)
-            etymology_str = "nothin'"
+            definitions_etymology_str = "nothin'"
 
-    # antonyms
-    antonyms_str = ""
-    if "antonyms" in request_form.keys():
-        try:
-            assert (
-                thesr_word.thesr_homonyms is not None
-                and len(thesr_word.thesr_homonyms) > 0
-            ), f"no Thesaurus.com homonyms for {word_spelling}"
-            for homonym in thesr_word.thesr_homonyms:
-                antonyms_str += f"{{ {homonym['word_class']}: {homonym['definition']} }} =/= {homonym['antonyms'][:10]}\n"
-        except Exception as e:
-            print(e)
-            antonyms_str = "nothin'"
 
     return render_template(
         "thesr.html",
         word_spelling=word_spelling,
-        synonyms_str=synonyms_str,
-        definitions_str=definitions_str,
-        etymology_str=etymology_str,
-        antonyms_str=antonyms_str,
+        synonyms_antonyms_str=synonyms_antonyms_str,
+        definitions_etymology_str=definitions_etymology_str,
     )
 
 
