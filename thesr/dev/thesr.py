@@ -8,14 +8,17 @@ from rich.console import Console
 
 
 def thesaurus(word, apikey):
-    response = requests.get(f"https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{word}?key={apikey}")
+    response = requests.get(
+        f"https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{word}?key={apikey}"
+    )
 
-    if response.text.count('{') == 0:
+    if response.text.count("{") == 0:
         print(response.text)
         return None
 
     sanjay = json.loads(response.text)
-    sanjay = jq("""
+    sanjay = jq(
+        """
         [
         .[] | .["def"].[0].["sseq"].[].[0].[1].fl = .fl | .["def"].[0].["sseq"].[].[0].[1] |
             {
@@ -27,19 +30,24 @@ def thesaurus(word, apikey):
                 opps: ([.opp_list.[]?.[].wd] | .[:10])
             }
         ]
-    """).transform(sanjay)
+    """
+    ).transform(sanjay)
 
     return sanjay
 
-def dictionary(word, apikey):
-    response = requests.get(f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={apikey}")
 
-    if response.text.count('{') == 0:
+def dictionary(word, apikey):
+    response = requests.get(
+        f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={apikey}"
+    )
+
+    if response.text.count("{") == 0:
         print(response.text)
         return None
 
     sanjay = json.loads(response.text)
-    sanjay = jq("""
+    sanjay = jq(
+        """
         [
         map(select(.shortdef | length > 0)).[] |
             {
@@ -48,7 +56,8 @@ def dictionary(word, apikey):
                 "etymology": .["et"]? // [null] | map(walk(if type == "array" then .[-1] else . end))
             }
         ]
-    """).transform(sanjay)
+    """
+    ).transform(sanjay)
 
     return sanjay
 
@@ -57,8 +66,7 @@ def rich_console_format(stringy):
     if stringy is None:
         return ""
     return (
-        stringy
-        .replace("{it}", "[i]").replace("{/it}", "[/i]")
+        stringy.replace("{it}", "[i]").replace("{/it}", "[/i]")
         .replace("{b}", "[bold]").replace("{/b}", "[/bold]")
     )
 
@@ -78,29 +86,47 @@ if __name__ == "__main__":
     sanjay = thesaurus(word=args.word, apikey=os.getenv("websterthesrapikey"))
 
     for homograph in sanjay or []:
-        console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'])}[/bright_cyan]")
+        console.print(
+            f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'])}[/bright_cyan]"
+        )
         if not args.antonyms:
-            if len(homograph['syns']) >= len(homograph['sims']):
-                console.print(f"\t[bright_green]synonyms: {homograph['syns']}[/bright_green]")
+            if len(homograph["syns"]) >= len(homograph["sims"]):
+                console.print(
+                    f"\t[bright_green]synonyms: {homograph['syns']}[/bright_green]"
+                )
             else:
-                console.print(f"\t[bright_green]near-synonyms: {homograph['sims']}[/bright_green]")
+                console.print(
+                    f"\t[bright_green]near-synonyms: {homograph['sims']}[/bright_green]"
+                )
         if args.antonyms or args.verbose:
-            if len(homograph['ants']) >= len(homograph['opps']):
-                console.print(f"\t[bright_red]antonyms: {homograph['ants']}[/bright_red]")
+            if len(homograph["ants"]) >= len(homograph["opps"]):
+                console.print(
+                    f"\t[bright_red]antonyms: {homograph['ants']}[/bright_red]"
+                )
             else:
-                console.print(f"\t[bright_red]near-antonyms: {homograph['opps']}[/bright_red]")
-        print('\n')
+                console.print(
+                    f"\t[bright_red]near-antonyms: {homograph['opps']}[/bright_red]"
+                )
+        print("\n")
 
     if args.define or args.verbose:
         print(f"---Dictionary{'-'*68}")
         sanjay = dictionary(word=args.word, apikey=os.getenv("websterdictapikey"))
         for homograph in sanjay or []:
-            console.print(f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'][0])}[/bright_cyan]")
-            for defi in homograph['def'][1:]:
-                console.print(f"\t[bright_cyan]{rich_console_format(defi)}[/bright_cyan]")
+            console.print(
+                f"[bright_magenta]({homograph['fl']})[/bright_magenta] [bright_cyan]{rich_console_format(homograph['def'][0])}[/bright_cyan]"
+            )
+            for defi in homograph["def"][1:]:
+                console.print(
+                    f"\t[bright_cyan]{rich_console_format(defi)}[/bright_cyan]"
+                )
 
-            if homograph['etymology'][0] is not None:
-                console.print(f"[bright_yellow]etymology: {rich_console_format(homograph['etymology'][0])}[/bright_yellow]")
-                for ety in homograph['etymology'][1:]:
-                  console.print(f"\t[bright_yellow]{rich_console_format(ety)}[/bright_yellow]")
-            print('\n')
+            if homograph["etymology"][0] is not None:
+                console.print(
+                    f"[bright_yellow]etymology: {rich_console_format(homograph['etymology'][0])}[/bright_yellow]"
+                )
+                for ety in homograph["etymology"][1:]:
+                    console.print(
+                        f"\t[bright_yellow]{rich_console_format(ety)}[/bright_yellow]"
+                    )
+            print("\n")
