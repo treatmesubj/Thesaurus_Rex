@@ -74,7 +74,25 @@ def rich_console_format(stringy):
 if __name__ == "__main__":
     console = Console()
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="""
+stdout:
+```
+
+[<word>!]
+
+(<part-of-speech>) <sense-of-word>
+    synonyms: []
+    antonyms: []
+
+---Dictionary--------------------------------------------------------------------
+(<part-of-speech>) <definition>
+etymology:
+    <etymolgy>
+```
+        """,
+        formatter_class=argparse.RawTextHelpFormatter # Preserves exact formatting
+    )
     parser.add_argument("--word", "-w", action="store", required=True)
     parser.add_argument("--antonyms", "-a", action="store_true")
     parser.add_argument("--define", "-d", action="store_true")
