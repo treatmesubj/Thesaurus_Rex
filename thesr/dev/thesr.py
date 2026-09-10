@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
             if homograph["etymology"][0] is not None:
                 console.print(
-                    f"[bright_yellow]etymology: {rich_console_format(homograph['etymology'][0])}[/bright_yellow]"
+                    f"[bright_yellow]etymology:\n\t{rich_console_format(homograph['etymology'][0])}[/bright_yellow]"
                 )
                 for ety in homograph["etymology"][1:]:
                     console.print(
