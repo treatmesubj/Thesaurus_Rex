@@ -1,5 +1,5 @@
 # Thesaurus-Rex
-CLI wrapper for [Merriam-Webster Collegiate Dictionary & Thesaurus APIs](https://dictionaryapi.com/products/index)
+Python CLI wrapper for [Merriam-Webster Collegiate Dictionary & Thesaurus APIs](https://dictionaryapi.com/products/index)
 
 ### Installation
 - from [PyPI](https://pypi.org/project/thesr): `pip install thesr`
@@ -7,9 +7,36 @@ CLI wrapper for [Merriam-Webster Collegiate Dictionary & Thesaurus APIs](https:/
 
 ### Usage
 
+Requires environment variables `websterthesrapikey`, `websterdictapikey` for
+your corresponding Collegiate Thesarus & Dictionary API keys requested from [https://dictionaryapi.com](https://dictionaryapi.com/register/index)
+
+````
+usage: thesr.py [-h] --word WORD [--antonyms] [--define] [--verbose]
+
+stdout:
 ```
-python thesr.py [-h] --word WORD [--antonyms] [--define] [--verbose]
+
+[<word>!]
+
+(<part-of-speech>) <sense-of-word>
+    synonyms: []
+    antonyms: []
+
+---Dictionary--------------------------------------------------------------------
+(<part-of-speech>) <definition>
+etymology:
+    <etymolgy>
 ```
+
+
+options:
+  -h, --help            show this help message and exit
+  --word WORD, -w WORD
+  --antonyms, -a
+  --define, -d
+  --verbose, -v
+
+````
 Common English phrases & idioms such as `tongue-in-cheek` or `dime-a-dozen` sometimes work as well
 
 ```
