@@ -39,6 +39,17 @@ spec:
           ports:
             - containerPort: 8000
           resources: {}
+          env:
+            - name: websterthesrapikey
+              valueFrom:
+                secretKeyRef:
+                  name: webster-secret-keys
+                  key: websterthesrapikey
+            - name: websterdictapikey
+              valueFrom:
+                secretKeyRef:
+                  name: webster-secret-keys
+                  key: websterdictapikey
       hostname: waitress-flask-wsgi
       dnsConfig:
         options:
