@@ -26,7 +26,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
-  local:
+  local:  # certs TODO
     path: /home/rock/Documents/Thesaurus_Rex/docker_k8s/letsencrypt
   nodeAffinity:
     required:
@@ -35,7 +35,7 @@ spec:
           - key: kubernetes.io/hostname
             operator: In
             values:
-              - thinkpad
+              - thinkpad  # host TODO
 
 ---
 

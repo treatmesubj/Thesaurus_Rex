@@ -145,6 +145,7 @@ sudo k3s ctr images ls
 Helm install charts
 ```bash
 cd ~/Thesaurus_Rex/docker_k8s/
+# validate affinity host & PVC mount path
 kubectl create secret generic webster-secret-keys \
     --from-literal=websterthesrapikey=dummy \
     --from-literal=websterdictapikey=dummy \
